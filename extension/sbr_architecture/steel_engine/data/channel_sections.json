@@ -1,0 +1,1578 @@
+{
+  "schema_version": 2,
+  "units": "mm",
+  "source": {
+    "file": "channel-steel2.dxf",
+    "sha256": "0d7b3b3d72ab356b3de4af8e20e6f070876097dc607144bcb3d0783598b64714"
+  },
+  "sections": [
+    {
+      "id": "CHANNEL/general/Rolled/75x40x5x7",
+      "name": "CHANNEL-75x40x5x7",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 75.0,
+        "B": 40.0,
+        "tw": 5.0,
+        "tf": 7.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -20.0,
+              -37.5,
+              0.0
+            ],
+            [
+              -20.0,
+              37.5,
+              0.0
+            ],
+            [
+              20.0,
+              37.5,
+              0.0
+            ],
+            [
+              20.0,
+              35.696376308,
+              -0.3888787318536471
+            ],
+            [
+              16.348622971,
+              31.711597515,
+              0.0
+            ],
+            [
+              -7.697245942,
+              29.607856581,
+              0.3888787318525955
+            ],
+            [
+              -15.0,
+              21.638298996,
+              0.0
+            ],
+            [
+              -15.0,
+              -21.638298996,
+              0.3888787318525955
+            ],
+            [
+              -7.697245942,
+              -29.607856581,
+              0.0
+            ],
+            [
+              16.348622971,
+              -31.711597515,
+              -0.3888787318525955
+            ],
+            [
+              20.0,
+              -35.696376308,
+              0.0
+            ],
+            [
+              20.0,
+              -37.5,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A7C",
+        "label_handle": "1B2A",
+        "entity_handle": "1A7C"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/100x50x5x7.5",
+      "name": "CHANNEL-100x50x5x7.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 50.0,
+        "tw": 5.0,
+        "tf": 7.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -25.0,
+              -50.0,
+              0.0
+            ],
+            [
+              -25.0,
+              50.0,
+              0.0
+            ],
+            [
+              25.0,
+              50.0,
+              0.0
+            ],
+            [
+              25.0,
+              48.133819625,
+              -0.3888787318525955
+            ],
+            [
+              21.348622971,
+              44.149040833,
+              0.0
+            ],
+            [
+              -12.697245942,
+              41.170413263,
+              0.3888787318525955
+            ],
+            [
+              -20.0,
+              33.200855679,
+              0.0
+            ],
+            [
+              -20.0,
+              -33.200855679,
+              0.3888787318536471
+            ],
+            [
+              -12.697245942,
+              -41.170413263,
+              0.0
+            ],
+            [
+              21.348622971,
+              -44.149040833,
+              -0.3888787318536471
+            ],
+            [
+              25.0,
+              -48.133819625,
+              0.0
+            ],
+            [
+              25.0,
+              -50.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A7E",
+        "label_handle": "1B2B",
+        "entity_handle": "1A7E"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/125x65x6x8",
+      "name": "CHANNEL-125x65x6x8",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 65.0,
+        "tw": 6.0,
+        "tf": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -32.5,
+              -62.5,
+              0.0
+            ],
+            [
+              32.5,
+              -62.5,
+              0.0
+            ],
+            [
+              32.5,
+              -60.74624027,
+              0.3888787318525955
+            ],
+            [
+              28.848622971,
+              -56.761461478,
+              0.0
+            ],
+            [
+              -19.197245942,
+              -52.557992619,
+              -0.3888787318525955
+            ],
+            [
+              -26.5,
+              -44.588435034,
+              0.0
+            ],
+            [
+              -26.5,
+              44.588435034,
+              -0.3888787318525955
+            ],
+            [
+              -19.197245942,
+              52.557992619,
+              0.0
+            ],
+            [
+              28.848622971,
+              56.761461478,
+              0.3888787318536471
+            ],
+            [
+              32.5,
+              60.74624027,
+              0.0
+            ],
+            [
+              32.5,
+              62.5,
+              0.0
+            ],
+            [
+              -32.5,
+              62.5,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A7F",
+        "label_handle": "1B2C",
+        "entity_handle": "1A7F"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/150x75x10x13.5",
+      "name": "CHANNEL-150x75x10x13.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 75.0,
+        "tw": 10,
+        "tf": 13.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -37.5,
+              -75.0,
+              0.0
+            ],
+            [
+              -37.5,
+              75.0,
+              0.0
+            ],
+            [
+              37.5,
+              75.0,
+              0.0
+            ],
+            [
+              37.5,
+              72.132196544,
+              -0.3888787318536471
+            ],
+            [
+              29.740823813,
+              63.66454161,
+              0.0
+            ],
+            [
+              -11.981647627,
+              60.014298345,
+              0.3888787318525955
+            ],
+            [
+              -27.5,
+              43.078988477,
+              0.0
+            ],
+            [
+              -27.5,
+              -43.078988477,
+              0.3888787318525955
+            ],
+            [
+              -11.981647627,
+              -60.014298345,
+              0.0
+            ],
+            [
+              29.740823813,
+              -63.66454161,
+              -0.3888787318525955
+            ],
+            [
+              37.5,
+              -72.132196544,
+              0.0
+            ],
+            [
+              37.5,
+              -75.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A81",
+        "label_handle": "1B2E",
+        "entity_handle": "1A81"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/150x75x6.5x10",
+      "name": "CHANNEL-150x75x6.5x10",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 75.0,
+        "tw": 6.5,
+        "tf": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -37.5,
+              -75.0,
+              0.0
+            ],
+            [
+              37.5,
+              -75.0,
+              0.0
+            ],
+            [
+              37.5,
+              -72.578142596,
+              0.3888787318536471
+            ],
+            [
+              32.935778714,
+              -67.597169105,
+              0.0
+            ],
+            [
+              -21.871557427,
+              -62.802148515,
+              -0.3888787318525955
+            ],
+            [
+              -31.0,
+              -52.840201534,
+              0.0
+            ],
+            [
+              -31.0,
+              52.840201534,
+              -0.3888787318525955
+            ],
+            [
+              -21.871557427,
+              62.802148515,
+              0.0
+            ],
+            [
+              32.935778714,
+              67.597169105,
+              0.3888787318525955
+            ],
+            [
+              37.5,
+              72.578142596,
+              0.0
+            ],
+            [
+              37.5,
+              75.0,
+              0.0
+            ],
+            [
+              -37.5,
+              75.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A80",
+        "label_handle": "1B2D",
+        "entity_handle": "1A80"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/180x75x7x10.5",
+      "name": "CHANNEL-180x75x7x10.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 180.0,
+        "B": 75.0,
+        "tw": 7.0,
+        "tf": 10.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -37.5,
+              -90.0,
+              0.0
+            ],
+            [
+              37.5,
+              -90.0,
+              0.0
+            ],
+            [
+              37.5,
+              -87.514436017,
+              0.3888787318536471
+            ],
+            [
+              32.479356585,
+              -82.035365177,
+              0.0
+            ],
+            [
+              -20.45871317,
+              -77.403884205,
+              -0.3888787318525955
+            ],
+            [
+              -30.5,
+              -66.445742526,
+              0.0
+            ],
+            [
+              -30.5,
+              66.445742526,
+              -0.3888787318536471
+            ],
+            [
+              -20.45871317,
+              77.403884205,
+              0.0
+            ],
+            [
+              32.479356585,
+              82.035365177,
+              0.3888787318536471
+            ],
+            [
+              37.5,
+              87.514436017,
+              0.0
+            ],
+            [
+              37.5,
+              90.0,
+              0.0
+            ],
+            [
+              -37.5,
+              90.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A82",
+        "label_handle": "1A90",
+        "entity_handle": "1A82"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/200x80x7.5x11",
+      "name": "CHANNEL-200x80x7.5x11",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 80.0,
+        "tw": 7.5,
+        "tf": 11.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -40.0,
+              -100.0,
+              0.0
+            ],
+            [
+              40.0,
+              -100.0,
+              0.0
+            ],
+            [
+              40.0,
+              -97.669451097,
+              0.3888787318525963
+            ],
+            [
+              34.522934456,
+              -91.692282908,
+              0.0
+            ],
+            [
+              -21.545868913,
+              -86.786898236,
+              -0.3888787318525963
+            ],
+            [
+              -32.5,
+              -74.832561859,
+              0.0
+            ],
+            [
+              -32.5,
+              74.832561859,
+              -0.3888787318536471
+            ],
+            [
+              -21.545868913,
+              86.786898236,
+              0.0
+            ],
+            [
+              34.522934456,
+              91.692282908,
+              0.3888787318525963
+            ],
+            [
+              40.0,
+              97.669451097,
+              0.0
+            ],
+            [
+              40.0,
+              100.0,
+              0.0
+            ],
+            [
+              -40.0,
+              100.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A83",
+        "label_handle": "1B30",
+        "entity_handle": "1A83"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/200x90x8x13.5",
+      "name": "CHANNEL-200x90x8x13.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 90.0,
+        "tw": 8.0,
+        "tf": 13.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -100.0,
+              0.0
+            ],
+            [
+              45.0,
+              -100.0,
+              0.0
+            ],
+            [
+              45.0,
+              -96.501353423,
+              0.3888787318525963
+            ],
+            [
+              38.610090199,
+              -89.527990536,
+              0.0
+            ],
+            [
+              -24.220180398,
+              -84.031054132,
+              -0.3888787318525963
+            ],
+            [
+              -37.0,
+              -70.084328359,
+              0.0
+            ],
+            [
+              -37.0,
+              70.084328359,
+              -0.3888787318536471
+            ],
+            [
+              -24.220180398,
+              84.031054132,
+              0.0
+            ],
+            [
+              38.610090199,
+              89.527990536,
+              0.3888787318525963
+            ],
+            [
+              45.0,
+              96.501353423,
+              0.0
+            ],
+            [
+              45.0,
+              100.0,
+              0.0
+            ],
+            [
+              -45.0,
+              100.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A84",
+        "label_handle": "1B32",
+        "entity_handle": "1A84"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/250x90x11x14.5",
+      "name": "CHANNEL-250x90x11x14.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 250.0,
+        "B": 90.0,
+        "tw": 11.0,
+        "tf": 14.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -125.0,
+              0.0
+            ],
+            [
+              45.0,
+              -125.0,
+              0.0
+            ],
+            [
+              45.0,
+              -121.744617188,
+              0.3888787318536471
+            ],
+            [
+              37.240823813,
+              -113.276962255,
+              0.0
+            ],
+            [
+              -18.481647627,
+              -108.4018777,
+              -0.3888787318525963
+            ],
+            [
+              -34.0,
+              -91.466567832,
+              0.0
+            ],
+            [
+              -34.0,
+              91.466567832,
+              -0.3888787318525962
+            ],
+            [
+              -18.481647627,
+              108.4018777,
+              0.0
+            ],
+            [
+              37.240823813,
+              113.276962255,
+              0.3888787318525963
+            ],
+            [
+              45.0,
+              121.744617188,
+              0.0
+            ],
+            [
+              45.0,
+              125.0,
+              0.0
+            ],
+            [
+              -45.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A86",
+        "label_handle": "1B34",
+        "entity_handle": "1A86"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/250x90x9x13",
+      "name": "CHANNEL-250x90x9x13",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 250.0,
+        "B": 90.0,
+        "tw": 9.0,
+        "tf": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -125.0,
+              0.0
+            ],
+            [
+              45.0,
+              -125.0,
+              0.0
+            ],
+            [
+              45.0,
+              -121.957609091,
+              0.3888787318536471
+            ],
+            [
+              38.610090199,
+              -114.984246204,
+              0.0
+            ],
+            [
+              -23.220180398,
+              -109.574798464,
+              -0.3888787318525963
+            ],
+            [
+              -36.0,
+              -95.628072691,
+              0.0
+            ],
+            [
+              -36.0,
+              95.628072691,
+              -0.3888787318536471
+            ],
+            [
+              -23.220180398,
+              109.574798464,
+              0.0
+            ],
+            [
+              38.610090199,
+              114.984246204,
+              0.3888787318525963
+            ],
+            [
+              45.0,
+              121.957609091,
+              0.0
+            ],
+            [
+              45.0,
+              125.0,
+              0.0
+            ],
+            [
+              -45.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A85",
+        "label_handle": "1B33",
+        "entity_handle": "1A85"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/300x90x10x15.5",
+      "name": "CHANNEL-300x90x10x15.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 300.0,
+        "B": 90.0,
+        "tw": 10.0,
+        "tf": 15.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -150.0,
+              0.0
+            ],
+            [
+              -45.0,
+              150.0,
+              0.0
+            ],
+            [
+              45.0,
+              150.0,
+              0.0
+            ],
+            [
+              45.0,
+              146.704692694,
+              -0.3888787318536471
+            ],
+            [
+              36.327979556,
+              137.240843062,
+              0.0
+            ],
+            [
+              -17.655959112,
+              132.517860416,
+              0.3888787318525962
+            ],
+            [
+              -35.0,
+              113.590161153,
+              0.0
+            ],
+            [
+              -35.0,
+              -113.590161153,
+              0.3888787318525963
+            ],
+            [
+              -17.655959112,
+              -132.517860416,
+              0.0
+            ],
+            [
+              36.327979556,
+              -137.240843062,
+              -0.3888787318525963
+            ],
+            [
+              45.0,
+              -146.704692694,
+              0.0
+            ],
+            [
+              45.0,
+              -150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A88",
+        "label_handle": "1B36",
+        "entity_handle": "1A88"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/300x90x12x16",
+      "name": "CHANNEL-300x90x12x16",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 300.0,
+        "B": 90.0,
+        "tw": 12.0,
+        "tf": 16.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -150.0,
+              0.0
+            ],
+            [
+              -45.0,
+              150.0,
+              0.0
+            ],
+            [
+              45.0,
+              150.0,
+              0.0
+            ],
+            [
+              45.0,
+              146.117204031,
+              -0.3888787318525955
+            ],
+            [
+              36.327979556,
+              136.653354399,
+              0.0
+            ],
+            [
+              -15.655959112,
+              132.10534908,
+              0.3888787318525955
+            ],
+            [
+              -33.0,
+              113.177649816,
+              0.0
+            ],
+            [
+              -33.0,
+              -113.177649816,
+              0.3888787318525955
+            ],
+            [
+              -15.655959112,
+              -132.10534908,
+              0.0
+            ],
+            [
+              36.327979556,
+              -136.653354399,
+              -0.3888787318525955
+            ],
+            [
+              45.0,
+              -146.117204031,
+              0.0
+            ],
+            [
+              45.0,
+              -150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A89",
+        "label_handle": "1B37",
+        "entity_handle": "1A89"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/300x90x9x13",
+      "name": "CHANNEL-300x90x9x13",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 300.0,
+        "B": 90.0,
+        "tw": 9.0,
+        "tf": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -150.0,
+              0.0
+            ],
+            [
+              45.0,
+              -150.0,
+              0.0
+            ],
+            [
+              45.0,
+              -146.957609091,
+              0.3888787318525963
+            ],
+            [
+              38.610090199,
+              -139.984246204,
+              0.0
+            ],
+            [
+              -23.220180398,
+              -134.574798464,
+              -0.3888787318525963
+            ],
+            [
+              -36.0,
+              -120.628072691,
+              0.0
+            ],
+            [
+              -36.0,
+              120.628072691,
+              -0.3888787318525962
+            ],
+            [
+              -23.220180398,
+              134.574798464,
+              0.0
+            ],
+            [
+              38.610090199,
+              139.984246204,
+              0.3888787318525963
+            ],
+            [
+              45.0,
+              146.957609091,
+              0.0
+            ],
+            [
+              45.0,
+              150.0,
+              0.0
+            ],
+            [
+              -45.0,
+              150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A87",
+        "label_handle": "1A91",
+        "entity_handle": "1A87"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/380x100x10.5x16",
+      "name": "CHANNEL-380x100x10.5x16",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 380.0,
+        "B": 100.0,
+        "tw": 10.5,
+        "tf": 16.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              -190.0,
+              0.0
+            ],
+            [
+              -50.0,
+              190.0,
+              0.0
+            ],
+            [
+              50.0,
+              190.0,
+              0.0
+            ],
+            [
+              50.0,
+              186.162098259,
+              -0.3888787318536471
+            ],
+            [
+              41.784401685,
+              177.196345976,
+              0.0
+            ],
+            [
+              -31.284401685,
+              170.803654024,
+              0.3888787318525955
+            ],
+            [
+              -39.5,
+              161.837901741,
+              0.0
+            ],
+            [
+              -39.5,
+              -161.837901741,
+              0.3888787318525955
+            ],
+            [
+              -31.284401685,
+              -170.803654024,
+              0.0
+            ],
+            [
+              41.784401685,
+              -177.196345976,
+              -0.3888787318525955
+            ],
+            [
+              50.0,
+              -186.162098259,
+              0.0
+            ],
+            [
+              50.0,
+              -190.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A8A",
+        "label_handle": "1B38",
+        "entity_handle": "1A8A"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/380x100x13x16.5",
+      "name": "CHANNEL-380x100x13x16.5",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 380.0,
+        "B": 100.0,
+        "tw": 13.0,
+        "tf": 16.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              -190.0,
+              0.0
+            ],
+            [
+              -50.0,
+              190.0,
+              0.0
+            ],
+            [
+              50.0,
+              190.0,
+              0.0
+            ],
+            [
+              50.0,
+              185.55273743,
+              -0.3888787318536471
+            ],
+            [
+              41.784401685,
+              176.586985147,
+              0.0
+            ],
+            [
+              -20.568803369,
+              171.13178657,
+              0.3888787318525955
+            ],
+            [
+              -37.0,
+              153.200282004,
+              0.0
+            ],
+            [
+              -37.0,
+              -153.200282004,
+              0.3888787318525955
+            ],
+            [
+              -20.568803369,
+              -171.13178657,
+              0.0
+            ],
+            [
+              41.784401685,
+              -176.586985147,
+              -0.3888787318525955
+            ],
+            [
+              50.0,
+              -185.55273743,
+              0.0
+            ],
+            [
+              50.0,
+              -190.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A8B",
+        "label_handle": "1B39",
+        "entity_handle": "1A8B"
+      }
+    },
+    {
+      "id": "CHANNEL/general/Rolled/380x100x13x20",
+      "name": "CHANNEL-380x100x13x20",
+      "section_type": "CHANNEL",
+      "family": "CHANNEL",
+      "standard": "general",
+      "subtype": "Rolled",
+      "dimensions_mm": {
+        "H": 380.0,
+        "B": 100.0,
+        "tw": 13.0,
+        "tf": 20.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              -190.0,
+              0.0
+            ],
+            [
+              -50.0,
+              190.0,
+              0.0
+            ],
+            [
+              50.0,
+              190.0,
+              0.0
+            ],
+            [
+              50.0,
+              185.55273743,
+              -0.368203103086715
+            ],
+            [
+              39.045868913,
+              172.694289413,
+              0.0
+            ],
+            [
+              -15.091737826,
+              167.957862553,
+              0.3888787318525955
+            ],
+            [
+              -37.0,
+              144.049189799,
+              0.0
+            ],
+            [
+              -37.0,
+              -144.049189799,
+              0.3888787318536471
+            ],
+            [
+              -15.091737826,
+              -167.957862553,
+              0.0
+            ],
+            [
+              39.045868913,
+              -172.694289413,
+              -0.3888787318525955
+            ],
+            [
+              50.0,
+              -184.64862579,
+              0.0
+            ],
+            [
+              50.0,
+              -190.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "channel-steel2.dxf",
+        "profile_handle": "1A8C",
+        "label_handle": "1B3A",
+        "entity_handle": "1A8C"
+      }
+    }
+  ]
+}

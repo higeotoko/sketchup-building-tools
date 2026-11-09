@@ -1,0 +1,4727 @@
+{
+  "schema_version": 2,
+  "units": "mm",
+  "source": {
+    "file": "ct-dxf-rev1.0.dxf",
+    "sha256": "75c740df2c20996e4e305dde872ce3170c4797ff2ce78d6f918700a8139eaf2d"
+  },
+  "sections": [
+    {
+      "id": "CT/general/CutT/50x50x5x7x8",
+      "name": "CT-50x50x5x7x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 50.0,
+        "B": 50.0,
+        "tw": 5.0,
+        "tf": 7.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -25.0,
+              25.0,
+              0
+            ],
+            [
+              25.0,
+              25.0,
+              0
+            ],
+            [
+              25.0,
+              18.0,
+              0
+            ],
+            [
+              10.5,
+              18.0,
+              0.41421356237309503
+            ],
+            [
+              2.5,
+              10.0,
+              0
+            ],
+            [
+              2.5,
+              -25.0,
+              0
+            ],
+            [
+              -2.5,
+              -25.0,
+              0
+            ],
+            [
+              -2.5,
+              10.0,
+              0.41421356237309503
+            ],
+            [
+              -10.5,
+              18.0,
+              0
+            ],
+            [
+              -25.0,
+              18.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2203C",
+        "text_handle": "1731D",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/50x100x6x8x8",
+      "name": "CT-50x100x6x8x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 50.0,
+        "B": 100.0,
+        "tw": 6.0,
+        "tf": 8.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              25.0,
+              0
+            ],
+            [
+              50.0,
+              25.0,
+              0
+            ],
+            [
+              50.0,
+              17.0,
+              0
+            ],
+            [
+              11.0,
+              17.0,
+              0.41421356237309503
+            ],
+            [
+              3.0,
+              9.0,
+              0
+            ],
+            [
+              3.0,
+              -25.0,
+              0
+            ],
+            [
+              -3.0,
+              -25.0,
+              0
+            ],
+            [
+              -3.0,
+              9.0,
+              0.41421356237309503
+            ],
+            [
+              -11.0,
+              17.0,
+              0
+            ],
+            [
+              -50.0,
+              17.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2203B",
+        "text_handle": "1731E",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/62.5x60x6x8x8",
+      "name": "CT-62.5x60x6x8x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 62.5,
+        "B": 60.0,
+        "tw": 6.0,
+        "tf": 8.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -30.0,
+              31.25,
+              0
+            ],
+            [
+              30.0,
+              31.25,
+              0
+            ],
+            [
+              30.0,
+              23.25,
+              0
+            ],
+            [
+              11.0,
+              23.25,
+              0.41421356237309503
+            ],
+            [
+              3.0,
+              15.25,
+              0
+            ],
+            [
+              3.0,
+              -31.25,
+              0
+            ],
+            [
+              -3.0,
+              -31.25,
+              0
+            ],
+            [
+              -3.0,
+              15.25,
+              0.41421356237309503
+            ],
+            [
+              -11.0,
+              23.25,
+              0
+            ],
+            [
+              -30.0,
+              23.25,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2203A",
+        "text_handle": "1731F",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/62.5x125x6.5x9x8",
+      "name": "CT-62.5x125x6.5x9x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 62.5,
+        "B": 125.0,
+        "tw": 6.5,
+        "tf": 9.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -62.5,
+              31.25,
+              0
+            ],
+            [
+              62.5,
+              31.25,
+              0
+            ],
+            [
+              62.5,
+              22.25,
+              0
+            ],
+            [
+              11.25,
+              22.25,
+              0.41421356237309503
+            ],
+            [
+              3.25,
+              14.25,
+              0
+            ],
+            [
+              3.25,
+              -31.25,
+              0
+            ],
+            [
+              -3.25,
+              -31.25,
+              0
+            ],
+            [
+              -3.25,
+              14.25,
+              0.41421356237309503
+            ],
+            [
+              -11.25,
+              22.25,
+              0
+            ],
+            [
+              -62.5,
+              22.25,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22039",
+        "text_handle": "17320",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/74x100x6x9x8",
+      "name": "CT-74x100x6x9x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 74.0,
+        "B": 100.0,
+        "tw": 6.0,
+        "tf": 9.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              37.0,
+              0
+            ],
+            [
+              50.0,
+              37.0,
+              0
+            ],
+            [
+              50.0,
+              28.0,
+              0
+            ],
+            [
+              11.0,
+              28.0,
+              0.41421356237309503
+            ],
+            [
+              3.0,
+              20.0,
+              0
+            ],
+            [
+              3.0,
+              -37.0,
+              0
+            ],
+            [
+              -3.0,
+              -37.0,
+              0
+            ],
+            [
+              -3.0,
+              20.0,
+              0.41421356237309503
+            ],
+            [
+              -11.0,
+              28.0,
+              0
+            ],
+            [
+              -50.0,
+              28.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22037",
+        "text_handle": "17322",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/75x75x5x7x8",
+      "name": "CT-75x75x5x7x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 75.0,
+        "B": 75.0,
+        "tw": 5.0,
+        "tf": 7.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -37.5,
+              37.5,
+              0
+            ],
+            [
+              37.5,
+              37.5,
+              0
+            ],
+            [
+              37.5,
+              30.5,
+              0
+            ],
+            [
+              10.5,
+              30.5,
+              0.41421356237309503
+            ],
+            [
+              2.5,
+              22.5,
+              0
+            ],
+            [
+              2.5,
+              -37.5,
+              0
+            ],
+            [
+              -2.5,
+              -37.5,
+              0
+            ],
+            [
+              -2.5,
+              22.5,
+              0.41421356237309503
+            ],
+            [
+              -10.5,
+              30.5,
+              0
+            ],
+            [
+              -37.5,
+              30.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22038",
+        "text_handle": "17321",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/75x150x7x10x8",
+      "name": "CT-75x150x7x10x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 75.0,
+        "B": 150.0,
+        "tw": 7.0,
+        "tf": 10.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -75.0,
+              37.5,
+              0
+            ],
+            [
+              75.0,
+              37.5,
+              0
+            ],
+            [
+              75.0,
+              27.5,
+              0
+            ],
+            [
+              11.5,
+              27.5,
+              0.41421356237309503
+            ],
+            [
+              3.5,
+              19.5,
+              0
+            ],
+            [
+              3.5,
+              -37.5,
+              0
+            ],
+            [
+              -3.5,
+              -37.5,
+              0
+            ],
+            [
+              -3.5,
+              19.5,
+              0.41421356237309503
+            ],
+            [
+              -11.5,
+              27.5,
+              0
+            ],
+            [
+              -75.0,
+              27.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22036",
+        "text_handle": "17323",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/87.5x90x5x8x8",
+      "name": "CT-87.5x90x5x8x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 87.5,
+        "B": 90.0,
+        "tw": 5.0,
+        "tf": 8.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              43.75,
+              0
+            ],
+            [
+              45.0,
+              43.75,
+              0
+            ],
+            [
+              45.0,
+              35.75,
+              0
+            ],
+            [
+              10.5,
+              35.75,
+              0.41421356237309503
+            ],
+            [
+              2.5,
+              27.75,
+              0
+            ],
+            [
+              2.5,
+              -43.75,
+              0
+            ],
+            [
+              -2.5,
+              -43.75,
+              0
+            ],
+            [
+              -2.5,
+              27.75,
+              0.41421356237309503
+            ],
+            [
+              -10.5,
+              35.75,
+              0
+            ],
+            [
+              -45.0,
+              35.75,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22035",
+        "text_handle": "17324",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/87.5x175x7.5x11x13",
+      "name": "CT-87.5x175x7.5x11x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 87.5,
+        "B": 175.0,
+        "tw": 7.5,
+        "tf": 11.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -87.5,
+              43.75,
+              0
+            ],
+            [
+              87.5,
+              43.75,
+              0
+            ],
+            [
+              87.5,
+              32.75,
+              0
+            ],
+            [
+              16.75,
+              32.75,
+              0.41421356237309503
+            ],
+            [
+              3.75,
+              19.75,
+              0
+            ],
+            [
+              3.75,
+              -43.75,
+              0
+            ],
+            [
+              -3.75,
+              -43.75,
+              0
+            ],
+            [
+              -3.75,
+              19.75,
+              0.41421356237309503
+            ],
+            [
+              -16.75,
+              32.75,
+              0
+            ],
+            [
+              -87.5,
+              32.75,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22034",
+        "text_handle": "17325",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/97x150x6x9x8",
+      "name": "CT-97x150x6x9x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 97.0,
+        "B": 150.0,
+        "tw": 6.0,
+        "tf": 9.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -75.0,
+              48.5,
+              0
+            ],
+            [
+              75.0,
+              48.5,
+              0
+            ],
+            [
+              75.0,
+              39.5,
+              0
+            ],
+            [
+              11.0,
+              39.5,
+              0.41421356237309503
+            ],
+            [
+              3.0,
+              31.5,
+              0
+            ],
+            [
+              3.0,
+              -48.5,
+              0
+            ],
+            [
+              -3.0,
+              -48.5,
+              0
+            ],
+            [
+              -3.0,
+              31.5,
+              0.41421356237309503
+            ],
+            [
+              -11.0,
+              39.5,
+              0
+            ],
+            [
+              -75.0,
+              39.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22031",
+        "text_handle": "17328",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/99x99x4.5x7x8",
+      "name": "CT-99x99x4.5x7x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 99.0,
+        "B": 99.0,
+        "tw": 4.5,
+        "tf": 7.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -49.5,
+              49.5,
+              0
+            ],
+            [
+              49.5,
+              49.5,
+              0
+            ],
+            [
+              49.5,
+              42.5,
+              0
+            ],
+            [
+              10.25,
+              42.5,
+              0.41421356237309503
+            ],
+            [
+              2.25,
+              34.5,
+              0
+            ],
+            [
+              2.25,
+              -49.5,
+              0
+            ],
+            [
+              -2.25,
+              -49.5,
+              0
+            ],
+            [
+              -2.25,
+              34.5,
+              0.41421356237309503
+            ],
+            [
+              -10.25,
+              42.5,
+              0
+            ],
+            [
+              -49.5,
+              42.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22033",
+        "text_handle": "17326",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/100x100x5.5x8x8",
+      "name": "CT-100x100x5.5x8x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 100.0,
+        "tw": 5.5,
+        "tf": 8.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              50.0,
+              0
+            ],
+            [
+              50.0,
+              50.0,
+              0
+            ],
+            [
+              50.0,
+              42.0,
+              0
+            ],
+            [
+              10.75,
+              42.0,
+              0.41421356237309503
+            ],
+            [
+              2.75,
+              34.0,
+              0
+            ],
+            [
+              2.75,
+              -50.0,
+              0
+            ],
+            [
+              -2.75,
+              -50.0,
+              0
+            ],
+            [
+              -2.75,
+              34.0,
+              0.41421356237309503
+            ],
+            [
+              -10.75,
+              42.0,
+              0
+            ],
+            [
+              -50.0,
+              42.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22032",
+        "text_handle": "17327",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/100x200x8x12x13",
+      "name": "CT-100x200x8x12x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 200.0,
+        "tw": 8.0,
+        "tf": 12.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              50.0,
+              0
+            ],
+            [
+              100.0,
+              50.0,
+              0
+            ],
+            [
+              100.0,
+              38.0,
+              0
+            ],
+            [
+              17.0,
+              38.0,
+              0.41421356237309503
+            ],
+            [
+              4.0,
+              25.0,
+              0
+            ],
+            [
+              4.0,
+              -50.0,
+              0
+            ],
+            [
+              -4.0,
+              -50.0,
+              0
+            ],
+            [
+              -4.0,
+              25.0,
+              0.41421356237309503
+            ],
+            [
+              -17.0,
+              38.0,
+              0
+            ],
+            [
+              -100.0,
+              38.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22030",
+        "text_handle": "17329",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/122x175x7x11x13",
+      "name": "CT-122x175x7x11x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 122.0,
+        "B": 175.0,
+        "tw": 7.0,
+        "tf": 11.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -87.5,
+              61.0,
+              0
+            ],
+            [
+              87.5,
+              61.0,
+              0
+            ],
+            [
+              87.5,
+              50.0,
+              0
+            ],
+            [
+              16.5,
+              50.0,
+              0.41421356237309503
+            ],
+            [
+              3.5,
+              37.0,
+              0
+            ],
+            [
+              3.5,
+              -61.0,
+              0
+            ],
+            [
+              -3.5,
+              -61.0,
+              0
+            ],
+            [
+              -3.5,
+              37.0,
+              0.41421356237309503
+            ],
+            [
+              -16.5,
+              50.0,
+              0
+            ],
+            [
+              -87.5,
+              50.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2202E",
+        "text_handle": "1732C",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/124x124x5x8x8",
+      "name": "CT-124x124x5x8x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 124.0,
+        "B": 124.0,
+        "tw": 5.0,
+        "tf": 8.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -62.0,
+              62.0,
+              0
+            ],
+            [
+              62.0,
+              62.0,
+              0
+            ],
+            [
+              62.0,
+              54.0,
+              0
+            ],
+            [
+              10.5,
+              54.0,
+              0.41421356237309503
+            ],
+            [
+              2.5,
+              46.0,
+              0
+            ],
+            [
+              2.5,
+              -62.0,
+              0
+            ],
+            [
+              -2.5,
+              -62.0,
+              0
+            ],
+            [
+              -2.5,
+              46.0,
+              0.41421356237309503
+            ],
+            [
+              -10.5,
+              54.0,
+              0
+            ],
+            [
+              -62.0,
+              54.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2202F",
+        "text_handle": "1732A",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/125x125x6x9x8",
+      "name": "CT-125x125x6x9x8",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 125.0,
+        "tw": 6.0,
+        "tf": 9.0,
+        "r": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -62.5,
+              62.5,
+              0
+            ],
+            [
+              62.5,
+              62.5,
+              0
+            ],
+            [
+              62.5,
+              53.5,
+              0
+            ],
+            [
+              11.0,
+              53.5,
+              0.41421356237309503
+            ],
+            [
+              3.0,
+              45.5,
+              0
+            ],
+            [
+              3.0,
+              -62.5,
+              0
+            ],
+            [
+              -3.0,
+              -62.5,
+              0
+            ],
+            [
+              -3.0,
+              45.5,
+              0.41421356237309503
+            ],
+            [
+              -11.0,
+              53.5,
+              0
+            ],
+            [
+              -62.5,
+              53.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2202C",
+        "text_handle": "1732B",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/125x250x9x14x13",
+      "name": "CT-125x250x9x14x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 250.0,
+        "tw": 9.0,
+        "tf": 14.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -125.0,
+              62.5,
+              0
+            ],
+            [
+              125.0,
+              62.5,
+              0
+            ],
+            [
+              125.0,
+              48.5,
+              0
+            ],
+            [
+              17.5,
+              48.5,
+              0.41421356237309503
+            ],
+            [
+              4.5,
+              35.5,
+              0
+            ],
+            [
+              4.5,
+              -62.5,
+              0
+            ],
+            [
+              -4.5,
+              -62.5,
+              0
+            ],
+            [
+              -4.5,
+              35.5,
+              0.41421356237309503
+            ],
+            [
+              -17.5,
+              48.5,
+              0
+            ],
+            [
+              -125.0,
+              48.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2202D",
+        "text_handle": "1732D",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/147x200x8x12x13",
+      "name": "CT-147x200x8x12x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 147.0,
+        "B": 200.0,
+        "tw": 8.0,
+        "tf": 12.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              73.5,
+              0
+            ],
+            [
+              100.0,
+              73.5,
+              0
+            ],
+            [
+              100.0,
+              61.5,
+              0
+            ],
+            [
+              17.0,
+              61.5,
+              0.41421356237309503
+            ],
+            [
+              4.0,
+              48.5,
+              0
+            ],
+            [
+              4.0,
+              -73.5,
+              0
+            ],
+            [
+              -4.0,
+              -73.5,
+              0
+            ],
+            [
+              -4.0,
+              48.5,
+              0.41421356237309503
+            ],
+            [
+              -17.0,
+              61.5,
+              0
+            ],
+            [
+              -100.0,
+              61.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22029",
+        "text_handle": "17330",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/149x149x5.5x8x13",
+      "name": "CT-149x149x5.5x8x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 149.0,
+        "B": 149.0,
+        "tw": 5.5,
+        "tf": 8.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -74.5,
+              74.5,
+              0
+            ],
+            [
+              74.5,
+              74.5,
+              0
+            ],
+            [
+              74.5,
+              66.5,
+              0
+            ],
+            [
+              15.75,
+              66.5,
+              0.41421356237309503
+            ],
+            [
+              2.75,
+              53.5,
+              0
+            ],
+            [
+              2.75,
+              -74.5,
+              0
+            ],
+            [
+              -2.75,
+              -74.5,
+              0
+            ],
+            [
+              -2.75,
+              53.5,
+              0.41421356237309503
+            ],
+            [
+              -15.75,
+              66.5,
+              0
+            ],
+            [
+              -74.5,
+              66.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2202B",
+        "text_handle": "1732E",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/150x150x6.5x9x13",
+      "name": "CT-150x150x6.5x9x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 150.0,
+        "tw": 6.5,
+        "tf": 9.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -75.0,
+              75.0,
+              0
+            ],
+            [
+              75.0,
+              75.0,
+              0
+            ],
+            [
+              75.0,
+              66.0,
+              0
+            ],
+            [
+              16.25,
+              66.0,
+              0.41421356237309503
+            ],
+            [
+              3.25,
+              53.0,
+              0
+            ],
+            [
+              3.25,
+              -75.0,
+              0
+            ],
+            [
+              -3.25,
+              -75.0,
+              0
+            ],
+            [
+              -3.25,
+              53.0,
+              0.41421356237309503
+            ],
+            [
+              -16.25,
+              66.0,
+              0
+            ],
+            [
+              -75.0,
+              66.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2202A",
+        "text_handle": "1732F",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/150x300x10x15x13",
+      "name": "CT-150x300x10x15x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 300.0,
+        "tw": 10.0,
+        "tf": 15.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              75.0,
+              0
+            ],
+            [
+              150.0,
+              75.0,
+              0
+            ],
+            [
+              150.0,
+              60.0,
+              0
+            ],
+            [
+              18.0,
+              60.0,
+              0.41421356237309503
+            ],
+            [
+              5.0,
+              47.0,
+              0
+            ],
+            [
+              5.0,
+              -75.0,
+              0
+            ],
+            [
+              -5.0,
+              -75.0,
+              0
+            ],
+            [
+              -5.0,
+              47.0,
+              0.41421356237309503
+            ],
+            [
+              -18.0,
+              60.0,
+              0
+            ],
+            [
+              -150.0,
+              60.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22028",
+        "text_handle": "17331",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/170x250x9x14x13",
+      "name": "CT-170x250x9x14x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 170.0,
+        "B": 250.0,
+        "tw": 9.0,
+        "tf": 14.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -125.0,
+              85.0,
+              0
+            ],
+            [
+              125.0,
+              85.0,
+              0
+            ],
+            [
+              125.0,
+              71.0,
+              0
+            ],
+            [
+              17.5,
+              71.0,
+              0.41421356237309503
+            ],
+            [
+              4.5,
+              58.0,
+              0
+            ],
+            [
+              4.5,
+              -85.0,
+              0
+            ],
+            [
+              -4.5,
+              -85.0,
+              0
+            ],
+            [
+              -4.5,
+              58.0,
+              0.41421356237309503
+            ],
+            [
+              -17.5,
+              71.0,
+              0
+            ],
+            [
+              -125.0,
+              71.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22026",
+        "text_handle": "17334",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/173x174x6x9x13",
+      "name": "CT-173x174x6x9x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 173.0,
+        "B": 174.0,
+        "tw": 6.0,
+        "tf": 9.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -87.0,
+              86.5,
+              0
+            ],
+            [
+              87.0,
+              86.5,
+              0
+            ],
+            [
+              87.0,
+              77.5,
+              0
+            ],
+            [
+              16.0,
+              77.5,
+              0.41421356237309503
+            ],
+            [
+              3.0,
+              64.5,
+              0
+            ],
+            [
+              3.0,
+              -86.5,
+              0
+            ],
+            [
+              -3.0,
+              -86.5,
+              0
+            ],
+            [
+              -3.0,
+              64.5,
+              0.41421356237309503
+            ],
+            [
+              -16.0,
+              77.5,
+              0
+            ],
+            [
+              -87.0,
+              77.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22027",
+        "text_handle": "17332",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/175x175x7x11x13",
+      "name": "CT-175x175x7x11x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 175.0,
+        "B": 175.0,
+        "tw": 7.0,
+        "tf": 11.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -87.5,
+              87.5,
+              0
+            ],
+            [
+              87.5,
+              87.5,
+              0
+            ],
+            [
+              87.5,
+              76.5,
+              0
+            ],
+            [
+              16.5,
+              76.5,
+              0.41421356237309503
+            ],
+            [
+              3.5,
+              63.5,
+              0
+            ],
+            [
+              3.5,
+              -87.5,
+              0
+            ],
+            [
+              -3.5,
+              -87.5,
+              0
+            ],
+            [
+              -3.5,
+              63.5,
+              0.41421356237309503
+            ],
+            [
+              -16.5,
+              76.5,
+              0
+            ],
+            [
+              -87.5,
+              76.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22025",
+        "text_handle": "17333",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/175x350x12x19x13",
+      "name": "CT-175x350x12x19x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 175.0,
+        "B": 350.0,
+        "tw": 12.0,
+        "tf": 19.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -175.0,
+              87.5,
+              0
+            ],
+            [
+              175.0,
+              87.5,
+              0
+            ],
+            [
+              175.0,
+              68.5,
+              0
+            ],
+            [
+              19.0,
+              68.5,
+              0.41421356237309503
+            ],
+            [
+              6.0,
+              55.5,
+              0
+            ],
+            [
+              6.0,
+              -87.5,
+              0
+            ],
+            [
+              -6.0,
+              -87.5,
+              0
+            ],
+            [
+              -6.0,
+              55.5,
+              0.41421356237309503
+            ],
+            [
+              -19.0,
+              68.5,
+              0
+            ],
+            [
+              -175.0,
+              68.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22024",
+        "text_handle": "17335",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/195x300x10x16x13",
+      "name": "CT-195x300x10x16x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 195.0,
+        "B": 300.0,
+        "tw": 10.0,
+        "tf": 16.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              97.5,
+              0
+            ],
+            [
+              150.0,
+              97.5,
+              0
+            ],
+            [
+              150.0,
+              81.5,
+              0
+            ],
+            [
+              18.0,
+              81.5,
+              0.41421356237309503
+            ],
+            [
+              5.0,
+              68.5,
+              0
+            ],
+            [
+              5.0,
+              -97.5,
+              0
+            ],
+            [
+              -5.0,
+              -97.5,
+              0
+            ],
+            [
+              -5.0,
+              68.5,
+              0.41421356237309503
+            ],
+            [
+              -18.0,
+              81.5,
+              0
+            ],
+            [
+              -150.0,
+              81.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22021",
+        "text_handle": "17338",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/198x199x7x11x13",
+      "name": "CT-198x199x7x11x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 198.0,
+        "B": 199.0,
+        "tw": 7.0,
+        "tf": 11.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -99.5,
+              99.0,
+              0
+            ],
+            [
+              99.5,
+              99.0,
+              0
+            ],
+            [
+              99.5,
+              88.0,
+              0
+            ],
+            [
+              16.5,
+              88.0,
+              0.41421356237309503
+            ],
+            [
+              3.5,
+              75.0,
+              0
+            ],
+            [
+              3.5,
+              -99.0,
+              0
+            ],
+            [
+              -3.5,
+              -99.0,
+              0
+            ],
+            [
+              -3.5,
+              75.0,
+              0.41421356237309503
+            ],
+            [
+              -16.5,
+              88.0,
+              0
+            ],
+            [
+              -99.5,
+              88.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22023",
+        "text_handle": "17336",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/200x200x8x13x13",
+      "name": "CT-200x200x8x13x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 200.0,
+        "tw": 8.0,
+        "tf": 13.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              100.0,
+              0
+            ],
+            [
+              100.0,
+              100.0,
+              0
+            ],
+            [
+              100.0,
+              87.0,
+              0
+            ],
+            [
+              17.0,
+              87.0,
+              0.41421356237309503
+            ],
+            [
+              4.0,
+              74.0,
+              0
+            ],
+            [
+              4.0,
+              -100.0,
+              0
+            ],
+            [
+              -4.0,
+              -100.0,
+              0
+            ],
+            [
+              -4.0,
+              74.0,
+              0.41421356237309503
+            ],
+            [
+              -17.0,
+              87.0,
+              0
+            ],
+            [
+              -100.0,
+              87.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22022",
+        "text_handle": "17337",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/200x400x13x21x22",
+      "name": "CT-200x400x13x21x22",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 400.0,
+        "tw": 13.0,
+        "tf": 21.0,
+        "r": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -200.0,
+              100.0,
+              0
+            ],
+            [
+              200.0,
+              100.0,
+              0
+            ],
+            [
+              200.0,
+              79.0,
+              0
+            ],
+            [
+              28.5,
+              79.0,
+              0.41421356237309503
+            ],
+            [
+              6.5,
+              57.0,
+              0
+            ],
+            [
+              6.5,
+              -100.0,
+              0
+            ],
+            [
+              -6.5,
+              -100.0,
+              0
+            ],
+            [
+              -6.5,
+              57.0,
+              0.41421356237309503
+            ],
+            [
+              -28.5,
+              79.0,
+              0
+            ],
+            [
+              -200.0,
+              79.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22020",
+        "text_handle": "17339",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/207x405x18x28x22",
+      "name": "CT-207x405x18x28x22",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 207.0,
+        "B": 405.0,
+        "tw": 18.0,
+        "tf": 28.0,
+        "r": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -202.5,
+              103.5,
+              0
+            ],
+            [
+              202.5,
+              103.5,
+              0
+            ],
+            [
+              202.5,
+              75.5,
+              0
+            ],
+            [
+              31.0,
+              75.5,
+              0.41421356237309503
+            ],
+            [
+              9.0,
+              53.5,
+              0
+            ],
+            [
+              9.0,
+              -103.5,
+              0
+            ],
+            [
+              -9.0,
+              -103.5,
+              0
+            ],
+            [
+              -9.0,
+              53.5,
+              0.41421356237309503
+            ],
+            [
+              -31.0,
+              75.5,
+              0
+            ],
+            [
+              -202.5,
+              75.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22019",
+        "text_handle": "1733A",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/214x407x20x35x22",
+      "name": "CT-214x407x20x35x22",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 214.0,
+        "B": 407.0,
+        "tw": 20.0,
+        "tf": 35.0,
+        "r": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -203.5,
+              107.0,
+              0
+            ],
+            [
+              203.5,
+              107.0,
+              0
+            ],
+            [
+              203.5,
+              72.0,
+              0
+            ],
+            [
+              32.0,
+              72.0,
+              0.41421356237309503
+            ],
+            [
+              10.0,
+              50.0,
+              0
+            ],
+            [
+              10.0,
+              -107.0,
+              0
+            ],
+            [
+              -10.0,
+              -107.0,
+              0
+            ],
+            [
+              -10.0,
+              50.0,
+              0.41421356237309503
+            ],
+            [
+              -32.0,
+              72.0,
+              0
+            ],
+            [
+              -203.5,
+              72.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22018",
+        "text_handle": "1733B",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/220x300x11x18x13",
+      "name": "CT-220x300x11x18x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 220.0,
+        "B": 300.0,
+        "tw": 11.0,
+        "tf": 18.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              110.0,
+              0
+            ],
+            [
+              150.0,
+              110.0,
+              0
+            ],
+            [
+              150.0,
+              92.0,
+              0
+            ],
+            [
+              18.5,
+              92.0,
+              0.41421356237309503
+            ],
+            [
+              5.5,
+              79.0,
+              0
+            ],
+            [
+              5.5,
+              -110.0,
+              0
+            ],
+            [
+              -5.5,
+              -110.0,
+              0
+            ],
+            [
+              -5.5,
+              79.0,
+              0.41421356237309503
+            ],
+            [
+              -18.5,
+              92.0,
+              0
+            ],
+            [
+              -150.0,
+              92.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2201E",
+        "text_handle": "17340",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/223x199x8x12x13",
+      "name": "CT-223x199x8x12x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 223.0,
+        "B": 199.0,
+        "tw": 8.0,
+        "tf": 12.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -99.5,
+              111.5,
+              0
+            ],
+            [
+              99.5,
+              111.5,
+              0
+            ],
+            [
+              99.5,
+              99.5,
+              0
+            ],
+            [
+              17.0,
+              99.5,
+              0.41421356237309503
+            ],
+            [
+              4.0,
+              86.5,
+              0
+            ],
+            [
+              4.0,
+              -111.5,
+              0
+            ],
+            [
+              -4.0,
+              -111.5,
+              0
+            ],
+            [
+              -4.0,
+              86.5,
+              0.41421356237309503
+            ],
+            [
+              -17.0,
+              99.5,
+              0
+            ],
+            [
+              -99.5,
+              99.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2201F",
+        "text_handle": "1733E",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/225x200x9x14x13",
+      "name": "CT-225x200x9x14x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 225.0,
+        "B": 200.0,
+        "tw": 9.0,
+        "tf": 14.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              112.5,
+              0
+            ],
+            [
+              100.0,
+              112.5,
+              0
+            ],
+            [
+              100.0,
+              98.5,
+              0
+            ],
+            [
+              17.5,
+              98.5,
+              0.41421356237309503
+            ],
+            [
+              4.5,
+              85.5,
+              0
+            ],
+            [
+              4.5,
+              -112.5,
+              0
+            ],
+            [
+              -4.5,
+              -112.5,
+              0
+            ],
+            [
+              -4.5,
+              85.5,
+              0.41421356237309503
+            ],
+            [
+              -17.5,
+              98.5,
+              0
+            ],
+            [
+              -100.0,
+              98.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22015",
+        "text_handle": "1733F",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/229x417x30x50x22",
+      "name": "CT-229x417x30x50x22",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 229.0,
+        "B": 417.0,
+        "tw": 30.0,
+        "tf": 50.0,
+        "r": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -208.5,
+              114.5,
+              0
+            ],
+            [
+              208.5,
+              114.5,
+              0
+            ],
+            [
+              208.5,
+              64.5,
+              0
+            ],
+            [
+              37.0,
+              64.5,
+              0.41421356237309503
+            ],
+            [
+              15.0,
+              42.5,
+              0
+            ],
+            [
+              15.0,
+              -114.5,
+              0
+            ],
+            [
+              -15.0,
+              -114.5,
+              0
+            ],
+            [
+              -15.0,
+              42.5,
+              0.41421356237309503
+            ],
+            [
+              -37.0,
+              64.5,
+              0
+            ],
+            [
+              -208.5,
+              64.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22017",
+        "text_handle": "1733C",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/241x300x11x15x13",
+      "name": "CT-241x300x11x15x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 241.0,
+        "B": 300.0,
+        "tw": 11.0,
+        "tf": 15.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              120.5,
+              0
+            ],
+            [
+              150.0,
+              120.5,
+              0
+            ],
+            [
+              150.0,
+              105.5,
+              0
+            ],
+            [
+              18.5,
+              105.5,
+              0.41421356237309503
+            ],
+            [
+              5.5,
+              92.5,
+              0
+            ],
+            [
+              5.5,
+              -120.5,
+              0
+            ],
+            [
+              -5.5,
+              -120.5,
+              0
+            ],
+            [
+              -5.5,
+              92.5,
+              0.41421356237309503
+            ],
+            [
+              -18.5,
+              105.5,
+              0
+            ],
+            [
+              -150.0,
+              105.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2201C",
+        "text_handle": "17343",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/244x300x11x18x13",
+      "name": "CT-244x300x11x18x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 244.0,
+        "B": 300.0,
+        "tw": 11.0,
+        "tf": 18.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              122.0,
+              0
+            ],
+            [
+              150.0,
+              122.0,
+              0
+            ],
+            [
+              150.0,
+              104.0,
+              0
+            ],
+            [
+              18.5,
+              104.0,
+              0.41421356237309503
+            ],
+            [
+              5.5,
+              91.0,
+              0
+            ],
+            [
+              5.5,
+              -122.0,
+              0
+            ],
+            [
+              -5.5,
+              -122.0,
+              0
+            ],
+            [
+              -5.5,
+              91.0,
+              0.41421356237309503
+            ],
+            [
+              -18.5,
+              104.0,
+              0
+            ],
+            [
+              -150.0,
+              104.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22013",
+        "text_handle": "17344",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/248x199x9x14x13",
+      "name": "CT-248x199x9x14x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 248.0,
+        "B": 199.0,
+        "tw": 9.0,
+        "tf": 14.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -99.5,
+              124.0,
+              0
+            ],
+            [
+              99.5,
+              124.0,
+              0
+            ],
+            [
+              99.5,
+              110.0,
+              0
+            ],
+            [
+              17.5,
+              110.0,
+              0.41421356237309503
+            ],
+            [
+              4.5,
+              97.0,
+              0
+            ],
+            [
+              4.5,
+              -124.0,
+              0
+            ],
+            [
+              -4.5,
+              -124.0,
+              0
+            ],
+            [
+              -4.5,
+              97.0,
+              0.41421356237309503
+            ],
+            [
+              -17.5,
+              110.0,
+              0
+            ],
+            [
+              -99.5,
+              110.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2201D",
+        "text_handle": "17341",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/249x432x45x70x22",
+      "name": "CT-249x432x45x70x22",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 249.0,
+        "B": 432.0,
+        "tw": 45.0,
+        "tf": 70.0,
+        "r": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -216.0,
+              124.5,
+              0
+            ],
+            [
+              216.0,
+              124.5,
+              0
+            ],
+            [
+              216.0,
+              54.5,
+              0
+            ],
+            [
+              44.5,
+              54.5,
+              0.41421356237309503
+            ],
+            [
+              22.5,
+              32.5,
+              0
+            ],
+            [
+              22.5,
+              -124.5,
+              0
+            ],
+            [
+              -22.5,
+              -124.5,
+              0
+            ],
+            [
+              -22.5,
+              32.5,
+              0.41421356237309503
+            ],
+            [
+              -44.5,
+              54.5,
+              0
+            ],
+            [
+              -216.0,
+              54.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22016",
+        "text_handle": "1733D",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/250x200x10x16x13",
+      "name": "CT-250x200x10x16x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 250.0,
+        "B": 200.0,
+        "tw": 10.0,
+        "tf": 16.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              125.0,
+              0
+            ],
+            [
+              100.0,
+              125.0,
+              0
+            ],
+            [
+              100.0,
+              109.0,
+              0
+            ],
+            [
+              18.0,
+              109.0,
+              0.41421356237309503
+            ],
+            [
+              5.0,
+              96.0,
+              0
+            ],
+            [
+              5.0,
+              -125.0,
+              0
+            ],
+            [
+              -5.0,
+              -125.0,
+              0
+            ],
+            [
+              -5.0,
+              96.0,
+              0.41421356237309503
+            ],
+            [
+              -18.0,
+              109.0,
+              0
+            ],
+            [
+              -100.0,
+              109.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22014",
+        "text_handle": "17342",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/291x300x12x17x13",
+      "name": "CT-291x300x12x17x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 291.0,
+        "B": 300.0,
+        "tw": 12.0,
+        "tf": 17.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              145.5,
+              0
+            ],
+            [
+              150.0,
+              145.5,
+              0
+            ],
+            [
+              150.0,
+              128.5,
+              0
+            ],
+            [
+              19.0,
+              128.5,
+              0.41421356237309503
+            ],
+            [
+              6.0,
+              115.5,
+              0
+            ],
+            [
+              6.0,
+              -145.5,
+              0
+            ],
+            [
+              -6.0,
+              -145.5,
+              0
+            ],
+            [
+              -6.0,
+              115.5,
+              0.41421356237309503
+            ],
+            [
+              -19.0,
+              128.5,
+              0
+            ],
+            [
+              -150.0,
+              128.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2201A",
+        "text_handle": "17347",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/294x300x12x20x13",
+      "name": "CT-294x300x12x20x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 294.0,
+        "B": 300.0,
+        "tw": 12.0,
+        "tf": 20.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              147.0,
+              0
+            ],
+            [
+              150.0,
+              147.0,
+              0
+            ],
+            [
+              150.0,
+              127.0,
+              0
+            ],
+            [
+              19.0,
+              127.0,
+              0.41421356237309503
+            ],
+            [
+              6.0,
+              114.0,
+              0
+            ],
+            [
+              6.0,
+              -147.0,
+              0
+            ],
+            [
+              -6.0,
+              -147.0,
+              0
+            ],
+            [
+              -6.0,
+              114.0,
+              0.41421356237309503
+            ],
+            [
+              -19.0,
+              127.0,
+              0
+            ],
+            [
+              -150.0,
+              127.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22011",
+        "text_handle": "17348",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/297x302x14x23x13",
+      "name": "CT-297x302x14x23x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 297.0,
+        "B": 302.0,
+        "tw": 14.0,
+        "tf": 23.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -151.0,
+              148.5,
+              0
+            ],
+            [
+              151.0,
+              148.5,
+              0
+            ],
+            [
+              151.0,
+              125.5,
+              0
+            ],
+            [
+              20.0,
+              125.5,
+              0.41421356237309503
+            ],
+            [
+              7.0,
+              112.5,
+              0
+            ],
+            [
+              7.0,
+              -148.5,
+              0
+            ],
+            [
+              -7.0,
+              -148.5,
+              0
+            ],
+            [
+              -7.0,
+              112.5,
+              0.41421356237309503
+            ],
+            [
+              -20.0,
+              125.5,
+              0
+            ],
+            [
+              -151.0,
+              125.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22010",
+        "text_handle": "17349",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/298x199x10x15x13",
+      "name": "CT-298x199x10x15x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 298.0,
+        "B": 199.0,
+        "tw": 10.0,
+        "tf": 15.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -99.5,
+              149.0,
+              0
+            ],
+            [
+              99.5,
+              149.0,
+              0
+            ],
+            [
+              99.5,
+              134.0,
+              0
+            ],
+            [
+              18.0,
+              134.0,
+              0.41421356237309503
+            ],
+            [
+              5.0,
+              121.0,
+              0
+            ],
+            [
+              5.0,
+              -149.0,
+              0
+            ],
+            [
+              -5.0,
+              -149.0,
+              0
+            ],
+            [
+              -5.0,
+              121.0,
+              0.41421356237309503
+            ],
+            [
+              -18.0,
+              134.0,
+              0
+            ],
+            [
+              -99.5,
+              134.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2201B",
+        "text_handle": "17345",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/300x200x11x17x13",
+      "name": "CT-300x200x11x17x13",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 300.0,
+        "B": 200.0,
+        "tw": 11.0,
+        "tf": 17.0,
+        "r": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              150.0,
+              0
+            ],
+            [
+              100.0,
+              150.0,
+              0
+            ],
+            [
+              100.0,
+              133.0,
+              0
+            ],
+            [
+              18.5,
+              133.0,
+              0.41421356237309503
+            ],
+            [
+              5.5,
+              120.0,
+              0
+            ],
+            [
+              5.5,
+              -150.0,
+              0
+            ],
+            [
+              -5.5,
+              -150.0,
+              0
+            ],
+            [
+              -5.5,
+              120.0,
+              0.41421356237309503
+            ],
+            [
+              -18.5,
+              133.0,
+              0
+            ],
+            [
+              -100.0,
+              133.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22012",
+        "text_handle": "17346",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/346x300x13x20x18",
+      "name": "CT-346x300x13x20x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 346.0,
+        "B": 300.0,
+        "tw": 13.0,
+        "tf": 20.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              173.0,
+              0
+            ],
+            [
+              150.0,
+              173.0,
+              0
+            ],
+            [
+              150.0,
+              153.0,
+              0
+            ],
+            [
+              24.5,
+              153.0,
+              0.41421356237309503
+            ],
+            [
+              6.5,
+              135.0,
+              0
+            ],
+            [
+              6.5,
+              -173.0,
+              0
+            ],
+            [
+              -6.5,
+              -173.0,
+              0
+            ],
+            [
+              -6.5,
+              135.0,
+              0.41421356237309503
+            ],
+            [
+              -24.5,
+              153.0,
+              0
+            ],
+            [
+              -150.0,
+              153.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2200F",
+        "text_handle": "1734A",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/350x300x13x24x18",
+      "name": "CT-350x300x13x24x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 350.0,
+        "B": 300.0,
+        "tw": 13.0,
+        "tf": 24.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              175.0,
+              0
+            ],
+            [
+              150.0,
+              175.0,
+              0
+            ],
+            [
+              150.0,
+              151.0,
+              0
+            ],
+            [
+              24.5,
+              151.0,
+              0.41421356237309503
+            ],
+            [
+              6.5,
+              133.0,
+              0
+            ],
+            [
+              6.5,
+              -175.0,
+              0
+            ],
+            [
+              -6.5,
+              -175.0,
+              0
+            ],
+            [
+              -6.5,
+              133.0,
+              0.41421356237309503
+            ],
+            [
+              -24.5,
+              151.0,
+              0
+            ],
+            [
+              -150.0,
+              151.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2200E",
+        "text_handle": "1734B",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/396x300x14x22x18",
+      "name": "CT-396x300x14x22x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 396.0,
+        "B": 300.0,
+        "tw": 14.0,
+        "tf": 22.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              198.0,
+              0
+            ],
+            [
+              150.0,
+              198.0,
+              0
+            ],
+            [
+              150.0,
+              176.0,
+              0
+            ],
+            [
+              25.0,
+              176.0,
+              0.41421356237309503
+            ],
+            [
+              7.0,
+              158.0,
+              0
+            ],
+            [
+              7.0,
+              -198.0,
+              0
+            ],
+            [
+              -7.0,
+              -198.0,
+              0
+            ],
+            [
+              -7.0,
+              158.0,
+              0.41421356237309503
+            ],
+            [
+              -25.0,
+              176.0,
+              0
+            ],
+            [
+              -150.0,
+              176.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2200D",
+        "text_handle": "1734C",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/400x300x14x26x18",
+      "name": "CT-400x300x14x26x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 400.0,
+        "B": 300.0,
+        "tw": 14.0,
+        "tf": 26.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              200.0,
+              0
+            ],
+            [
+              150.0,
+              200.0,
+              0
+            ],
+            [
+              150.0,
+              174.0,
+              0
+            ],
+            [
+              25.0,
+              174.0,
+              0.41421356237309503
+            ],
+            [
+              7.0,
+              156.0,
+              0
+            ],
+            [
+              7.0,
+              -200.0,
+              0
+            ],
+            [
+              -7.0,
+              -200.0,
+              0
+            ],
+            [
+              -7.0,
+              156.0,
+              0.41421356237309503
+            ],
+            [
+              -25.0,
+              174.0,
+              0
+            ],
+            [
+              -150.0,
+              174.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2200B",
+        "text_handle": "1734D",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/445x299x15x23x18",
+      "name": "CT-445x299x15x23x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 445.0,
+        "B": 299.0,
+        "tw": 15.0,
+        "tf": 23.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -149.5,
+              222.5,
+              0
+            ],
+            [
+              149.5,
+              222.5,
+              0
+            ],
+            [
+              149.5,
+              199.5,
+              0
+            ],
+            [
+              25.5,
+              199.5,
+              0.41421356237309503
+            ],
+            [
+              7.5,
+              181.5,
+              0
+            ],
+            [
+              7.5,
+              -222.5,
+              0
+            ],
+            [
+              -7.5,
+              -222.5,
+              0
+            ],
+            [
+              -7.5,
+              181.5,
+              0.41421356237309503
+            ],
+            [
+              -25.5,
+              199.5,
+              0
+            ],
+            [
+              -149.5,
+              199.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2200C",
+        "text_handle": "1734E",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/450x300x16x28x18",
+      "name": "CT-450x300x16x28x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 450.0,
+        "B": 300.0,
+        "tw": 16.0,
+        "tf": 28.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -150.0,
+              225.0,
+              0
+            ],
+            [
+              150.0,
+              225.0,
+              0
+            ],
+            [
+              150.0,
+              197.0,
+              0
+            ],
+            [
+              26.0,
+              197.0,
+              0.41421356237309503
+            ],
+            [
+              8.0,
+              179.0,
+              0
+            ],
+            [
+              8.0,
+              -225.0,
+              0
+            ],
+            [
+              -8.0,
+              -225.0,
+              0
+            ],
+            [
+              -8.0,
+              179.0,
+              0.41421356237309503
+            ],
+            [
+              -26.0,
+              197.0,
+              0
+            ],
+            [
+              -150.0,
+              197.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "2200A",
+        "text_handle": "1734F",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/456x302x18x34x18",
+      "name": "CT-456x302x18x34x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 456.0,
+        "B": 302.0,
+        "tw": 18.0,
+        "tf": 34.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -151.0,
+              228.0,
+              0
+            ],
+            [
+              151.0,
+              228.0,
+              0
+            ],
+            [
+              151.0,
+              194.0,
+              0
+            ],
+            [
+              27.0,
+              194.0,
+              0.41421356237309503
+            ],
+            [
+              9.0,
+              176.0,
+              0
+            ],
+            [
+              9.0,
+              -228.0,
+              0
+            ],
+            [
+              -9.0,
+              -228.0,
+              0
+            ],
+            [
+              -9.0,
+              176.0,
+              0.41421356237309503
+            ],
+            [
+              -27.0,
+              194.0,
+              0
+            ],
+            [
+              -151.0,
+              194.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22009",
+        "text_handle": "17350",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    },
+    {
+      "id": "CT/general/CutT/459x303x19x37x18",
+      "name": "CT-459x303x19x37x18",
+      "family": "CT",
+      "section_type": "CT",
+      "standard": "general",
+      "subtype": "CutT",
+      "dimensions_mm": {
+        "H": 459.0,
+        "B": 303.0,
+        "tw": 19.0,
+        "tf": 37.0,
+        "r": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -151.5,
+              229.5,
+              0
+            ],
+            [
+              151.5,
+              229.5,
+              0
+            ],
+            [
+              151.5,
+              192.5,
+              0
+            ],
+            [
+              27.5,
+              192.5,
+              0.41421356237309503
+            ],
+            [
+              9.5,
+              174.5,
+              0
+            ],
+            [
+              9.5,
+              -229.5,
+              0
+            ],
+            [
+              -9.5,
+              -229.5,
+              0
+            ],
+            [
+              -9.5,
+              174.5,
+              0.41421356237309503
+            ],
+            [
+              -27.5,
+              192.5,
+              0
+            ],
+            [
+              -151.5,
+              192.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "ct-dxf-rev1.0.dxf",
+        "profile_handle": "22008",
+        "text_handle": "17351",
+        "geometry": "nominal_t_verified_against_dxf_bulges"
+      }
+    }
+  ]
+}

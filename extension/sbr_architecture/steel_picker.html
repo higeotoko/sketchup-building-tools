@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>鋼材断面</title>
+<style>
+  :root { color-scheme: light dark; font: 14px "Yu Gothic UI", sans-serif; }
+  body { margin: 22px; }
+  h1 { font-size: 20px; margin: 0 0 6px; }
+  p { margin: 0 0 14px; }
+  form { display: grid; gap: 12px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  label { display: grid; gap: 4px; flex: 1; min-width: 130px; }
+  select, input, button { font: inherit; min-height: 32px; padding: 4px 8px; box-sizing: border-box; }
+  button { background: #145592; color: white; border: 0; border-radius: 4px; }
+  button:disabled { opacity: .55; }
+  output { font-size: 12px; }
+  [hidden] { display: none; }
+</style>
+<h1 id="heading">鋼材断面</h1>
+<p>Steel Member Generator の断面カタログ</p>
+<form id="picker">
+  <div class="row">
+    <label>断面の種類 <select id="family"></select></label>
+    <label>寸法・記号で検索 <input id="query" type="search" placeholder="例 300x150"></label>
+  </div>
+  <label>断面 <select id="section" size="5" required></select></label>
+  <output id="count" aria-live="polite"></output>
+  <div class="row">
+    <label id="heightRow">柱高さ (mm) <input id="height" type="number" step="any" min="1"></label>
+    <label id="elevationRow"><span id="datum"></span><input id="elevation" type="number" step="any"></label>
+  </div>
+  <button id="apply" type="submit">この断面を使う</button>
+</form>
+<script>
+  const byId = id => document.getElementById(id);
+  const familyNames = {
+    H: "H形鋼", BOX: "角形鋼管", PIPE: "丸鋼管", ANGLE: "山形鋼", C: "軽量形鋼",
+    CHANNEL: "溝形鋼", I: "I形鋼", FB: "平鋼", CT: "CT形鋼", HB: "六角鋼", SB: "角鋼", RB: "丸鋼"
+  };
+  let entries = [];
+
+  function filter(preferred = byId("section").value) {
+    const family = byId("family").value;
+    const clean = value => value.toLowerCase().replace(/[×ｘ]/g, "x").replace(/\s/g, "");
+    const query = clean(byId("query").value);
+    const sections = entries.filter(([id, name, type]) =>
+      (!family || type === family) && (!query || clean(id).includes(query) || clean(name).includes(query)));
+    byId("section").replaceChildren(...sections.map(([id, name]) => new Option(name, id)));
+    byId("section").value = sections.some(([id]) => id === preferred) ? preferred : (sections[0]?.[0] ?? "");
+    byId("count").textContent = sections.length + " 件";
+    byId("apply").disabled = sections.length === 0;
+  }
+
+  function setup(data) {
+    entries = data.sections;
+    byId("heading").textContent = "鉄骨造 " + data.member + "の断面";
+    const families = [...new Set(entries.map(entry => entry[2]))];
+    byId("family").replaceChildren(new Option("すべて", ""), ...families.map(id => new Option(familyNames[id] ?? id, id)));
+    byId("family").value = entries.find(entry => entry[0] === data.section)?.[2] ?? "";
+    byId("heightRow").hidden = data.height == null;
+    byId("height").required = data.height != null;
+    byId("height").value = data.height ?? "";
+    byId("elevationRow").hidden = data.elevation == null;
+    byId("elevation").required = data.elevation != null;
+    byId("elevation").value = data.elevation ?? "";
+    byId("datum").textContent = data.elevationLabel;
+    filter(data.section);
+    byId("query").focus();
+  }
+
+  byId("family").addEventListener("change", () => filter());
+  byId("query").addEventListener("input", () => filter());
+  byId("picker").addEventListener("submit", event => {
+    event.preventDefault();
+    if (byId("section").value) sketchup.apply(byId("section").value, byId("height").value, byId("elevation").value);
+  });
+  document.addEventListener("DOMContentLoaded", () => sketchup.ready());
+</script>

@@ -1,0 +1,3365 @@
+{
+  "schema_version": 2,
+  "units": "mm",
+  "source": {
+    "file": "steel-bar.dxf",
+    "sha256": "f868eb78b2812836c26f05e6e88c8564110d43d4cb02758778c8a0a0f522c4b7"
+  },
+  "sections": [
+    {
+      "id": "SB/general/Square/4",
+      "name": "SB-4",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 4.0,
+        "B": 4.0,
+        "S": 4.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -2.0,
+              -2.0,
+              0
+            ],
+            [
+              2.0,
+              -2.0,
+              0
+            ],
+            [
+              2.0,
+              2.0,
+              0
+            ],
+            [
+              -2.0,
+              2.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6BD",
+        "dimension_handle": "C6BE",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/5",
+      "name": "SB-5",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 5.0,
+        "B": 5.0,
+        "S": 5.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -2.5,
+              -2.5,
+              0
+            ],
+            [
+              2.5,
+              -2.5,
+              0
+            ],
+            [
+              2.5,
+              2.5,
+              0
+            ],
+            [
+              -2.5,
+              2.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C744",
+        "dimension_handle": "C8CC",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/6",
+      "name": "SB-6",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 6.0,
+        "B": 6.0,
+        "S": 6.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -3.0,
+              -3.0,
+              0
+            ],
+            [
+              3.0,
+              -3.0,
+              0
+            ],
+            [
+              3.0,
+              3.0,
+              0
+            ],
+            [
+              -3.0,
+              3.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C745",
+        "dimension_handle": "C74B",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/7",
+      "name": "SB-7",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 7.0,
+        "B": 7.0,
+        "S": 7.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -3.5,
+              -3.5,
+              0
+            ],
+            [
+              3.5,
+              -3.5,
+              0
+            ],
+            [
+              3.5,
+              3.5,
+              0
+            ],
+            [
+              -3.5,
+              3.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C746",
+        "dimension_handle": "C74C",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/8",
+      "name": "SB-8",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 8.0,
+        "B": 8.0,
+        "S": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -4.0,
+              -4.0,
+              0
+            ],
+            [
+              4.0,
+              -4.0,
+              0
+            ],
+            [
+              4.0,
+              4.0,
+              0
+            ],
+            [
+              -4.0,
+              4.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C747",
+        "dimension_handle": "C74D",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/9",
+      "name": "SB-9",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 9.0,
+        "B": 9.0,
+        "S": 9.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -4.5,
+              -4.5,
+              0
+            ],
+            [
+              4.5,
+              -4.5,
+              0
+            ],
+            [
+              4.5,
+              4.5,
+              0
+            ],
+            [
+              -4.5,
+              4.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C748",
+        "dimension_handle": "C74F",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/10",
+      "name": "SB-10",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 10.0,
+        "B": 10.0,
+        "S": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -5.0,
+              -5.0,
+              0
+            ],
+            [
+              5.0,
+              -5.0,
+              0
+            ],
+            [
+              5.0,
+              5.0,
+              0
+            ],
+            [
+              -5.0,
+              5.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C749",
+        "dimension_handle": "C74E",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/11",
+      "name": "SB-11",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 11.0,
+        "B": 11.0,
+        "S": 11.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -5.5,
+              -5.5,
+              0
+            ],
+            [
+              5.5,
+              -5.5,
+              0
+            ],
+            [
+              5.5,
+              5.5,
+              0
+            ],
+            [
+              -5.5,
+              5.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C74A",
+        "dimension_handle": "C750",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/12",
+      "name": "SB-12",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 12.0,
+        "B": 12.0,
+        "S": 12.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -6.0,
+              -6.0,
+              0
+            ],
+            [
+              6.0,
+              -6.0,
+              0
+            ],
+            [
+              6.0,
+              6.0,
+              0
+            ],
+            [
+              -6.0,
+              6.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C751",
+        "dimension_handle": "C753",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/13",
+      "name": "SB-13",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 13.0,
+        "B": 13.0,
+        "S": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -6.5,
+              -6.5,
+              0
+            ],
+            [
+              6.5,
+              -6.5,
+              0
+            ],
+            [
+              6.5,
+              6.5,
+              0
+            ],
+            [
+              -6.5,
+              6.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C752",
+        "dimension_handle": "C754",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/14",
+      "name": "SB-14",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 14.0,
+        "B": 14.0,
+        "S": 14.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -7.0,
+              -7.0,
+              0
+            ],
+            [
+              7.0,
+              -7.0,
+              0
+            ],
+            [
+              7.0,
+              7.0,
+              0
+            ],
+            [
+              -7.0,
+              7.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C755",
+        "dimension_handle": "C756",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/15",
+      "name": "SB-15",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 15.0,
+        "B": 15.0,
+        "S": 15.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -7.5,
+              -7.5,
+              0
+            ],
+            [
+              7.5,
+              -7.5,
+              0
+            ],
+            [
+              7.5,
+              7.5,
+              0
+            ],
+            [
+              -7.5,
+              7.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C759",
+        "dimension_handle": "C764",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/16",
+      "name": "SB-16",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 16.0,
+        "B": 16.0,
+        "S": 16.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -8.0,
+              -8.0,
+              0
+            ],
+            [
+              8.0,
+              -8.0,
+              0
+            ],
+            [
+              8.0,
+              8.0,
+              0
+            ],
+            [
+              -8.0,
+              8.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C75A",
+        "dimension_handle": "C75B",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/17",
+      "name": "SB-17",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 17.0,
+        "B": 17.0,
+        "S": 17.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -8.5,
+              -8.5,
+              0
+            ],
+            [
+              8.5,
+              -8.5,
+              0
+            ],
+            [
+              8.5,
+              8.5,
+              0
+            ],
+            [
+              -8.5,
+              8.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C75E",
+        "dimension_handle": "C767",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/18",
+      "name": "SB-18",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 18.0,
+        "B": 18.0,
+        "S": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -9.0,
+              -9.0,
+              0
+            ],
+            [
+              9.0,
+              -9.0,
+              0
+            ],
+            [
+              9.0,
+              9.0,
+              0
+            ],
+            [
+              -9.0,
+              9.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C75F",
+        "dimension_handle": "C76A",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/19",
+      "name": "SB-19",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 19.0,
+        "B": 19.0,
+        "S": 19.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -9.5,
+              -9.5,
+              0
+            ],
+            [
+              9.5,
+              -9.5,
+              0
+            ],
+            [
+              9.5,
+              9.5,
+              0
+            ],
+            [
+              -9.5,
+              9.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C760",
+        "dimension_handle": "C76D",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/20",
+      "name": "SB-20",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 20.0,
+        "B": 20.0,
+        "S": 20.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -10.0,
+              -10.0,
+              0
+            ],
+            [
+              10.0,
+              -10.0,
+              0
+            ],
+            [
+              10.0,
+              10.0,
+              0
+            ],
+            [
+              -10.0,
+              10.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C761",
+        "dimension_handle": "C770",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/21",
+      "name": "SB-21",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 21.0,
+        "B": 21.0,
+        "S": 21.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -10.5,
+              -10.5,
+              0
+            ],
+            [
+              10.5,
+              -10.5,
+              0
+            ],
+            [
+              10.5,
+              10.5,
+              0
+            ],
+            [
+              -10.5,
+              10.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C762",
+        "dimension_handle": "C773",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/22",
+      "name": "SB-22",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 22.0,
+        "B": 22.0,
+        "S": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -11.0,
+              -11.0,
+              0
+            ],
+            [
+              11.0,
+              -11.0,
+              0
+            ],
+            [
+              11.0,
+              11.0,
+              0
+            ],
+            [
+              -11.0,
+              11.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C763",
+        "dimension_handle": "C776",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/23",
+      "name": "SB-23",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 23.0,
+        "B": 23.0,
+        "S": 23.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -11.5,
+              -11.5,
+              0
+            ],
+            [
+              11.5,
+              -11.5,
+              0
+            ],
+            [
+              11.5,
+              11.5,
+              0
+            ],
+            [
+              -11.5,
+              11.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C779",
+        "dimension_handle": "C77C",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/24",
+      "name": "SB-24",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 24.0,
+        "B": 24.0,
+        "S": 24.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -12.0,
+              -12.0,
+              0
+            ],
+            [
+              12.0,
+              -12.0,
+              0
+            ],
+            [
+              12.0,
+              12.0,
+              0
+            ],
+            [
+              -12.0,
+              12.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C77A",
+        "dimension_handle": "C77F",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/25",
+      "name": "SB-25",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 25.0,
+        "B": 25.0,
+        "S": 25.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -12.5,
+              -12.5,
+              0
+            ],
+            [
+              12.5,
+              -12.5,
+              0
+            ],
+            [
+              12.5,
+              12.5,
+              0
+            ],
+            [
+              -12.5,
+              12.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C77B",
+        "dimension_handle": "C782",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/26",
+      "name": "SB-26",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 26.0,
+        "B": 26.0,
+        "S": 26.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -13.0,
+              -13.0,
+              0
+            ],
+            [
+              13.0,
+              -13.0,
+              0
+            ],
+            [
+              13.0,
+              13.0,
+              0
+            ],
+            [
+              -13.0,
+              13.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C901",
+        "dimension_handle": "C902",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/28",
+      "name": "SB-28",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 28.0,
+        "B": 28.0,
+        "S": 28.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -14.0,
+              -14.0,
+              0
+            ],
+            [
+              14.0,
+              -14.0,
+              0
+            ],
+            [
+              14.0,
+              14.0,
+              0
+            ],
+            [
+              -14.0,
+              14.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C785",
+        "dimension_handle": "C793",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/30",
+      "name": "SB-30",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 30.0,
+        "B": 30.0,
+        "S": 30.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -15.0,
+              -15.0,
+              0
+            ],
+            [
+              15.0,
+              -15.0,
+              0
+            ],
+            [
+              15.0,
+              15.0,
+              0
+            ],
+            [
+              -15.0,
+              15.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C786",
+        "dimension_handle": "C796",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/32",
+      "name": "SB-32",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 32.0,
+        "B": 32.0,
+        "S": 32.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -16.0,
+              -16.0,
+              0
+            ],
+            [
+              16.0,
+              -16.0,
+              0
+            ],
+            [
+              16.0,
+              16.0,
+              0
+            ],
+            [
+              -16.0,
+              16.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C787",
+        "dimension_handle": "C799",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/34",
+      "name": "SB-34",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 34.0,
+        "B": 34.0,
+        "S": 34.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -17.0,
+              -17.0,
+              0
+            ],
+            [
+              17.0,
+              -17.0,
+              0
+            ],
+            [
+              17.0,
+              17.0,
+              0
+            ],
+            [
+              -17.0,
+              17.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C788",
+        "dimension_handle": "C79C",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/35",
+      "name": "SB-35",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 35.0,
+        "B": 35.0,
+        "S": 35.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -17.5,
+              -17.5,
+              0
+            ],
+            [
+              17.5,
+              -17.5,
+              0
+            ],
+            [
+              17.5,
+              17.5,
+              0
+            ],
+            [
+              -17.5,
+              17.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C789",
+        "dimension_handle": "C79F",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/36",
+      "name": "SB-36",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 36.0,
+        "B": 36.0,
+        "S": 36.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -18.0,
+              -18.0,
+              0
+            ],
+            [
+              18.0,
+              -18.0,
+              0
+            ],
+            [
+              18.0,
+              18.0,
+              0
+            ],
+            [
+              -18.0,
+              18.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C78A",
+        "dimension_handle": "C7A2",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/38",
+      "name": "SB-38",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 38.0,
+        "B": 38.0,
+        "S": 38.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -19.0,
+              -19.0,
+              0
+            ],
+            [
+              19.0,
+              -19.0,
+              0
+            ],
+            [
+              19.0,
+              19.0,
+              0
+            ],
+            [
+              -19.0,
+              19.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C78B",
+        "dimension_handle": "C7A5",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/40",
+      "name": "SB-40",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 40.0,
+        "B": 40.0,
+        "S": 40.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -20.0,
+              -20.0,
+              0
+            ],
+            [
+              20.0,
+              -20.0,
+              0
+            ],
+            [
+              20.0,
+              20.0,
+              0
+            ],
+            [
+              -20.0,
+              20.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C78C",
+        "dimension_handle": "C7A8",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/42",
+      "name": "SB-42",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 42.0,
+        "B": 42.0,
+        "S": 42.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -21.0,
+              -21.0,
+              0
+            ],
+            [
+              21.0,
+              -21.0,
+              0
+            ],
+            [
+              21.0,
+              21.0,
+              0
+            ],
+            [
+              -21.0,
+              21.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C78D",
+        "dimension_handle": "C7AB",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/44",
+      "name": "SB-44",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 44.0,
+        "B": 44.0,
+        "S": 44.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -22.0,
+              -22.0,
+              0
+            ],
+            [
+              22.0,
+              -22.0,
+              0
+            ],
+            [
+              22.0,
+              22.0,
+              0
+            ],
+            [
+              -22.0,
+              22.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C78E",
+        "dimension_handle": "C7AE",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/45",
+      "name": "SB-45",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 45.0,
+        "B": 45.0,
+        "S": 45.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -22.5,
+              -22.5,
+              0
+            ],
+            [
+              22.5,
+              -22.5,
+              0
+            ],
+            [
+              22.5,
+              22.5,
+              0
+            ],
+            [
+              -22.5,
+              22.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C78F",
+        "dimension_handle": "C7B1",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/50",
+      "name": "SB-50",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 50.0,
+        "B": 50.0,
+        "S": 50.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -25.0,
+              -25.0,
+              0
+            ],
+            [
+              25.0,
+              -25.0,
+              0
+            ],
+            [
+              25.0,
+              25.0,
+              0
+            ],
+            [
+              -25.0,
+              25.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C790",
+        "dimension_handle": "C7B4",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/55",
+      "name": "SB-55",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 55.0,
+        "B": 55.0,
+        "S": 55.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -27.5,
+              -27.5,
+              0
+            ],
+            [
+              27.5,
+              -27.5,
+              0
+            ],
+            [
+              27.5,
+              27.5,
+              0
+            ],
+            [
+              -27.5,
+              27.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C791",
+        "dimension_handle": "C7B7",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/60",
+      "name": "SB-60",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 60.0,
+        "B": 60.0,
+        "S": 60.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -30.0,
+              -30.0,
+              0
+            ],
+            [
+              30.0,
+              -30.0,
+              0
+            ],
+            [
+              30.0,
+              30.0,
+              0
+            ],
+            [
+              -30.0,
+              30.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C792",
+        "dimension_handle": "C7BA",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/65",
+      "name": "SB-65",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 65.0,
+        "B": 65.0,
+        "S": 65.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -32.5,
+              -32.5,
+              0
+            ],
+            [
+              32.5,
+              -32.5,
+              0
+            ],
+            [
+              32.5,
+              32.5,
+              0
+            ],
+            [
+              -32.5,
+              32.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7BD",
+        "dimension_handle": "C7BE",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/70",
+      "name": "SB-70",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 70.0,
+        "B": 70.0,
+        "S": 70.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -35.0,
+              -35.0,
+              0
+            ],
+            [
+              35.0,
+              -35.0,
+              0
+            ],
+            [
+              35.0,
+              35.0,
+              0
+            ],
+            [
+              -35.0,
+              35.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7C1",
+        "dimension_handle": "C7C5",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/80",
+      "name": "SB-80",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 80.0,
+        "B": 80.0,
+        "S": 80.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -40.0,
+              -40.0,
+              0
+            ],
+            [
+              40.0,
+              -40.0,
+              0
+            ],
+            [
+              40.0,
+              40.0,
+              0
+            ],
+            [
+              -40.0,
+              40.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7C2",
+        "dimension_handle": "C7C8",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/85",
+      "name": "SB-85",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 85.0,
+        "B": 85.0,
+        "S": 85.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -42.5,
+              -42.5,
+              0
+            ],
+            [
+              42.5,
+              -42.5,
+              0
+            ],
+            [
+              42.5,
+              42.5,
+              0
+            ],
+            [
+              -42.5,
+              42.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C908",
+        "dimension_handle": "C907",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/90",
+      "name": "SB-90",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 90.0,
+        "B": 90.0,
+        "S": 90.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -45.0,
+              -45.0,
+              0
+            ],
+            [
+              45.0,
+              -45.0,
+              0
+            ],
+            [
+              45.0,
+              45.0,
+              0
+            ],
+            [
+              -45.0,
+              45.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7C3",
+        "dimension_handle": "C7CB",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/95",
+      "name": "SB-95",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 95.0,
+        "B": 95.0,
+        "S": 95.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -47.5,
+              -47.5,
+              0
+            ],
+            [
+              47.5,
+              -47.5,
+              0
+            ],
+            [
+              47.5,
+              47.5,
+              0
+            ],
+            [
+              -47.5,
+              47.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7C4",
+        "dimension_handle": "C7CE",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/100",
+      "name": "SB-100",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 100.0,
+        "S": 100.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -50.0,
+              -50.0,
+              0
+            ],
+            [
+              50.0,
+              -50.0,
+              0
+            ],
+            [
+              50.0,
+              50.0,
+              0
+            ],
+            [
+              -50.0,
+              50.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7D1",
+        "dimension_handle": "C7D4",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/110",
+      "name": "SB-110",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 110.0,
+        "B": 110.0,
+        "S": 110.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -55.0,
+              -55.0,
+              0
+            ],
+            [
+              55.0,
+              -55.0,
+              0
+            ],
+            [
+              55.0,
+              55.0,
+              0
+            ],
+            [
+              -55.0,
+              55.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7D2",
+        "dimension_handle": "C7D7",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/120",
+      "name": "SB-120",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 120.0,
+        "B": 120.0,
+        "S": 120.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -60.0,
+              -60.0,
+              0
+            ],
+            [
+              60.0,
+              -60.0,
+              0
+            ],
+            [
+              60.0,
+              60.0,
+              0
+            ],
+            [
+              -60.0,
+              60.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7D3",
+        "dimension_handle": "C7DA",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/125",
+      "name": "SB-125",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 125.0,
+        "S": 125.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -62.5,
+              -62.5,
+              0
+            ],
+            [
+              62.5,
+              -62.5,
+              0
+            ],
+            [
+              62.5,
+              62.5,
+              0
+            ],
+            [
+              -62.5,
+              62.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7DD",
+        "dimension_handle": "C7DE",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/130",
+      "name": "SB-130",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 130.0,
+        "B": 130.0,
+        "S": 130.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -65.0,
+              -65.0,
+              0
+            ],
+            [
+              65.0,
+              -65.0,
+              0
+            ],
+            [
+              65.0,
+              65.0,
+              0
+            ],
+            [
+              -65.0,
+              65.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7E1",
+        "dimension_handle": "C7ED",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/140",
+      "name": "SB-140",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 140.0,
+        "B": 140.0,
+        "S": 140.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -70.0,
+              -70.0,
+              0
+            ],
+            [
+              70.0,
+              -70.0,
+              0
+            ],
+            [
+              70.0,
+              70.0,
+              0
+            ],
+            [
+              -70.0,
+              70.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7E2",
+        "dimension_handle": "C7FA",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/150",
+      "name": "SB-150",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 150.0,
+        "S": 150.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -75.0,
+              -75.0,
+              0
+            ],
+            [
+              75.0,
+              -75.0,
+              0
+            ],
+            [
+              75.0,
+              75.0,
+              0
+            ],
+            [
+              -75.0,
+              75.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7E3",
+        "dimension_handle": "C7F0",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/160",
+      "name": "SB-160",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 160.0,
+        "B": 160.0,
+        "S": 160.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -80.0,
+              -80.0,
+              0
+            ],
+            [
+              80.0,
+              -80.0,
+              0
+            ],
+            [
+              80.0,
+              80.0,
+              0
+            ],
+            [
+              -80.0,
+              80.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7E4",
+        "dimension_handle": "C7E5",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/170",
+      "name": "SB-170",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 170.0,
+        "B": 170.0,
+        "S": 170.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -85.0,
+              -85.0,
+              0
+            ],
+            [
+              85.0,
+              -85.0,
+              0
+            ],
+            [
+              85.0,
+              85.0,
+              0
+            ],
+            [
+              -85.0,
+              85.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7E6",
+        "dimension_handle": "C7E7",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/180",
+      "name": "SB-180",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 180.0,
+        "B": 180.0,
+        "S": 180.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -90.0,
+              -90.0,
+              0
+            ],
+            [
+              90.0,
+              -90.0,
+              0
+            ],
+            [
+              90.0,
+              90.0,
+              0
+            ],
+            [
+              -90.0,
+              90.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7EA",
+        "dimension_handle": "C7F1",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/190",
+      "name": "SB-190",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 190.0,
+        "B": 190.0,
+        "S": 190.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -95.0,
+              -95.0,
+              0
+            ],
+            [
+              95.0,
+              -95.0,
+              0
+            ],
+            [
+              95.0,
+              95.0,
+              0
+            ],
+            [
+              -95.0,
+              95.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7EB",
+        "dimension_handle": "C7F4",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    },
+    {
+      "id": "SB/general/Square/200",
+      "name": "SB-200",
+      "family": "SB",
+      "section_type": "SB",
+      "standard": "general",
+      "subtype": "Square",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 200.0,
+        "S": 200.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              -100.0,
+              -100.0,
+              0
+            ],
+            [
+              100.0,
+              -100.0,
+              0
+            ],
+            [
+              100.0,
+              100.0,
+              0
+            ],
+            [
+              -100.0,
+              100.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7EC",
+        "dimension_handle": "C7F7",
+        "geometry": "nominal_regular_bar_verified_against_dxf",
+        "size_review_urls": [
+          "https://www.esteel.co.jp/pdf/cfssize.pdf",
+          "https://www.jisf.or.jp/sunpo/html/0304.html"
+        ]
+      }
+    }
+  ]
+}

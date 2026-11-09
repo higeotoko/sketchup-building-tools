@@ -1,0 +1,9 @@
+/SDK*/
+/sdk/
+/work/
+/outputs/
+*.rbz
+*.skp
+*.skb
+*.layout
+*.ifc

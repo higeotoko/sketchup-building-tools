@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SketchBRep 図面・シーン</title>
+<link rel="stylesheet" href="palette.css">
+<style>
+  #drawing-form { display:grid; gap:8px; }
+  #drawing-form > button { color:white; border-color:#133f57; background:#133f57; }
+  #pages { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
+  #pages button { display:block; width:100%; text-align:left; }
+  #pages small { display:block; color:#435d6a; font-weight:400; }
+  #status { min-height:1em; }
+</style>
+<header><img src="drawings.svg" alt=""><div><span>SKETCHBREP FOR SKETCHUP</span><h1>図面・シーン</h1></div></header>
+<main>
+  <section>
+    <h2>図面を作成・更新</h2>
+    <form id="drawing-form">
+      <label>種類 <select id="kind"><option value="plan">階別平面</option><option value="elevation">立面</option><option value="section">断面</option></select></label>
+      <div id="plan" class="fields">
+        <label>作図レベル <select id="level"></select></label>
+        <label>床面からの切断高さ (mm) <input id="cut" type="number" value="1100" min="1" step="any" required></label>
+      </div>
+      <div id="side-row" hidden><label>見る方向 <select id="side"></select></label></div>
+      <div id="section" class="fields" hidden>
+        <label>断面名 <input id="name" value="A-A" maxlength="40"></label>
+        <label id="offset-label"><span>切断位置 (mm)</span><input id="offset" type="number" value="0" step="any"></label>
+      </div>
+      <p id="hint" class="tip">同じ階を選ぶと、既存のシーンを更新します。</p>
+      <button type="submit" id="make" disabled>作成・更新して開く</button>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+  </section>
+  <section>
+    <div class="line"><h2>登録済みシーン</h2><button type="button" id="update" disabled>モデルから全更新</button></div>
+    <ul id="pages"></ul>
+    <button type="button" id="layout" disabled>LayOutへ配置（A3横）</button>
+    <p class="tip">シーンはSKPに保存されます。モデル変更後は「モデルから全更新」で注記と図面を作り直します。</p>
+  </section>
+  <section>
+    <h2>IFC4</h2>
+    <p class="tip">建築パレットで作った部材・階・開口・建具を書き出します。先にSKPを保存してください。</p>
+    <button type="button" id="ifc" disabled>IFC4を書き出す</button>
+  </section>
+</main>
+<script>
+"use strict";
+const byId = id => document.getElementById(id);
+let state, busy = false;
+function setBusy(value) {
+  busy = value;
+  byId("make").disabled = busy || !state;
+  byId("update").disabled = busy || !state?.pages.length;
+  byId("layout").disabled = busy || !state?.pages.length;
+  byId("ifc").disabled = busy || !state;
+}
+function refreshFields() {
+  const kind = byId("kind").value;
+  byId("plan").hidden = kind !== "plan";
+  byId("side-row").hidden = kind === "plan";
+  byId("section").hidden = kind !== "section";
+  byId("cut").disabled = kind !== "plan";
+  byId("offset").required = kind === "section";
+  byId("name").required = kind === "section";
+  byId("offset-label").querySelector("span").textContent = byId("side").value.toUpperCase()[0] + "座標 (mm)";
+  byId("hint").textContent = {plan:"同じ階を選ぶと、既存のシーンを更新します。",
+    elevation:"世界軸のどちら側から見るかを選びます。",
+    section:"切る位置を世界座標で指定します。同じ断面名は更新します。"}[kind];
+}
+function receiveDrawings(data) {
+  const same = state?.token === data.token;
+  const level = same ? byId("level").value : data.active;
+  const side = same ? byId("side").value : "y-";
+  state = data;
+  byId("level").replaceChildren(...data.levels.map(([name, z]) => new Option(name + " · " + z + " mm", name)));
+  if (data.levels.some(([name]) => name === level)) byId("level").value = level;
+  byId("side").replaceChildren(...Object.entries(data.sides).map(([id, label]) => new Option(label + "から見る", id)));
+  if (side in data.sides) byId("side").value = side;
+  byId("pages").replaceChildren(...data.pages.map(([key, name, description]) => {
+    const item = document.createElement("li");
+    const button = document.createElement("button");
+    const detail = document.createElement("small");
+    detail.textContent = description;
+    button.append(name, detail);
+    button.addEventListener("click", () => { if (!busy) sketchup.openDrawing(state.token, key); });
+    item.append(button);
+    return item;
+  }));
+  setBusy(false);
+  refreshFields();
+}
+function drawingStatus(message, error) {
+  byId("status").textContent = message;
+  byId("status").classList.toggle("error", error);
+  setBusy(false);
+}
+byId("kind").addEventListener("change", refreshFields);
+byId("side").addEventListener("change", refreshFields);
+byId("drawing-form").addEventListener("submit", event => {
+  event.preventDefault();
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "作成・更新中…";
+  sketchup.makeDrawing(state.token, JSON.stringify(Object.fromEntries(
+    ["kind", "level", "cut", "side", "name", "offset"].map(id => [id, byId(id).value]))));
+});
+byId("update").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "全シーンを更新中…";
+  sketchup.updateAll(state.token);
+});
+byId("layout").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "LayOutの保存先を選択…";
+  sketchup.exportLayout(state.token);
+});
+byId("ifc").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "IFC4を書き出し中…";
+  sketchup.exportIfc(state.token);
+});
+document.addEventListener("DOMContentLoaded", () => sketchup.ready());
+</script>

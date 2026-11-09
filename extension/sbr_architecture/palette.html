@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SketchBRep 建築パレット</title>
+  <link rel="stylesheet" href="palette.css">
+  <script src="palette.js" defer></script>
+</head>
+<body>
+  <header>
+    <img src="palette.svg" alt="">
+    <div><span>SKETCHBREP FOR SKETCHUP</span><h1>建築パレット</h1></div>
+  </header>
+  <main>
+    <section aria-labelledby="setup">
+      <div class="line"><h2 id="setup">作図条件</h2><button id="edit-levels" type="button">階の高さを編集</button></div>
+      <div class="fields">
+        <label>作図レベル <select id="level"></select></label>
+        <label>作図高さ Z (mm) <input id="elevation" type="number" step="any" required></label>
+      </div>
+      <div id="systems" class="systems" aria-label="構造"></div>
+    </section>
+    <section aria-labelledby="tools-heading">
+      <h2 id="tools-heading">描く部材を選ぶ</h2>
+      <div id="tools" class="tools"></div>
+    </section>
+    <section class="inspector" aria-label="部材設定">
+      <div class="line"><h2 id="form-title">部材設定</h2><button id="back" type="button" hidden>作図へ戻る</button></div>
+      <form id="form">
+        <div id="properties" class="fields"></div>
+        <fieldset id="composition" hidden>
+          <legend>層構成</legend>
+          <p id="layer-order" class="tip"></p>
+          <div id="layers"></div>
+          <div class="line"><button type="button" id="add-layer">層を追加</button><output id="total-layers"></output></div>
+        </fieldset>
+        <div id="openings" hidden></div>
+        <p id="tip" class="tip"></p>
+        <button id="submit" type="submit" disabled>作図を開始</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+    <section class="selection" aria-label="選択中の要素">
+      <div><h2>選択中の要素</h2><span id="selection">要素を選択すると編集できます</span></div>
+      <button id="edit" type="button" disabled>寸法を編集</button>
+      <button id="follow" type="button" disabled>関連付け</button>
+    </section>
+    <section id="wall-head-section" class="line" aria-label="壁上端の納まり" hidden>
+      <span id="wall-head-current"></span>
+      <button id="wall-head" type="button">壁上端の納まり</button>
+    </section>
+    <section class="line" aria-label="モデル情報"><h2>モデル情報</h2><button id="schedule" type="button">階別一覧・CSV</button><button id="drawings" type="button">図面・シーン</button></section>
+  </main>
+</body>
+</html>

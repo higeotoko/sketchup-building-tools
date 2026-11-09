@@ -1,0 +1,3159 @@
+{
+  "schema_version": 2,
+  "units": "mm",
+  "source": {
+    "file": "steel-bar.dxf",
+    "sha256": "f868eb78b2812836c26f05e6e88c8564110d43d4cb02758778c8a0a0f522c4b7"
+  },
+  "sections": [
+    {
+      "id": "HB/general/Hexagonal/4",
+      "name": "HB-4",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 4.0,
+        "B": 4.618802153517007,
+        "S": 4.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              2.3094010767585034,
+              0,
+              0
+            ],
+            [
+              1.1547005383792517,
+              2.0,
+              0
+            ],
+            [
+              -1.1547005383792517,
+              2.0,
+              0
+            ],
+            [
+              -2.3094010767585034,
+              0,
+              0
+            ],
+            [
+              -1.1547005383792517,
+              -2.0,
+              0
+            ],
+            [
+              1.1547005383792517,
+              -2.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6B5",
+        "dimension_handle": "C6B6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/5",
+      "name": "HB-5",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 5.0,
+        "B": 5.773502691896258,
+        "S": 5.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              2.886751345948129,
+              0,
+              0
+            ],
+            [
+              1.4433756729740645,
+              2.5,
+              0
+            ],
+            [
+              -1.4433756729740645,
+              2.5,
+              0
+            ],
+            [
+              -2.886751345948129,
+              0,
+              0
+            ],
+            [
+              -1.4433756729740645,
+              -2.5,
+              0
+            ],
+            [
+              1.4433756729740645,
+              -2.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6CC",
+        "dimension_handle": "C6F8",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/6",
+      "name": "HB-6",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 6.0,
+        "B": 6.92820323027551,
+        "S": 6.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              3.464101615137755,
+              0,
+              0
+            ],
+            [
+              1.7320508075688774,
+              3.0,
+              0
+            ],
+            [
+              -1.7320508075688774,
+              3.0,
+              0
+            ],
+            [
+              -3.464101615137755,
+              0,
+              0
+            ],
+            [
+              -1.7320508075688774,
+              -3.0,
+              0
+            ],
+            [
+              1.7320508075688774,
+              -3.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6CD",
+        "dimension_handle": "C6F9",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/7",
+      "name": "HB-7",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 7.0,
+        "B": 8.082903768654761,
+        "S": 7.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              4.041451884327381,
+              0,
+              0
+            ],
+            [
+              2.0207259421636903,
+              3.5,
+              0
+            ],
+            [
+              -2.0207259421636903,
+              3.5,
+              0
+            ],
+            [
+              -4.041451884327381,
+              0,
+              0
+            ],
+            [
+              -2.0207259421636903,
+              -3.5,
+              0
+            ],
+            [
+              2.0207259421636903,
+              -3.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6CE",
+        "dimension_handle": "C6FA",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/8",
+      "name": "HB-8",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 8.0,
+        "B": 9.237604307034013,
+        "S": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              4.618802153517007,
+              0,
+              0
+            ],
+            [
+              2.3094010767585034,
+              4.0,
+              0
+            ],
+            [
+              -2.3094010767585034,
+              4.0,
+              0
+            ],
+            [
+              -4.618802153517007,
+              0,
+              0
+            ],
+            [
+              -2.3094010767585034,
+              -4.0,
+              0
+            ],
+            [
+              2.3094010767585034,
+              -4.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6CF",
+        "dimension_handle": "C6FB",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/9",
+      "name": "HB-9",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 9.0,
+        "B": 10.392304845413264,
+        "S": 9.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              5.196152422706632,
+              0,
+              0
+            ],
+            [
+              2.598076211353316,
+              4.5,
+              0
+            ],
+            [
+              -2.598076211353316,
+              4.5,
+              0
+            ],
+            [
+              -5.196152422706632,
+              0,
+              0
+            ],
+            [
+              -2.598076211353316,
+              -4.5,
+              0
+            ],
+            [
+              2.598076211353316,
+              -4.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6D0",
+        "dimension_handle": "C6FC",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/10",
+      "name": "HB-10",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 10.0,
+        "B": 11.547005383792516,
+        "S": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              5.773502691896258,
+              0,
+              0
+            ],
+            [
+              2.886751345948129,
+              5.0,
+              0
+            ],
+            [
+              -2.886751345948129,
+              5.0,
+              0
+            ],
+            [
+              -5.773502691896258,
+              0,
+              0
+            ],
+            [
+              -2.886751345948129,
+              -5.0,
+              0
+            ],
+            [
+              2.886751345948129,
+              -5.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6D1",
+        "dimension_handle": "C6FD",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/11",
+      "name": "HB-11",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 11.0,
+        "B": 12.701705922171767,
+        "S": 11.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              6.3508529610858835,
+              0,
+              0
+            ],
+            [
+              3.1754264805429417,
+              5.5,
+              0
+            ],
+            [
+              -3.1754264805429417,
+              5.5,
+              0
+            ],
+            [
+              -6.3508529610858835,
+              0,
+              0
+            ],
+            [
+              -3.1754264805429417,
+              -5.5,
+              0
+            ],
+            [
+              3.1754264805429417,
+              -5.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6D2",
+        "dimension_handle": "C6D6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/12",
+      "name": "HB-12",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 12.0,
+        "B": 13.85640646055102,
+        "S": 12.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              6.92820323027551,
+              0,
+              0
+            ],
+            [
+              3.464101615137755,
+              6.0,
+              0
+            ],
+            [
+              -3.464101615137755,
+              6.0,
+              0
+            ],
+            [
+              -6.92820323027551,
+              0,
+              0
+            ],
+            [
+              -3.464101615137755,
+              -6.0,
+              0
+            ],
+            [
+              3.464101615137755,
+              -6.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6D3",
+        "dimension_handle": "C700",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/13",
+      "name": "HB-13",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 13.0,
+        "B": 15.01110699893027,
+        "S": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              7.505553499465135,
+              0,
+              0
+            ],
+            [
+              3.7527767497325675,
+              6.5,
+              0
+            ],
+            [
+              -3.7527767497325675,
+              6.5,
+              0
+            ],
+            [
+              -7.505553499465135,
+              0,
+              0
+            ],
+            [
+              -3.7527767497325675,
+              -6.5,
+              0
+            ],
+            [
+              3.7527767497325675,
+              -6.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6D4",
+        "dimension_handle": "C703",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/14",
+      "name": "HB-14",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 14.0,
+        "B": 16.165807537309522,
+        "S": 14.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              8.082903768654761,
+              0,
+              0
+            ],
+            [
+              4.041451884327381,
+              7.0,
+              0
+            ],
+            [
+              -4.041451884327381,
+              7.0,
+              0
+            ],
+            [
+              -8.082903768654761,
+              0,
+              0
+            ],
+            [
+              -4.041451884327381,
+              -7.0,
+              0
+            ],
+            [
+              4.041451884327381,
+              -7.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6D5",
+        "dimension_handle": "C6D9",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/17",
+      "name": "HB-17",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 17.0,
+        "B": 19.629909152447276,
+        "S": 17.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              9.814954576223638,
+              0,
+              0
+            ],
+            [
+              4.907477288111819,
+              8.5,
+              0
+            ],
+            [
+              -4.907477288111819,
+              8.5,
+              0
+            ],
+            [
+              -9.814954576223638,
+              0,
+              0
+            ],
+            [
+              -4.907477288111819,
+              -8.5,
+              0
+            ],
+            [
+              4.907477288111819,
+              -8.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6DC",
+        "dimension_handle": "C706",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/19",
+      "name": "HB-19",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 19.0,
+        "B": 21.93931022920578,
+        "S": 19.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              10.96965511460289,
+              0,
+              0
+            ],
+            [
+              5.484827557301445,
+              9.5,
+              0
+            ],
+            [
+              -5.484827557301445,
+              9.5,
+              0
+            ],
+            [
+              -10.96965511460289,
+              0,
+              0
+            ],
+            [
+              -5.484827557301445,
+              -9.5,
+              0
+            ],
+            [
+              5.484827557301445,
+              -9.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6DD",
+        "dimension_handle": "C709",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/21",
+      "name": "HB-21",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 21.0,
+        "B": 24.248711305964285,
+        "S": 21.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              12.124355652982143,
+              0,
+              0
+            ],
+            [
+              6.062177826491071,
+              10.5,
+              0
+            ],
+            [
+              -6.062177826491071,
+              10.5,
+              0
+            ],
+            [
+              -12.124355652982143,
+              0,
+              0
+            ],
+            [
+              -6.062177826491071,
+              -10.5,
+              0
+            ],
+            [
+              6.062177826491071,
+              -10.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6DE",
+        "dimension_handle": "C6DF",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/22",
+      "name": "HB-22",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 22.0,
+        "B": 25.403411844343534,
+        "S": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              12.701705922171767,
+              0,
+              0
+            ],
+            [
+              6.3508529610858835,
+              11.0,
+              0
+            ],
+            [
+              -6.3508529610858835,
+              11.0,
+              0
+            ],
+            [
+              -12.701705922171767,
+              0,
+              0
+            ],
+            [
+              -6.3508529610858835,
+              -11.0,
+              0
+            ],
+            [
+              6.3508529610858835,
+              -11.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6E0",
+        "dimension_handle": "C6E1",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/23",
+      "name": "HB-23",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 23.0,
+        "B": 26.558112382722786,
+        "S": 23.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              13.279056191361393,
+              0,
+              0
+            ],
+            [
+              6.639528095680697,
+              11.5,
+              0
+            ],
+            [
+              -6.639528095680697,
+              11.5,
+              0
+            ],
+            [
+              -13.279056191361393,
+              0,
+              0
+            ],
+            [
+              -6.639528095680697,
+              -11.5,
+              0
+            ],
+            [
+              6.639528095680697,
+              -11.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6E4",
+        "dimension_handle": "C6E6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/24",
+      "name": "HB-24",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 24.0,
+        "B": 27.71281292110204,
+        "S": 24.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              13.85640646055102,
+              0,
+              0
+            ],
+            [
+              6.92820323027551,
+              12.0,
+              0
+            ],
+            [
+              -6.92820323027551,
+              12.0,
+              0
+            ],
+            [
+              -13.85640646055102,
+              0,
+              0
+            ],
+            [
+              -6.92820323027551,
+              -12.0,
+              0
+            ],
+            [
+              6.92820323027551,
+              -12.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6E5",
+        "dimension_handle": "C6E9",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/26",
+      "name": "HB-26",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 26.0,
+        "B": 30.02221399786054,
+        "S": 26.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              15.01110699893027,
+              0,
+              0
+            ],
+            [
+              7.505553499465135,
+              13.0,
+              0
+            ],
+            [
+              -7.505553499465135,
+              13.0,
+              0
+            ],
+            [
+              -15.01110699893027,
+              0,
+              0
+            ],
+            [
+              -7.505553499465135,
+              -13.0,
+              0
+            ],
+            [
+              7.505553499465135,
+              -13.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6EC",
+        "dimension_handle": "C6ED",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/27",
+      "name": "HB-27",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 27.0,
+        "B": 31.176914536239792,
+        "S": 27.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              15.588457268119896,
+              0,
+              0
+            ],
+            [
+              7.794228634059948,
+              13.5,
+              0
+            ],
+            [
+              -7.794228634059948,
+              13.5,
+              0
+            ],
+            [
+              -15.588457268119896,
+              0,
+              0
+            ],
+            [
+              -7.794228634059948,
+              -13.5,
+              0
+            ],
+            [
+              7.794228634059948,
+              -13.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6F0",
+        "dimension_handle": "C6F1",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/29",
+      "name": "HB-29",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 29.0,
+        "B": 33.4863156129983,
+        "S": 29.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              16.74315780649915,
+              0,
+              0
+            ],
+            [
+              8.371578903249574,
+              14.5,
+              0
+            ],
+            [
+              -8.371578903249574,
+              14.5,
+              0
+            ],
+            [
+              -16.74315780649915,
+              0,
+              0
+            ],
+            [
+              -8.371578903249574,
+              -14.5,
+              0
+            ],
+            [
+              8.371578903249574,
+              -14.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6F4",
+        "dimension_handle": "C6F5",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/30",
+      "name": "HB-30",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 30.0,
+        "B": 34.64101615137755,
+        "S": 30.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              17.320508075688775,
+              0,
+              0
+            ],
+            [
+              8.660254037844387,
+              15.0,
+              0
+            ],
+            [
+              -8.660254037844387,
+              15.0,
+              0
+            ],
+            [
+              -17.320508075688775,
+              0,
+              0
+            ],
+            [
+              -8.660254037844387,
+              -15.0,
+              0
+            ],
+            [
+              8.660254037844387,
+              -15.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8CD",
+        "dimension_handle": "C8CE",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/32",
+      "name": "HB-32",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 32.0,
+        "B": 36.950417228136054,
+        "S": 32.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              18.475208614068027,
+              0,
+              0
+            ],
+            [
+              9.237604307034013,
+              16.0,
+              0
+            ],
+            [
+              -9.237604307034013,
+              16.0,
+              0
+            ],
+            [
+              -18.475208614068027,
+              0,
+              0
+            ],
+            [
+              -9.237604307034013,
+              -16.0,
+              0
+            ],
+            [
+              9.237604307034013,
+              -16.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8D1",
+        "dimension_handle": "C8D2",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/35",
+      "name": "HB-35",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 35.0,
+        "B": 40.414518843273804,
+        "S": 35.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              20.207259421636902,
+              0,
+              0
+            ],
+            [
+              10.103629710818451,
+              17.5,
+              0
+            ],
+            [
+              -10.103629710818451,
+              17.5,
+              0
+            ],
+            [
+              -20.207259421636902,
+              0,
+              0
+            ],
+            [
+              -10.103629710818451,
+              -17.5,
+              0
+            ],
+            [
+              10.103629710818451,
+              -17.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8D5",
+        "dimension_handle": "C8D6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/36",
+      "name": "HB-36",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 36.0,
+        "B": 41.569219381653056,
+        "S": 36.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              20.784609690826528,
+              0,
+              0
+            ],
+            [
+              10.392304845413264,
+              18.0,
+              0
+            ],
+            [
+              -10.392304845413264,
+              18.0,
+              0
+            ],
+            [
+              -20.784609690826528,
+              0,
+              0
+            ],
+            [
+              -10.392304845413264,
+              -18.0,
+              0
+            ],
+            [
+              10.392304845413264,
+              -18.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8D9",
+        "dimension_handle": "C8DA",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/38",
+      "name": "HB-38",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 38.0,
+        "B": 43.87862045841156,
+        "S": 38.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              21.93931022920578,
+              0,
+              0
+            ],
+            [
+              10.96965511460289,
+              19.0,
+              0
+            ],
+            [
+              -10.96965511460289,
+              19.0,
+              0
+            ],
+            [
+              -21.93931022920578,
+              0,
+              0
+            ],
+            [
+              -10.96965511460289,
+              -19.0,
+              0
+            ],
+            [
+              10.96965511460289,
+              -19.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8DD",
+        "dimension_handle": "C8DE",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/41",
+      "name": "HB-41",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 41.0,
+        "B": 47.34272207354932,
+        "S": 41.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              23.67136103677466,
+              0,
+              0
+            ],
+            [
+              11.83568051838733,
+              20.5,
+              0
+            ],
+            [
+              -11.83568051838733,
+              20.5,
+              0
+            ],
+            [
+              -23.67136103677466,
+              0,
+              0
+            ],
+            [
+              -11.83568051838733,
+              -20.5,
+              0
+            ],
+            [
+              11.83568051838733,
+              -20.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8E1",
+        "dimension_handle": "C8E2",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/46",
+      "name": "HB-46",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 46.0,
+        "B": 53.11622476544557,
+        "S": 46.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              26.558112382722786,
+              0,
+              0
+            ],
+            [
+              13.279056191361393,
+              23.0,
+              0
+            ],
+            [
+              -13.279056191361393,
+              23.0,
+              0
+            ],
+            [
+              -26.558112382722786,
+              0,
+              0
+            ],
+            [
+              -13.279056191361393,
+              -23.0,
+              0
+            ],
+            [
+              13.279056191361393,
+              -23.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8E5",
+        "dimension_handle": "C8E6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/50",
+      "name": "HB-50",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 50.0,
+        "B": 57.73502691896258,
+        "S": 50.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              28.86751345948129,
+              0,
+              0
+            ],
+            [
+              14.433756729740645,
+              25.0,
+              0
+            ],
+            [
+              -14.433756729740645,
+              25.0,
+              0
+            ],
+            [
+              -28.86751345948129,
+              0,
+              0
+            ],
+            [
+              -14.433756729740645,
+              -25.0,
+              0
+            ],
+            [
+              14.433756729740645,
+              -25.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8E9",
+        "dimension_handle": "C8EA",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/54",
+      "name": "HB-54",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 54.0,
+        "B": 62.353829072479584,
+        "S": 54.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              31.176914536239792,
+              0,
+              0
+            ],
+            [
+              15.588457268119896,
+              27.0,
+              0
+            ],
+            [
+              -15.588457268119896,
+              27.0,
+              0
+            ],
+            [
+              -31.176914536239792,
+              0,
+              0
+            ],
+            [
+              -15.588457268119896,
+              -27.0,
+              0
+            ],
+            [
+              15.588457268119896,
+              -27.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8ED",
+        "dimension_handle": "C8EE",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/55",
+      "name": "HB-55",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 55.0,
+        "B": 63.50852961085884,
+        "S": 55.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              31.75426480542942,
+              0,
+              0
+            ],
+            [
+              15.87713240271471,
+              27.5,
+              0
+            ],
+            [
+              -15.87713240271471,
+              27.5,
+              0
+            ],
+            [
+              -31.75426480542942,
+              0,
+              0
+            ],
+            [
+              -15.87713240271471,
+              -27.5,
+              0
+            ],
+            [
+              15.87713240271471,
+              -27.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8F1",
+        "dimension_handle": "C8F2",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/58",
+      "name": "HB-58",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 58.0,
+        "B": 66.9726312259966,
+        "S": 58.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              33.4863156129983,
+              0,
+              0
+            ],
+            [
+              16.74315780649915,
+              29.0,
+              0
+            ],
+            [
+              -16.74315780649915,
+              29.0,
+              0
+            ],
+            [
+              -33.4863156129983,
+              0,
+              0
+            ],
+            [
+              -16.74315780649915,
+              -29.0,
+              0
+            ],
+            [
+              16.74315780649915,
+              -29.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8F5",
+        "dimension_handle": "C8F6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/60",
+      "name": "HB-60",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 60.0,
+        "B": 69.2820323027551,
+        "S": 60.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              34.64101615137755,
+              0,
+              0
+            ],
+            [
+              17.320508075688775,
+              30.0,
+              0
+            ],
+            [
+              -17.320508075688775,
+              30.0,
+              0
+            ],
+            [
+              -34.64101615137755,
+              0,
+              0
+            ],
+            [
+              -17.320508075688775,
+              -30.0,
+              0
+            ],
+            [
+              17.320508075688775,
+              -30.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8F9",
+        "dimension_handle": "C8FA",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/63",
+      "name": "HB-63",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 63.0,
+        "B": 72.74613391789285,
+        "S": 63.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              36.373066958946424,
+              0,
+              0
+            ],
+            [
+              18.186533479473212,
+              31.5,
+              0
+            ],
+            [
+              -18.186533479473212,
+              31.5,
+              0
+            ],
+            [
+              -36.373066958946424,
+              0,
+              0
+            ],
+            [
+              -18.186533479473212,
+              -31.5,
+              0
+            ],
+            [
+              18.186533479473212,
+              -31.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8FD",
+        "dimension_handle": "C8FE",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/65",
+      "name": "HB-65",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 65.0,
+        "B": 75.05553499465135,
+        "S": 65.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              37.52776749732568,
+              0,
+              0
+            ],
+            [
+              18.76388374866284,
+              32.5,
+              0
+            ],
+            [
+              -18.76388374866284,
+              32.5,
+              0
+            ],
+            [
+              -37.52776749732568,
+              0,
+              0
+            ],
+            [
+              -18.76388374866284,
+              -32.5,
+              0
+            ],
+            [
+              18.76388374866284,
+              -32.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C70C",
+        "dimension_handle": "C70D",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/67",
+      "name": "HB-67",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 67.0,
+        "B": 77.36493607140986,
+        "S": 67.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              38.68246803570493,
+              0,
+              0
+            ],
+            [
+              19.341234017852464,
+              33.5,
+              0
+            ],
+            [
+              -19.341234017852464,
+              33.5,
+              0
+            ],
+            [
+              -38.68246803570493,
+              0,
+              0
+            ],
+            [
+              -19.341234017852464,
+              -33.5,
+              0
+            ],
+            [
+              19.341234017852464,
+              -33.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C710",
+        "dimension_handle": "C711",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/70",
+      "name": "HB-70",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 70.0,
+        "B": 80.82903768654761,
+        "S": 70.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              40.414518843273804,
+              0,
+              0
+            ],
+            [
+              20.207259421636902,
+              35.0,
+              0
+            ],
+            [
+              -20.207259421636902,
+              35.0,
+              0
+            ],
+            [
+              -40.414518843273804,
+              0,
+              0
+            ],
+            [
+              -20.207259421636902,
+              -35.0,
+              0
+            ],
+            [
+              20.207259421636902,
+              -35.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C714",
+        "dimension_handle": "C715",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/71",
+      "name": "HB-71",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 71.0,
+        "B": 81.98373822492687,
+        "S": 71.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              40.991869112463434,
+              0,
+              0
+            ],
+            [
+              20.495934556231717,
+              35.5,
+              0
+            ],
+            [
+              -20.495934556231717,
+              35.5,
+              0
+            ],
+            [
+              -40.991869112463434,
+              0,
+              0
+            ],
+            [
+              -20.495934556231717,
+              -35.5,
+              0
+            ],
+            [
+              20.495934556231717,
+              -35.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C718",
+        "dimension_handle": "C719",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/75",
+      "name": "HB-75",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 75.0,
+        "B": 86.60254037844388,
+        "S": 75.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              43.30127018922194,
+              0,
+              0
+            ],
+            [
+              21.65063509461097,
+              37.5,
+              0
+            ],
+            [
+              -21.65063509461097,
+              37.5,
+              0
+            ],
+            [
+              -43.30127018922194,
+              0,
+              0
+            ],
+            [
+              -21.65063509461097,
+              -37.5,
+              0
+            ],
+            [
+              21.65063509461097,
+              -37.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C71C",
+        "dimension_handle": "C71D",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/77",
+      "name": "HB-77",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 77.0,
+        "B": 88.91194145520237,
+        "S": 77.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              44.45597072760118,
+              0,
+              0
+            ],
+            [
+              22.22798536380059,
+              38.5,
+              0
+            ],
+            [
+              -22.22798536380059,
+              38.5,
+              0
+            ],
+            [
+              -44.45597072760118,
+              0,
+              0
+            ],
+            [
+              -22.22798536380059,
+              -38.5,
+              0
+            ],
+            [
+              22.22798536380059,
+              -38.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C720",
+        "dimension_handle": "C721",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/80",
+      "name": "HB-80",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 80.0,
+        "B": 92.37604307034013,
+        "S": 80.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              46.188021535170066,
+              0,
+              0
+            ],
+            [
+              23.094010767585033,
+              40.0,
+              0
+            ],
+            [
+              -23.094010767585033,
+              40.0,
+              0
+            ],
+            [
+              -46.188021535170066,
+              0,
+              0
+            ],
+            [
+              -23.094010767585033,
+              -40.0,
+              0
+            ],
+            [
+              23.094010767585033,
+              -40.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C724",
+        "dimension_handle": "C725",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/85",
+      "name": "HB-85",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 85.0,
+        "B": 98.14954576223639,
+        "S": 85.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              49.07477288111819,
+              0,
+              0
+            ],
+            [
+              24.537386440559096,
+              42.5,
+              0
+            ],
+            [
+              -24.537386440559096,
+              42.5,
+              0
+            ],
+            [
+              -49.07477288111819,
+              0,
+              0
+            ],
+            [
+              -24.537386440559096,
+              -42.5,
+              0
+            ],
+            [
+              24.537386440559096,
+              -42.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C728",
+        "dimension_handle": "C729",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/90",
+      "name": "HB-90",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 90.0,
+        "B": 103.92304845413264,
+        "S": 90.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              51.96152422706632,
+              0,
+              0
+            ],
+            [
+              25.98076211353316,
+              45.0,
+              0
+            ],
+            [
+              -25.98076211353316,
+              45.0,
+              0
+            ],
+            [
+              -51.96152422706632,
+              0,
+              0
+            ],
+            [
+              -25.98076211353316,
+              -45.0,
+              0
+            ],
+            [
+              25.98076211353316,
+              -45.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C72C",
+        "dimension_handle": "C72D",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/95",
+      "name": "HB-95",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 95.0,
+        "B": 109.6965511460289,
+        "S": 95.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              54.84827557301445,
+              0,
+              0
+            ],
+            [
+              27.424137786507224,
+              47.5,
+              0
+            ],
+            [
+              -27.424137786507224,
+              47.5,
+              0
+            ],
+            [
+              -54.84827557301445,
+              0,
+              0
+            ],
+            [
+              -27.424137786507224,
+              -47.5,
+              0
+            ],
+            [
+              27.424137786507224,
+              -47.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C730",
+        "dimension_handle": "C731",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/100",
+      "name": "HB-100",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 115.47005383792516,
+        "S": 100.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              57.73502691896258,
+              0,
+              0
+            ],
+            [
+              28.86751345948129,
+              50.0,
+              0
+            ],
+            [
+              -28.86751345948129,
+              50.0,
+              0
+            ],
+            [
+              -57.73502691896258,
+              0,
+              0
+            ],
+            [
+              -28.86751345948129,
+              -50.0,
+              0
+            ],
+            [
+              28.86751345948129,
+              -50.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C734",
+        "dimension_handle": "C735",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/105",
+      "name": "HB-105",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 105.0,
+        "B": 121.24355652982142,
+        "S": 105.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              60.62177826491071,
+              0,
+              0
+            ],
+            [
+              30.310889132455355,
+              52.5,
+              0
+            ],
+            [
+              -30.310889132455355,
+              52.5,
+              0
+            ],
+            [
+              -60.62177826491071,
+              0,
+              0
+            ],
+            [
+              -30.310889132455355,
+              -52.5,
+              0
+            ],
+            [
+              30.310889132455355,
+              -52.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C738",
+        "dimension_handle": "C739",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/110",
+      "name": "HB-110",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 110.0,
+        "B": 127.01705922171767,
+        "S": 110.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              63.50852961085884,
+              0,
+              0
+            ],
+            [
+              31.75426480542942,
+              55.0,
+              0
+            ],
+            [
+              -31.75426480542942,
+              55.0,
+              0
+            ],
+            [
+              -63.50852961085884,
+              0,
+              0
+            ],
+            [
+              -31.75426480542942,
+              -55.0,
+              0
+            ],
+            [
+              31.75426480542942,
+              -55.0,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C73C",
+        "dimension_handle": "C73D",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "HB/general/Hexagonal/115",
+      "name": "HB-115",
+      "family": "HB",
+      "section_type": "HB",
+      "standard": "general",
+      "subtype": "Hexagonal",
+      "dimensions_mm": {
+        "H": 115.0,
+        "B": 132.79056191361394,
+        "S": 115.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              66.39528095680697,
+              0,
+              0
+            ],
+            [
+              33.197640478403486,
+              57.5,
+              0
+            ],
+            [
+              -33.197640478403486,
+              57.5,
+              0
+            ],
+            [
+              -66.39528095680697,
+              0,
+              0
+            ],
+            [
+              -33.197640478403486,
+              -57.5,
+              0
+            ],
+            [
+              33.197640478403486,
+              -57.5,
+              0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C740",
+        "dimension_handle": "C741",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    }
+  ]
+}

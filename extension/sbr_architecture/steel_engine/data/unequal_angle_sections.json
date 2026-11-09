@@ -1,0 +1,1637 @@
+{
+  "schema_version": 2,
+  "units": "mm",
+  "source": {
+    "file": "unequal-angles.dxf",
+    "sha256": "a4e2ebaeb911fc6a6bce520825684fe620298cbe93d535a01fd7c0b4b36f2e65"
+  },
+  "sections": [
+    {
+      "id": "ANGLE/general/Unequal/100x75x10",
+      "name": "L-100x75x10",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 75.0,
+        "t": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              100.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              3.0,
+              0.4142135623730951
+            ],
+            [
+              68.0,
+              10.0,
+              0.0
+            ],
+            [
+              20.0,
+              10.0,
+              -0.4142135623730951
+            ],
+            [
+              10.0,
+              20.0,
+              0.0
+            ],
+            [
+              10.0,
+              93.0,
+              0.4142135623730951
+            ],
+            [
+              3.0,
+              100.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          37.5,
+          50.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2807",
+        "text_handle": "27E9"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/100x75x7",
+      "name": "L-100x75x7",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 75.0,
+        "t": 7.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              100.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              2.0,
+              0.4142135623730951
+            ],
+            [
+              70.0,
+              7.0,
+              0.0
+            ],
+            [
+              17.0,
+              7.0,
+              -0.4142135623730951
+            ],
+            [
+              7.0,
+              17.0,
+              0.0
+            ],
+            [
+              7.0,
+              95.0,
+              0.4142135623730951
+            ],
+            [
+              2.0,
+              100.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          37.5,
+          50.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "27FE",
+        "text_handle": "27E8"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/125x75x10",
+      "name": "L-125x75x10",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 75.0,
+        "t": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              125.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              3.0,
+              0.4142135623730951
+            ],
+            [
+              68.0,
+              10.0,
+              0.0
+            ],
+            [
+              20.0,
+              10.0,
+              -0.4142135623730951
+            ],
+            [
+              10.0,
+              20.0,
+              0.0
+            ],
+            [
+              10.0,
+              118.0,
+              0.4142135623730951
+            ],
+            [
+              3.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          37.5,
+          62.5
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2819",
+        "text_handle": "27EB"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/125x75x13",
+      "name": "L-125x75x13",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 75.0,
+        "t": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              125.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              6.0,
+              0.4142135623730951
+            ],
+            [
+              68.0,
+              13.0,
+              0.0
+            ],
+            [
+              23.0,
+              13.0,
+              -0.4142135623730951
+            ],
+            [
+              13.0,
+              23.0,
+              0.0
+            ],
+            [
+              13.0,
+              118.0,
+              0.4142135623730951
+            ],
+            [
+              6.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          37.5,
+          62.5
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2822",
+        "text_handle": "27EC"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/125x75x7",
+      "name": "L-125x75x7",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 75.0,
+        "t": 7.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              125.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              2.0,
+              0.4142135623730951
+            ],
+            [
+              70.0,
+              7.0,
+              0.0
+            ],
+            [
+              17.0,
+              7.0,
+              -0.4142135623730951
+            ],
+            [
+              7.0,
+              17.0,
+              0.0
+            ],
+            [
+              7.0,
+              120.0,
+              0.4142135623730951
+            ],
+            [
+              2.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          37.5,
+          62.5
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2810",
+        "text_handle": "27EA"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/125x90x10",
+      "name": "L-125x90x10",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 90.0,
+        "t": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              125.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              3.0,
+              0.4142135623730951
+            ],
+            [
+              83.0,
+              10.0,
+              0.0
+            ],
+            [
+              20.0,
+              10.0,
+              -0.4142135623730951
+            ],
+            [
+              10.0,
+              20.0,
+              0.0
+            ],
+            [
+              10.0,
+              118.0,
+              0.4142135623730951
+            ],
+            [
+              3.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          62.5
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "282B",
+        "text_handle": "27ED"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/125x90x13",
+      "name": "L-125x90x13",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 125.0,
+        "B": 90.0,
+        "t": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              125.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              6.0,
+              0.4142135623730951
+            ],
+            [
+              83.0,
+              13.0,
+              0.0
+            ],
+            [
+              23.0,
+              13.0,
+              -0.4142135623730951
+            ],
+            [
+              13.0,
+              23.0,
+              0.0
+            ],
+            [
+              13.0,
+              118.0,
+              0.4142135623730951
+            ],
+            [
+              6.0,
+              125.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          62.5
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2834",
+        "text_handle": "27EE"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/150x100x12",
+      "name": "L-150x100x12",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 100.0,
+        "t": 12.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              150.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              3.5,
+              0.4142135623730951
+            ],
+            [
+              91.5,
+              12.0,
+              0.0
+            ],
+            [
+              24.0,
+              12.0,
+              -0.4142135623730951
+            ],
+            [
+              12.0,
+              24.0,
+              0.0
+            ],
+            [
+              12.0,
+              141.5,
+              0.4142135623730951
+            ],
+            [
+              3.5,
+              150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          50.0,
+          75.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2858",
+        "text_handle": "27F2"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/150x100x15",
+      "name": "L-150x100x15",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 100.0,
+        "t": 15.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              150.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              6.5,
+              0.4142135623730951
+            ],
+            [
+              91.5,
+              15.0,
+              0.0
+            ],
+            [
+              27.0,
+              15.0,
+              -0.4142135623730951
+            ],
+            [
+              15.0,
+              27.0,
+              0.0
+            ],
+            [
+              15.0,
+              141.5,
+              0.4142135623730951
+            ],
+            [
+              6.5,
+              150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          50.0,
+          75.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2861",
+        "text_handle": "27F3"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/150x100x9",
+      "name": "L-150x100x9",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 100.0,
+        "t": 9.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              150.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              0.0,
+              0.0
+            ],
+            [
+              100.0,
+              3.0,
+              0.4142135623730951
+            ],
+            [
+              94.0,
+              9.0,
+              0.0
+            ],
+            [
+              21.0,
+              9.0,
+              -0.4142135623730951
+            ],
+            [
+              9.0,
+              21.0,
+              0.0
+            ],
+            [
+              9.0,
+              144.0,
+              0.4142135623730951
+            ],
+            [
+              3.0,
+              150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          50.0,
+          75.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "284F",
+        "text_handle": "27F1"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/150x90x12",
+      "name": "L-150x90x12",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 90.0,
+        "t": 12.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              150.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              3.5,
+              0.4142135623730951
+            ],
+            [
+              81.5,
+              12.0,
+              0.0
+            ],
+            [
+              24.0,
+              12.0,
+              -0.4142135623730951
+            ],
+            [
+              12.0,
+              24.0,
+              0.0
+            ],
+            [
+              12.0,
+              141.5,
+              0.4142135623730951
+            ],
+            [
+              3.5,
+              150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          75.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2846",
+        "text_handle": "27F0"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/150x90x9",
+      "name": "L-150x90x9",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 90.0,
+        "t": 9.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              150.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              3.0,
+              0.4142135623730951
+            ],
+            [
+              84.0,
+              9.0,
+              0.0
+            ],
+            [
+              21.0,
+              9.0,
+              -0.4142135623730951
+            ],
+            [
+              9.0,
+              21.0,
+              0.0
+            ],
+            [
+              9.0,
+              144.0,
+              0.4142135623730951
+            ],
+            [
+              3.0,
+              150.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          75.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "283D",
+        "text_handle": "27EF"
+      }
+    },
+    {
+      "id": "ANGLE/general/Unequal/90x75x9",
+      "name": "L-90x75x9",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "Unequal",
+      "dimensions_mm": {
+        "H": 90.0,
+        "B": 75.0,
+        "t": 9.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              90.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              0.0,
+              0.0
+            ],
+            [
+              75.0,
+              3.0,
+              0.4142135623730951
+            ],
+            [
+              69.0,
+              9.0,
+              0.0
+            ],
+            [
+              17.5,
+              9.0,
+              -0.4142135623730951
+            ],
+            [
+              9.0,
+              17.5,
+              0.0
+            ],
+            [
+              9.0,
+              84.0,
+              0.4142135623730951
+            ],
+            [
+              3.0,
+              90.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          37.5,
+          45.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "27F5",
+        "text_handle": "27E4"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/200x90x9x14",
+      "name": "L-200x90x9x14",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 90.0,
+        "t_vertical": 9.0,
+        "t_horizontal": 14.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              200.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ],
+            [
+              90.0,
+              7.0,
+              0.4142135623730951
+            ],
+            [
+              83.0,
+              14.0,
+              0.0
+            ],
+            [
+              23.0,
+              14.0,
+              -0.4142135623730951
+            ],
+            [
+              9.0,
+              28.0,
+              0.0
+            ],
+            [
+              9.0,
+              193.0,
+              0.4142135623730951
+            ],
+            [
+              2.0,
+              200.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          100.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AAA",
+        "text_handle": "2AAB"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/250x90x10x15",
+      "name": "L-250x90x10x15",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 250.0,
+        "B": 90.0,
+        "t_vertical": 10.0,
+        "t_horizontal": 15.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              250.0,
+              0.0
+            ],
+            [
+              1.5,
+              250.0,
+              -0.4142135623730951
+            ],
+            [
+              10.0,
+              241.5,
+              0.0
+            ],
+            [
+              10.0,
+              32.0,
+              0.4142135623730951
+            ],
+            [
+              27.0,
+              15.0,
+              0.0
+            ],
+            [
+              81.5,
+              15.0,
+              -0.4142135623730951
+            ],
+            [
+              90.0,
+              6.5,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          125.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AAD",
+        "text_handle": "2AB4"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/250x90x12x16",
+      "name": "L-250x90x12x16",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 250.0,
+        "B": 90.0,
+        "t_vertical": 12.0,
+        "t_horizontal": 16.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              250.0,
+              0.0
+            ],
+            [
+              3.5,
+              250.0,
+              -0.4142135623730951
+            ],
+            [
+              12.0,
+              241.5,
+              0.0
+            ],
+            [
+              12.0,
+              33.0,
+              0.4142135623730951
+            ],
+            [
+              29.0,
+              16.0,
+              0.0
+            ],
+            [
+              81.5,
+              16.0,
+              -0.4142135623730951
+            ],
+            [
+              90.0,
+              7.5,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          125.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AAE",
+        "text_handle": "2AB6"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/300x90x11x16",
+      "name": "L-300x90x11x16",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 300.0,
+        "B": 90.0,
+        "t_vertical": 11.0,
+        "t_horizontal": 16.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              300.0,
+              0.0
+            ],
+            [
+              1.5,
+              300.0,
+              -0.4142135623730951
+            ],
+            [
+              11.0,
+              290.5,
+              0.0
+            ],
+            [
+              11.0,
+              35.0,
+              0.4142135623730951
+            ],
+            [
+              30.0,
+              16.0,
+              0.0
+            ],
+            [
+              80.5,
+              16.0,
+              -0.4142135623730951
+            ],
+            [
+              90.0,
+              6.5,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          150.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AAF",
+        "text_handle": "2AB8"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/300x90x13x17",
+      "name": "L-300x90x13x17",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 300.0,
+        "B": 90.0,
+        "t_vertical": 13.0,
+        "t_horizontal": 17.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              300.0,
+              0.0
+            ],
+            [
+              3.5,
+              300.0,
+              -0.4142135623730951
+            ],
+            [
+              13.0,
+              290.5,
+              0.0
+            ],
+            [
+              13.0,
+              36.0,
+              0.4142135623730951
+            ],
+            [
+              32.0,
+              17.0,
+              0.0
+            ],
+            [
+              80.5,
+              17.0,
+              -0.4142135623730951
+            ],
+            [
+              90.0,
+              7.5,
+              0.0
+            ],
+            [
+              90.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          45.0,
+          150.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AB1",
+        "text_handle": "2ABA"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/350x100x12x17",
+      "name": "L-350x100x12x17",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 350.0,
+        "B": 100.0,
+        "t_vertical": 12.0,
+        "t_horizontal": 17.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              350.0,
+              0.0
+            ],
+            [
+              1.0,
+              350.0,
+              -0.4142135623730951
+            ],
+            [
+              12.0,
+              339.0,
+              0.0
+            ],
+            [
+              12.0,
+              39.0,
+              0.4142135623730951
+            ],
+            [
+              34.0,
+              17.0,
+              0.0
+            ],
+            [
+              89.0,
+              17.0,
+              -0.4142135623730951
+            ],
+            [
+              100.0,
+              6.0,
+              0.0
+            ],
+            [
+              100.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          50.0,
+          175.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AB2",
+        "text_handle": "2ABC"
+      }
+    },
+    {
+      "id": "ANGLE/general/UnequalThickness/400x100x13x18",
+      "name": "L-400x100x13x18",
+      "section_type": "ANGLE",
+      "family": "ANGLE",
+      "standard": "general",
+      "subtype": "UnequalThickness",
+      "dimensions_mm": {
+        "H": 400.0,
+        "B": 100.0,
+        "t_vertical": 13.0,
+        "t_horizontal": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              400.0,
+              0.0
+            ],
+            [
+              1.0,
+              400.0,
+              -0.4142135623730951
+            ],
+            [
+              13.0,
+              388.0,
+              0.0
+            ],
+            [
+              13.0,
+              42.0,
+              0.4142135623730951
+            ],
+            [
+              37.0,
+              18.0,
+              0.0
+            ],
+            [
+              88.0,
+              18.0,
+              -0.4142135623730951
+            ],
+            [
+              100.0,
+              6.0,
+              0.0
+            ],
+            [
+              100.0,
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "outer_heel",
+        "member_axis_mm": [
+          50.0,
+          200.0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "unequal-angles.dxf",
+        "profile_handle": "2AB3",
+        "text_handle": "2ABE"
+      }
+    }
+  ]
+}

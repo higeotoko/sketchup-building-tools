@@ -1,0 +1,2974 @@
+{
+  "schema_version": 2,
+  "units": "mm",
+  "source": {
+    "file": "steel-bar.dxf",
+    "sha256": "f868eb78b2812836c26f05e6e88c8564110d43d4cb02758778c8a0a0f522c4b7"
+  },
+  "sections": [
+    {
+      "id": "RB/general/Round/5.5",
+      "name": "RB-5.5",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 5.5,
+        "B": 5.5,
+        "D": 5.5
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              2.75,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              2.75,
+              0.41421356237309503
+            ],
+            [
+              -2.75,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -2.75,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C6C7",
+        "dimension_handle": "C8C9",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/6",
+      "name": "RB-6",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 6.0,
+        "B": 6.0,
+        "D": 6.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              3.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              3.0,
+              0.41421356237309503
+            ],
+            [
+              -3.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -3.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7FD",
+        "dimension_handle": "C8C6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/7",
+      "name": "RB-7",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 7.0,
+        "B": 7.0,
+        "D": 7.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              3.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              3.5,
+              0.41421356237309503
+            ],
+            [
+              -3.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -3.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7FE",
+        "dimension_handle": "C8C3",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/8",
+      "name": "RB-8",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 8.0,
+        "B": 8.0,
+        "D": 8.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              4.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              4.0,
+              0.41421356237309503
+            ],
+            [
+              -4.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -4.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C7FF",
+        "dimension_handle": "C8C0",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/9",
+      "name": "RB-9",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 9.0,
+        "B": 9.0,
+        "D": 9.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              4.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              4.5,
+              0.41421356237309503
+            ],
+            [
+              -4.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -4.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C800",
+        "dimension_handle": "C8BD",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/10",
+      "name": "RB-10",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 10.0,
+        "B": 10.0,
+        "D": 10.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              5.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              5.0,
+              0.41421356237309503
+            ],
+            [
+              -5.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -5.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C801",
+        "dimension_handle": "C8BA",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/11",
+      "name": "RB-11",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 11.0,
+        "B": 11.0,
+        "D": 11.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              5.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              5.5,
+              0.41421356237309503
+            ],
+            [
+              -5.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -5.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C802",
+        "dimension_handle": "C8B9",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/12",
+      "name": "RB-12",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 12.0,
+        "B": 12.0,
+        "D": 12.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              6.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              6.0,
+              0.41421356237309503
+            ],
+            [
+              -6.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -6.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C803",
+        "dimension_handle": "C8B6",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/13",
+      "name": "RB-13",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 13.0,
+        "B": 13.0,
+        "D": 13.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              6.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              6.5,
+              0.41421356237309503
+            ],
+            [
+              -6.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -6.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C804",
+        "dimension_handle": "C8B3",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/14",
+      "name": "RB-14",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 14.0,
+        "B": 14.0,
+        "D": 14.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              7.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              7.0,
+              0.41421356237309503
+            ],
+            [
+              -7.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -7.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C805",
+        "dimension_handle": "C8B0",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/16",
+      "name": "RB-16",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 16.0,
+        "B": 16.0,
+        "D": 16.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              8.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              8.0,
+              0.41421356237309503
+            ],
+            [
+              -8.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -8.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C806",
+        "dimension_handle": "C8AD",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/18",
+      "name": "RB-18",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 18.0,
+        "B": 18.0,
+        "D": 18.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              9.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              9.0,
+              0.41421356237309503
+            ],
+            [
+              -9.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -9.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C807",
+        "dimension_handle": "C8AA",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/19",
+      "name": "RB-19",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 19.0,
+        "B": 19.0,
+        "D": 19.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              9.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              9.5,
+              0.41421356237309503
+            ],
+            [
+              -9.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -9.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C808",
+        "dimension_handle": "C80F",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/20",
+      "name": "RB-20",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 20.0,
+        "B": 20.0,
+        "D": 20.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              10.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              10.0,
+              0.41421356237309503
+            ],
+            [
+              -10.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -10.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C809",
+        "dimension_handle": "C812",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/22",
+      "name": "RB-22",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 22.0,
+        "B": 22.0,
+        "D": 22.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              11.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              11.0,
+              0.41421356237309503
+            ],
+            [
+              -11.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -11.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C80A",
+        "dimension_handle": "C815",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/24",
+      "name": "RB-24",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 24.0,
+        "B": 24.0,
+        "D": 24.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              12.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              12.0,
+              0.41421356237309503
+            ],
+            [
+              -12.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -12.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C80B",
+        "dimension_handle": "C818",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/25",
+      "name": "RB-25",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 25.0,
+        "B": 25.0,
+        "D": 25.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              12.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              12.5,
+              0.41421356237309503
+            ],
+            [
+              -12.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -12.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C80C",
+        "dimension_handle": "C81B",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/27",
+      "name": "RB-27",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 27.0,
+        "B": 27.0,
+        "D": 27.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              13.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              13.5,
+              0.41421356237309503
+            ],
+            [
+              -13.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -13.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C80D",
+        "dimension_handle": "C81E",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/28",
+      "name": "RB-28",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 28.0,
+        "B": 28.0,
+        "D": 28.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              14.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              14.0,
+              0.41421356237309503
+            ],
+            [
+              -14.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -14.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C80E",
+        "dimension_handle": "C821",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/30",
+      "name": "RB-30",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 30.0,
+        "B": 30.0,
+        "D": 30.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              15.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              15.0,
+              0.41421356237309503
+            ],
+            [
+              -15.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -15.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C888",
+        "dimension_handle": "C889",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/32",
+      "name": "RB-32",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 32.0,
+        "B": 32.0,
+        "D": 32.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              16.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              16.0,
+              0.41421356237309503
+            ],
+            [
+              -16.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -16.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C824",
+        "dimension_handle": "C83A",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/33",
+      "name": "RB-33",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 33.0,
+        "B": 33.0,
+        "D": 33.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              16.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              16.5,
+              0.41421356237309503
+            ],
+            [
+              -16.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -16.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C825",
+        "dimension_handle": "C83D",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/36",
+      "name": "RB-36",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 36.0,
+        "B": 36.0,
+        "D": 36.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              18.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              18.0,
+              0.41421356237309503
+            ],
+            [
+              -18.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -18.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C826",
+        "dimension_handle": "C840",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/38",
+      "name": "RB-38",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 38.0,
+        "B": 38.0,
+        "D": 38.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              19.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              19.0,
+              0.41421356237309503
+            ],
+            [
+              -19.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -19.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C827",
+        "dimension_handle": "C843",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/39",
+      "name": "RB-39",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 39.0,
+        "B": 39.0,
+        "D": 39.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              19.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              19.5,
+              0.41421356237309503
+            ],
+            [
+              -19.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -19.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C828",
+        "dimension_handle": "C846",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/42",
+      "name": "RB-42",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 42.0,
+        "B": 42.0,
+        "D": 42.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              21.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              21.0,
+              0.41421356237309503
+            ],
+            [
+              -21.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -21.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C829",
+        "dimension_handle": "C82E",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/45",
+      "name": "RB-45",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 45.0,
+        "B": 45.0,
+        "D": 45.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              22.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              22.5,
+              0.41421356237309503
+            ],
+            [
+              -22.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -22.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C82A",
+        "dimension_handle": "C82B",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/46",
+      "name": "RB-46",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 46.0,
+        "B": 46.0,
+        "D": 46.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              23.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              23.0,
+              0.41421356237309503
+            ],
+            [
+              -23.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -23.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C831",
+        "dimension_handle": "C832",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/48",
+      "name": "RB-48",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 48.0,
+        "B": 48.0,
+        "D": 48.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              24.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              24.0,
+              0.41421356237309503
+            ],
+            [
+              -24.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -24.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C835",
+        "dimension_handle": "C849",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/50",
+      "name": "RB-50",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 50.0,
+        "B": 50.0,
+        "D": 50.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              25.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              25.0,
+              0.41421356237309503
+            ],
+            [
+              -25.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -25.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C836",
+        "dimension_handle": "C84C",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/52",
+      "name": "RB-52",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 52.0,
+        "B": 52.0,
+        "D": 52.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              26.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              26.0,
+              0.41421356237309503
+            ],
+            [
+              -26.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -26.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C837",
+        "dimension_handle": "C84F",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/55",
+      "name": "RB-55",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 55.0,
+        "B": 55.0,
+        "D": 55.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              27.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              27.5,
+              0.41421356237309503
+            ],
+            [
+              -27.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -27.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C838",
+        "dimension_handle": "C852",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/56",
+      "name": "RB-56",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 56.0,
+        "B": 56.0,
+        "D": 56.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              28.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              28.0,
+              0.41421356237309503
+            ],
+            [
+              -28.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -28.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C839",
+        "dimension_handle": "C855",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/60",
+      "name": "RB-60",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 60.0,
+        "B": 60.0,
+        "D": 60.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              30.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              30.0,
+              0.41421356237309503
+            ],
+            [
+              -30.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -30.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C884",
+        "dimension_handle": "C885",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/64",
+      "name": "RB-64",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 64.0,
+        "B": 64.0,
+        "D": 64.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              32.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              32.0,
+              0.41421356237309503
+            ],
+            [
+              -32.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -32.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C88C",
+        "dimension_handle": "C88D",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/65",
+      "name": "RB-65",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 65.0,
+        "B": 65.0,
+        "D": 65.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              32.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              32.5,
+              0.41421356237309503
+            ],
+            [
+              -32.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -32.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C858",
+        "dimension_handle": "C868",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/68",
+      "name": "RB-68",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 68.0,
+        "B": 68.0,
+        "D": 68.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              34.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              34.0,
+              0.41421356237309503
+            ],
+            [
+              -34.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -34.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C859",
+        "dimension_handle": "C85A",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/70",
+      "name": "RB-70",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 70.0,
+        "B": 70.0,
+        "D": 70.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              35.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              35.0,
+              0.41421356237309503
+            ],
+            [
+              -35.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -35.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C85D",
+        "dimension_handle": "C86B",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/75",
+      "name": "RB-75",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 75.0,
+        "B": 75.0,
+        "D": 75.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              37.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              37.5,
+              0.41421356237309503
+            ],
+            [
+              -37.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -37.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C85E",
+        "dimension_handle": "C860",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/80",
+      "name": "RB-80",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 80.0,
+        "B": 80.0,
+        "D": 80.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              40.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              40.0,
+              0.41421356237309503
+            ],
+            [
+              -40.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -40.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C85F",
+        "dimension_handle": "C863",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/85",
+      "name": "RB-85",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 85.0,
+        "B": 85.0,
+        "D": 85.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              42.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              42.5,
+              0.41421356237309503
+            ],
+            [
+              -42.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -42.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C866",
+        "dimension_handle": "C86E",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/90",
+      "name": "RB-90",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 90.0,
+        "B": 90.0,
+        "D": 90.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              45.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              45.0,
+              0.41421356237309503
+            ],
+            [
+              -45.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -45.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C867",
+        "dimension_handle": "C871",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/95",
+      "name": "RB-95",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 95.0,
+        "B": 95.0,
+        "D": 95.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              47.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              47.5,
+              0.41421356237309503
+            ],
+            [
+              -47.5,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -47.5,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C874",
+        "dimension_handle": "C875",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/100",
+      "name": "RB-100",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 100.0,
+        "B": 100.0,
+        "D": 100.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              50.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              50.0,
+              0.41421356237309503
+            ],
+            [
+              -50.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -50.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C890",
+        "dimension_handle": "C891",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/110",
+      "name": "RB-110",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 110.0,
+        "B": 110.0,
+        "D": 110.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              55.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              55.0,
+              0.41421356237309503
+            ],
+            [
+              -55.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -55.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C894",
+        "dimension_handle": "C895",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/120",
+      "name": "RB-120",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 120.0,
+        "B": 120.0,
+        "D": 120.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              60.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              60.0,
+              0.41421356237309503
+            ],
+            [
+              -60.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -60.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C878",
+        "dimension_handle": "C87B",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/130",
+      "name": "RB-130",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 130.0,
+        "B": 130.0,
+        "D": 130.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              65.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              65.0,
+              0.41421356237309503
+            ],
+            [
+              -65.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -65.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C879",
+        "dimension_handle": "C87E",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/140",
+      "name": "RB-140",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 140.0,
+        "B": 140.0,
+        "D": 140.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              70.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              70.0,
+              0.41421356237309503
+            ],
+            [
+              -70.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -70.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C87A",
+        "dimension_handle": "C881",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/150",
+      "name": "RB-150",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 150.0,
+        "B": 150.0,
+        "D": 150.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              75.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              75.0,
+              0.41421356237309503
+            ],
+            [
+              -75.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -75.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C89C",
+        "dimension_handle": "C89E",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/160",
+      "name": "RB-160",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 160.0,
+        "B": 160.0,
+        "D": 160.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              80.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              80.0,
+              0.41421356237309503
+            ],
+            [
+              -80.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -80.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C89D",
+        "dimension_handle": "C8A1",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/180",
+      "name": "RB-180",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 180.0,
+        "B": 180.0,
+        "D": 180.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              90.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              90.0,
+              0.41421356237309503
+            ],
+            [
+              -90.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -90.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C8A4",
+        "dimension_handle": "C8A5",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    },
+    {
+      "id": "RB/general/Round/200",
+      "name": "RB-200",
+      "family": "RB",
+      "section_type": "RB",
+      "standard": "general",
+      "subtype": "Round",
+      "dimensions_mm": {
+        "H": 200.0,
+        "B": 200.0,
+        "D": 200.0
+      },
+      "profile": {
+        "outer_loop": {
+          "kind": "polyline_bulge",
+          "closed": true,
+          "coordinates": "YZ",
+          "vertices_y_z_bulge": [
+            [
+              100.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              100.0,
+              0.41421356237309503
+            ],
+            [
+              -100.0,
+              0,
+              0.41421356237309503
+            ],
+            [
+              0,
+              -100.0,
+              0.41421356237309503
+            ]
+          ]
+        },
+        "inner_loops": []
+      },
+      "reference": {
+        "profile_origin": "bbox_center",
+        "member_axis_mm": [
+          0,
+          0
+        ],
+        "centroid_mm": null
+      },
+      "source": {
+        "file": "steel-bar.dxf",
+        "profile_handle": "C898",
+        "dimension_handle": "C899",
+        "geometry": "nominal_regular_bar_verified_against_dxf"
+      }
+    }
+  ]
+}
