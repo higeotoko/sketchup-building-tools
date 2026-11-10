@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <g stroke="#137ac4" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M4 19h24M4 12h24M4 5h24"/><path d="m12 8 4 4 4-4" fill="#137ac4"/>
+  <g fill="none" stroke="#437f9b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 8h15M4 16h24M4 24h15"/>
+    <path d="m20 11 4 5 4-5Z" fill="#caebe7"/>
   </g>
 </svg>

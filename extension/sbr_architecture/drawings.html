@@ -2,7 +2,7 @@
 <html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SketchBRep 図面・シーン</title>
+<title>SketchUPbuildingTool 図面・シーン</title>
 <link rel="stylesheet" href="palette.css">
 <style>
   #drawing-form { display:grid; gap:8px; }
@@ -10,24 +10,58 @@
   #pages { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
   #pages button { display:block; width:100%; text-align:left; }
   #pages small { display:block; color:#435d6a; font-weight:400; }
+  #publication-fields { border:0; padding:0; margin:8px 0; min-width:0; display:grid; gap:8px; }
+  #publication-views { border:1px solid #c6d4da; border-radius:5px; padding:6px 8px; max-height:170px; overflow:auto; }
+  #publication-views label, #publication-fields .check { display:flex; align-items:center; gap:7px; }
+  #publication-fields input[type="checkbox"] { width:auto; min-height:0; flex:none; }
+  #publication-views label { padding:3px 0; }
   #status { min-height:1em; }
 </style>
-<header><img src="drawings.svg" alt=""><div><span>SKETCHBREP FOR SKETCHUP</span><h1>図面・シーン</h1></div></header>
+<header><img src="drawings.svg" alt=""><div><span>SketchUPbuildingTool</span><h1>図面・シーン</h1></div></header>
 <main>
   <section>
     <h2>図面を作成・更新</h2>
     <form id="drawing-form">
-      <label>種類 <select id="kind"><option value="plan">階別平面</option><option value="elevation">立面</option><option value="section">断面</option></select></label>
+      <label>種類 <select id="kind"><option value="plan">一般平面</option><option value="framing">梁伏図</option><option value="elevation">立面</option><option value="section">断面</option></select></label>
       <div id="plan" class="fields">
         <label>作図レベル <select id="level"></select></label>
         <label>床面からの切断高さ (mm) <input id="cut" type="number" value="1100" min="1" step="any" required></label>
       </div>
+      <div id="framing" class="fields" hidden>
+        <label>基準からの梁天端オフセット (mm) <input id="top-offset" type="number" step="any" value="0"></label>
+        <label>梁天端を拾う範囲 ± (mm) <input id="top-tolerance" type="number" min="1" step="any" value="150"></label>
+        <label class="wide line"><span>梁の断面寸法・鋼材規格を表示</span><input id="beam-labels" type="checkbox" checked style="width:auto;min-height:0"></label>
+      </div>
+      <label id="hatch-row" class="line"><span>平面に壁・床の層別ハッチを表示</span><input id="hatch" type="checkbox" style="width:auto;min-height:0"></label>
+      <label id="opening-dimensions-row" class="line"><span>記号付き建具の位置・幅寸法を表示</span><input id="opening-dimensions" type="checkbox" style="width:auto;min-height:0"></label>
       <div id="side-row" hidden><label>見る方向 <select id="side"></select></label></div>
+      <div id="elevation" class="fields" hidden>
+        <label class="wide">北の方向（4立面で共通） <select id="north"></select></label>
+        <label class="wide line"><span>記号付き建具の上端・窓下端を表示</span><input id="opening-heights" type="checkbox" style="width:auto;min-height:0"></label>
+        <label>軒高 Z (mm) <input id="eave" type="number" step="any" placeholder="屋根が1件なら両方空欄で自動"></label>
+        <label>棟高 Z (mm) <input id="ridge" type="number" step="any" placeholder="屋根が1件なら両方空欄で自動"></label>
+        <button id="eave-edge" type="button">選択辺から軒高</button>
+        <button id="ridge-edge" type="button">選択辺から棟高</button>
+      </div>
+      <div id="section-target-row" hidden><label>編集する断面 <select id="section-target"></select></label></div>
       <div id="section" class="fields" hidden>
+        <button id="plan-section" class="wide" type="button">平面で断面位置を指定</button>
+        <button id="native-section" class="wide" type="button">現在のSketchUp断面を使う</button>
         <label>断面名 <input id="name" value="A-A" maxlength="40"></label>
         <label id="offset-label"><span>切断位置 (mm)</span><input id="offset" type="number" value="0" step="any"></label>
+        <label class="wide">見通しの奥行き (mm)
+          <input id="depth" type="number" min="1" step="any" placeholder="空欄は制限なし">
+        </label>
+        <label class="wide"><input type="checkbox" id="storey-dimensions" checked> 階高寸法を表示</label>
+        <label>梁下寸法 <select id="beam-mode">
+          <option value="keep">現在の設定を使う</option>
+          <option value="use">選択中の梁を使う</option>
+          <option value="clear">梁下寸法を外す</option>
+        </select></label>
+        <label>基準レベル <select id="beam-level" disabled></select></label>
+        <p id="beam-hint" class="wide tip"></p>
       </div>
-      <p id="hint" class="tip">同じ階を選ぶと、既存のシーンを更新します。</p>
+      <p id="hint" class="tip">切断面より上と床面以下の梁は省きます。同じ階を選ぶと既存のシーンを更新します。</p>
       <button type="submit" id="make" disabled>作成・更新して開く</button>
     </form>
     <p id="status" role="status" aria-live="polite"></p>
@@ -35,8 +69,71 @@
   <section>
     <div class="line"><h2>登録済みシーン</h2><button type="button" id="update" disabled>モデルから全更新</button></div>
     <ul id="pages"></ul>
-    <button type="button" id="layout" disabled>LayOutへ配置（A3横）</button>
-    <p class="tip">シーンはSKPに保存されます。モデル変更後は「モデルから全更新」で注記と図面を作り直します。</p>
+    <details>
+      <summary>図枠の案件情報</summary>
+      <div class="fields" style="margin:8px 0">
+        <label class="wide">案件名 <input id="project-name" maxlength="36" placeholder="空欄はモデル名"></label>
+        <label>案件番号 <input id="project-number" maxlength="14"></label>
+        <label>作成者 <input id="project-author" maxlength="16"></label>
+        <label>発行日 <input id="project-date" type="date"></label>
+      </div>
+    </details>
+    <label style="margin-top:8px">発行対象
+      <select id="publication"><option value="">全図面</option></select>
+    </label>
+    <p id="publication-info" class="tip"></p>
+    <label id="section-override" hidden style="display:flex;align-items:center;gap:6px;margin:6px 0">
+      <input id="allow-missing-sections" type="checkbox" style="width:auto;min-height:0">
+      発行対象外の断面への参照を許可する
+    </label>
+    <details id="publication-editor">
+      <summary>発行セットを登録・編集</summary>
+      <form id="publication-form">
+        <fieldset id="publication-fields" disabled>
+          <label>セット名 <input id="publication-name" maxlength="32" required placeholder="例　確認用図面"></label>
+          <div class="line"><span id="publication-count">発行する図面</span><button id="publication-toggle-all" type="button">すべて外す</button></div>
+          <div id="publication-views" aria-label="発行する図面"></div>
+          <label class="check"><input id="publication-openings" type="checkbox">建具表を付ける</label>
+          <label class="check"><input id="publication-rooms" type="checkbox">室一覧を付ける</label>
+          <label>LayOutの配置 <select id="publication-arrangement">
+            <option value="single">図面ごとに1枚</option>
+            <option value="grouped">同じ種類の図面をまとめる</option>
+          </select></label>
+          <div class="line">
+            <button id="publication-new" type="button">新規セット</button>
+            <button id="publication-remove" type="button" disabled>セットを削除</button>
+            <button id="publication-save" type="submit">セットを保存</button>
+          </div>
+          <p id="publication-draft" class="tip"></p>
+        </fieldset>
+      </form>
+    </details>
+    <div id="direct-publication">
+    <div class="fields" style="margin:8px 0">
+      <label class="line"><span>建具表を付ける</span><input id="table-openings" type="checkbox" style="width:auto;min-height:0"></label>
+      <label class="line"><span>室一覧を付ける</span><input id="table-rooms" type="checkbox" style="width:auto;min-height:0"></label>
+    </div>
+    <label>LayOutの配置
+      <select id="layout-arrangement">
+        <option value="single">図面ごとに1枚</option>
+        <option value="grouped">同じ種類の図面をまとめる</option>
+      </select>
+    </label>
+    <p class="tip">まとめる場合も登録済みの縮尺を使用します。同じ種類・縮尺で収まる図面を組み合わせます。</p>
+    </div>
+    <button id="refresh-layout-tables" type="button" disabled>既存LayOutの表を更新</button>
+    <p class="tip">表の更新は、同じフォルダに別名のLayOutを保存します。</p>
+    <div class="line">
+      <label>図面縮尺（作成・更新・配置） <select id="layout-scale">
+        <option value="">設定済みを使用（新規は自動）</option><option value="auto">自動で選び直す</option>
+        <option value="20">1:20</option><option value="25">1:25</option>
+        <option value="50">1:50</option><option value="100">1:100</option><option value="200">1:200</option>
+        <option value="500">1:500</option><option value="1000">1:1000</option>
+      </select></label>
+      <button type="button" id="layout" disabled>LayOutへ配置（A3横）</button>
+    </div>
+    <p id="publication-status" role="status" aria-live="polite"></p>
+    <p class="tip">縮尺を変えるときは選択後に「モデルから全更新」を実行してSKPを保存します。ハッチの間隔も縮尺に合わせて更新します。</p>
   </section>
   <section>
     <h2>IFC4</h2>
@@ -48,74 +145,306 @@
 "use strict";
 const byId = id => document.getElementById(id);
 let state, busy = false;
+let publishing = false;
+let draftId = "", publicationDirty = false;
+const tableKeys = ["openings", "rooms"];
+const activePublication = () => state?.publications?.find(item => item.id === byId("publication").value);
+const publicationChecks = () => [...byId("publication-views").querySelectorAll("input")];
+const missingPublicationViews = item => item ? item.keys.filter(key => !state.pages.some(([current]) => current === key)).length : 0;
+
+function showPublication(item) {
+  const missing = missingPublicationViews(item);
+  byId("direct-publication").hidden = !!item;
+  byId("section-override").hidden = !item;
+  byId("allow-missing-sections").checked = false;
+  byId("publication-info").textContent = item
+    ? [item.keys.length + "図", item.arrangement === "grouped" ? "複数配置" : "図面ごとに1枚",
+      ...item.tables.map(key => key === "openings" ? "建具表" : "室一覧"),
+      missing ? "一覧から削除された図面 " + missing + "件。選び直して保存してください。" : ""].filter(Boolean).join("　")
+    : "登録済みの図面をすべて出力します。";
+}
+
+function editPublication(item) {
+  draftId = item?.id ?? "";
+  publicationDirty = false;
+  byId("publication-name").value = item?.name ?? "";
+  byId("publication-remove").disabled = !draftId;
+  byId("publication-arrangement").value = item?.arrangement ?? byId("layout-arrangement").value;
+  for (const key of tableKeys) {
+    byId("publication-" + key).checked = item ? item.tables.includes(key) : byId("table-" + key).checked;
+  }
+  byId("publication-views").replaceChildren(...state.pages.map(([key, name, , number]) => {
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = key;
+    checkbox.checked = item ? item.keys.includes(key) : true;
+    label.append(checkbox, [number, name].filter(Boolean).join("　"));
+    return label;
+  }));
+  byId("publication-draft").textContent = "セットを登録したらSKPを保存します。";
+}
+
 function setBusy(value) {
   busy = value;
+  const checks = publicationChecks();
+  byId("publication-count").textContent = "発行する図面 " + checks.filter(input => input.checked).length + "件";
+  byId("publication-toggle-all").textContent = checks.every(input => input.checked) ? "すべて外す" : "すべて選択";
   byId("make").disabled = busy || !state;
+  for (const id of ["kind", "section-target", "plan-section", "native-section"]) byId(id).disabled = busy;
   byId("update").disabled = busy || !state?.pages.length;
-  byId("layout").disabled = busy || !state?.pages.length;
+  byId("layout").disabled = busy || !state?.pages.length || missingPublicationViews(activePublication()) > 0 ||
+    (byId("publication-editor").open && publicationDirty);
+  byId("publication").disabled = busy || !state;
+  byId("publication-fields").disabled = busy || !state?.pages.length;
+  byId("refresh-layout-tables").disabled = busy || !state?.table_update;
   byId("ifc").disabled = busy || !state;
 }
 function refreshFields() {
   const kind = byId("kind").value;
-  byId("plan").hidden = kind !== "plan";
-  byId("side-row").hidden = kind === "plan";
+  const horizontal = kind === "plan" || kind === "framing";
+  byId("plan").hidden = !horizontal;
+  byId("cut").closest("label").hidden = kind !== "plan";
+  byId("framing").hidden = kind !== "framing";
+  for (const id of ["top-offset", "top-tolerance"]) {
+    byId(id).disabled = kind !== "framing";
+    byId(id).required = kind === "framing";
+  }
+  byId("hatch-row").hidden = kind !== "plan";
+  byId("opening-dimensions-row").hidden = kind !== "plan";
+  byId("side-row").hidden = horizontal;
+  byId("elevation").hidden = kind !== "elevation";
+  for (const id of ["eave", "ridge"]) byId(id).disabled = kind !== "elevation";
+  byId("section-target-row").hidden = kind !== "section";
   byId("section").hidden = kind !== "section";
+  const beamMode = byId("beam-mode").value;
+  byId("beam-level").disabled = kind !== "section" || beamMode !== "use";
+  const currentSection = state?.sections.find(item => item.key === byId("section-target").value);
+  byId("beam-hint").textContent = beamMode === "use" ? "SketchUp上で梁を1本選び、寸法の基準にするレベルを指定します。" :
+    beamMode === "clear" ? "この断面から梁下寸法を外します。" :
+      currentSection?.beam_level ? currentSection.beam_level + " 基準の梁下寸法を登録済み" : "";
   byId("cut").disabled = kind !== "plan";
   byId("offset").required = kind === "section";
+  byId("depth").disabled = kind !== "section";
   byId("name").required = kind === "section";
   byId("offset-label").querySelector("span").textContent = byId("side").value.toUpperCase()[0] + "座標 (mm)";
-  byId("hint").textContent = {plan:"同じ階を選ぶと、既存のシーンを更新します。",
-    elevation:"世界軸のどちら側から見るかを選びます。",
-    section:"切る位置を世界座標で指定します。同じ断面名は更新します。"}[kind];
+  byId("hint").textContent = {plan:"切断面より上と床面以下の梁は省きます。同じ階を選ぶと既存のシーンを更新します。",
+    framing:"2階床下の梁は2FLを基準に選びます。梁天端が床面より下なら、その差を負の値で入力します。",
+    elevation:"北を選ぶと4立面の方位名をそろえます。建具高さと軒・棟のZは立面ごとに設定します。",
+    section:"平面で断面線と見る方向をクリックできます。登録済みの断面を選ぶと、図番を保って位置を変えられます。"}[kind];
+}
+function loadPlanSettings() {
+  const level = byId("level").value;
+  const settings = state?.plans.find(item => item.kind === "plan" && item.level === level);
+  const framing = state?.plans.find(item => item.kind === "framing" && item.level === level);
+  byId("cut").value = settings?.cut ?? 1100;
+  byId("hatch").checked = settings?.hatch === true;
+  byId("opening-dimensions").checked = settings?.opening_dimensions === true;
+  byId("top-offset").value = framing?.top_offset ?? 0;
+  byId("top-tolerance").value = framing?.top_tolerance ?? 150;
+  byId("beam-labels").checked = framing?.beam_labels !== false;
+}
+function loadElevationSettings() {
+  const settings = state?.elevations.find(item => item.side === byId("side").value);
+  byId("opening-heights").checked = settings?.opening_heights === true;
+  byId("eave").value = settings?.eave ?? "";
+  byId("ridge").value = settings?.ridge ?? "";
 }
 function receiveDrawings(data) {
   const same = state?.token === data.token;
+  const selectedPublication = data.publication_selection ?? (same ? byId("publication").value : "");
   const level = same ? byId("level").value : data.active;
   const side = same ? byId("side").value : "y-";
+  const section = same ? byId("section-target").value : "";
   state = data;
+  if (!same) {
+    for (const key of ["name", "number", "author", "date"]) byId("project-" + key).value = "";
+    byId("project-name").placeholder = data.project_title || "空欄はモデル名";
+    for (const key of tableKeys) byId("table-" + key).checked = false;
+    byId("layout-arrangement").value = "single";
+  }
   byId("level").replaceChildren(...data.levels.map(([name, z]) => new Option(name + " · " + z + " mm", name)));
   if (data.levels.some(([name]) => name === level)) byId("level").value = level;
+  loadPlanSettings();
+  const beamLevel = same ? byId("beam-level").value : level;
+  byId("beam-level").replaceChildren(...data.levels.map(([name, z]) => new Option(name + " · " + z + " mm", name)));
+  if (data.levels.some(([name]) => name === beamLevel)) byId("beam-level").value = beamLevel;
+  byId("beam-mode").value = "keep";
   byId("side").replaceChildren(...Object.entries(data.sides).map(([id, label]) => new Option(label + "から見る", id)));
   if (side in data.sides) byId("side").value = side;
-  byId("pages").replaceChildren(...data.pages.map(([key, name, description]) => {
+  byId("north").replaceChildren(new Option("未設定（軸名で表示）", ""), ...Object.entries(data.sides).map(([id, label]) => new Option(label + "が北", id)));
+  byId("north").value = data.north;
+  loadElevationSettings();
+  const numbers = new Map(data.pages.map(([key, , , number]) => [key, number]));
+  byId("section-target").replaceChildren(new Option("新規作成／同じ名前を更新", ""), ...data.sections.map(item => {
+    const number = numbers.get(item.key);
+    return new Option(number ? item.name + " / " + number : item.name, item.key);
+  }));
+  if (data.sections.some(item => item.key === section)) byId("section-target").value = section;
+  byId("storey-dimensions").checked = data.sections.find(item => item.key === section)?.storey_dimensions !== false;
+  byId("pages").replaceChildren(...data.pages.map(([key, name, description, number]) => {
     const item = document.createElement("li");
     const button = document.createElement("button");
     const detail = document.createElement("small");
     detail.textContent = description;
-    button.append(name, detail);
+    button.append(number ? number + "　" + name : name, detail);
     button.addEventListener("click", () => { if (!busy) sketchup.openDrawing(state.token, key); });
     item.append(button);
     return item;
   }));
+  const publications = data.publications ?? [];
+  byId("publication").replaceChildren(new Option("全図面", ""), ...publications.map(item => new Option(item.name, item.id)));
+  byId("publication").value = publications.some(item => item.id === selectedPublication) ? selectedPublication : "";
+  showPublication(activePublication());
+  editPublication(activePublication());
+  if (data.publication_selection !== null && data.publication_selection !== undefined) byId("publication-editor").open = false;
   setBusy(false);
   refreshFields();
 }
 function drawingStatus(message, error) {
-  byId("status").textContent = message;
-  byId("status").classList.toggle("error", error);
+  const target = byId(publishing ? "publication-status" : "status");
+  target.textContent = message;
+  target.classList.toggle("error", error);
+  publishing = false;
   setBusy(false);
 }
-byId("kind").addEventListener("change", refreshFields);
-byId("side").addEventListener("change", refreshFields);
+function receiveSectionPlane(data) {
+  byId("kind").value = "section";
+  byId("side").value = data.side;
+  byId("offset").value = data.offset;
+  refreshFields();
+}
+function receiveRoofHeight({field, value}) {
+  if (field === "eave" || field === "ridge") byId(field).value = value;
+}
+byId("kind").addEventListener("change", () => { if (byId("kind").value === "elevation") loadElevationSettings(); refreshFields(); });
+byId("level").addEventListener("change", loadPlanSettings);
+byId("side").addEventListener("change", () => { if (byId("kind").value === "elevation") loadElevationSettings(); refreshFields(); });
+byId("beam-mode").addEventListener("change", refreshFields);
+byId("plan-section").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "モデル上で断面線の始点、終点、矢印を向ける側を順にクリックします。Escで戻ります。";
+  sketchup.pickPlanSection(state.token);
+});
+byId("native-section").addEventListener("click", () => {
+  if (!busy && state) sketchup.useNativeSection(state.token);
+});
+for (const field of ["eave", "ridge"]) {
+  byId(field + "-edge").addEventListener("click", () => {
+    if (!busy && state) sketchup.useRoofEdge(state.token, field);
+  });
+}
+byId("section-target").addEventListener("change", event => {
+  const section = state?.sections.find(item => item.key === event.target.value);
+  byId("beam-mode").value = "keep";
+  if (section) {
+    for (const id of ["name", "side", "offset"]) byId(id).value = section[id];
+    if (state.levels.some(([name]) => name === section.beam_level)) byId("beam-level").value = section.beam_level;
+  }
+  byId("depth").value = section?.depth ?? "";
+  byId("storey-dimensions").checked = section?.storey_dimensions !== false;
+  refreshFields();
+});
 byId("drawing-form").addEventListener("submit", event => {
   event.preventDefault();
   if (busy || !state) return;
   setBusy(true);
   byId("status").textContent = "作成・更新中…";
-  sketchup.makeDrawing(state.token, JSON.stringify(Object.fromEntries(
-    ["kind", "level", "cut", "side", "name", "offset"].map(id => [id, byId(id).value]))));
+  const fields = Object.fromEntries(["kind", "level", "cut", "side", "name", "offset"].map(id => [id, byId(id).value]));
+  if (fields.kind === "section" && byId("section-target").value) fields.key = byId("section-target").value;
+  if (fields.kind === "framing") {
+    fields.top_offset = byId("top-offset").value;
+    fields.top_tolerance = byId("top-tolerance").value;
+    fields.beam_labels = byId("beam-labels").checked;
+  }
+  if (fields.kind === "section") {
+    fields.depth = byId("depth").value;
+    fields.storey_dimensions = byId("storey-dimensions").checked;
+    fields.beam_mode = byId("beam-mode").value;
+    fields.beam_level = byId("beam-level").value;
+  }
+  if (fields.kind === "elevation") {
+    fields.north_side = byId("north").value;
+    fields.opening_heights = byId("opening-heights").checked;
+    fields.eave = byId("eave").value;
+    fields.ridge = byId("ridge").value;
+  }
+  fields.hatch = byId("hatch").checked;
+  fields.opening_dimensions = byId("opening-dimensions").checked;
+  fields.scale = byId("layout-scale").value;
+  sketchup.makeDrawing(state.token, JSON.stringify(fields));
 });
 byId("update").addEventListener("click", () => {
   if (busy || !state) return;
   setBusy(true);
   byId("status").textContent = "全シーンを更新中…";
-  sketchup.updateAll(state.token);
+  sketchup.updateAll(state.token, byId("layout-scale").value);
+});
+byId("publication").addEventListener("change", () => {
+  showPublication(activePublication());
+  editPublication(activePublication());
+  setBusy(busy);
+});
+function changedPublication() {
+  publicationDirty = true;
+  byId("publication-draft").textContent = "変更を保存すると発行に反映されます。";
+  setBusy(busy);
+}
+byId("publication-form").addEventListener("input", changedPublication);
+byId("publication-editor").addEventListener("toggle", () => setBusy(busy));
+byId("publication-toggle-all").addEventListener("click", () => {
+  const checks = publicationChecks();
+  const selected = !checks.every(input => input.checked);
+  for (const input of checks) input.checked = selected;
+  changedPublication();
+});
+byId("publication-new").addEventListener("click", () => {
+  editPublication(null);
+  changedPublication();
+  byId("publication-name").focus();
+});
+byId("publication-form").addEventListener("submit", event => {
+  event.preventDefault();
+  if (busy || !state) return;
+  const keys = publicationChecks().filter(input => input.checked).map(input => input.value);
+  if (!keys.length) {
+    byId("publication-draft").textContent = "発行する図面を1枚以上選んでください。";
+    return;
+  }
+  const data = { id: draftId, name: byId("publication-name").value, keys,
+    tables: tableKeys.filter(key => byId("publication-" + key).checked),
+    arrangement: byId("publication-arrangement").value };
+  setBusy(true);
+  sketchup.savePublication(state.token, JSON.stringify(data));
+});
+byId("publication-remove").addEventListener("click", () => {
+  if (busy || !state || !draftId) return;
+  setBusy(true);
+  sketchup.removePublication(state.token, draftId);
 });
 byId("layout").addEventListener("click", () => {
   if (busy || !state) return;
   setBusy(true);
-  byId("status").textContent = "LayOutの保存先を選択…";
-  sketchup.exportLayout(state.token);
+  publishing = true;
+  byId("publication-status").textContent = "発行する図面を確認中…";
+  const project = Object.fromEntries(["name", "number", "author", "date"].map(key => [key, byId("project-" + key).value]));
+  const publication = activePublication();
+  if (publication) {
+    project.publication = publication.id;
+    project.allow_missing_sections = byId("allow-missing-sections").checked;
+  }
+  else {
+    project.tables = tableKeys.filter(key => byId("table-" + key).checked);
+    project.arrangement = byId("layout-arrangement").value;
+  }
+  sketchup.exportLayout(state.token, byId("layout-scale").value, JSON.stringify(project));
+});
+byId("refresh-layout-tables").addEventListener("click", () => {
+  if (busy || !state?.table_update) return;
+  setBusy(true);
+  byId("status").textContent = "表を更新するLayOutを選択…";
+  sketchup.refreshLayoutTables(state.token);
 });
 byId("ifc").addEventListener("click", () => {
   if (busy || !state) return;

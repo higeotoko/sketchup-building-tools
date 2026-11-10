@@ -58,13 +58,14 @@ module Higeotoko
 
       def slab(group, params)
         outline = Layout.slab_outline(params.fetch('points'))
+        holes = SlabOpenings.rings(params, outline)
         layers = bands(params)
         if layers.empty?
           thickness = params.fetch('thickness')
-          API.write_prism(group, outline, -thickness, thickness)
+          SlabOpenings.write(group, outline, holes, -thickness, 0)
         else
           layers.each do |layer, index, start, finish|
-            API.write_prism(layer_group(group, layer, index), outline, -finish, finish - start)
+            SlabOpenings.write(layer_group(group, layer, index), outline, holes, -finish, -start)
           end
         end
       end

@@ -5,23 +5,39 @@ require 'json'
 require_relative 'layout'
 require_relative 'catalog'
 require_relative 'openings'
+require_relative 'plan_opening_pick'
 require_relative 'composition'
-require_relative 'sashes'
 require_relative 'follow'
 require_relative 'wall_heads'
 require_relative 'column_centers'
 require_relative 'schedule'
+require_relative 'grid_style'
+require_relative 'column_cuts'
 require_relative 'plan_linework'
+require_relative 'framing_plan'
 require_relative 'layer_hatches'
+require_relative 'drawing_datums'
+require_relative 'elevation_datums'
+require_relative 'section_depth'
+require_relative 'section_placement'
+require_relative 'roof'
+require_relative 'slab_openings'
+require_relative 'stairs'
+require_relative 'room_boundaries'
+require_relative 'rooms'
+require_relative 'work_view'
 require_relative 'drawings'
+require_relative 'drawing_schedules'
 require_relative 'layout_sheets'
+require_relative 'publication_sets'
+require_relative 'layout_schedule_update'
 require_relative 'ifc_export'
 require_relative 'palette'
 
 module Higeotoko
   module SbrArchitecture
     DICT = 'higeotoko.sbr_architecture'
-    MENU_TITLE = 'SketchBRep 建築ツール'
+    MENU_TITLE = 'SketchUPbuildingTool'
     WALL_DEFAULTS = [120, 2700, 0, '中央'].freeze
     GRID_DEFAULTS = ['910*4', '910*3', 'X', 'Y', 0].freeze
     MEMBERS = {
@@ -40,12 +56,17 @@ module Higeotoko
       Geom::Point3d.new(x.mm, y.mm, z.mm)
     end
 
-    def wall_params(thickness, height, alignment)
-      {
-        'thickness' => Layout.mm(thickness, '壁厚', positive: true),
-        'height' => Layout.mm(height, '壁高さ', positive: true),
-        'alignment' => alignment
-      }
+    def arrow_axis(key)
+      { VK_RIGHT => :x, VK_LEFT => :y, VK_UP => :z }[key]
+    end
+
+    def axis_position(axis, anchor, cursor)
+      x, y, z = anchor.to_a
+      case axis
+      when :x then Geom::Point3d.new(cursor.x, y, z)
+      when :y then Geom::Point3d.new(x, cursor.y, z)
+      when :z then Geom::Point3d.new(x, y, cursor.z)
+      end
     end
 
     def grid_params(x_spans, y_spans, x_names, y_names)
@@ -76,7 +97,9 @@ module Higeotoko
       profiles = wall_profiles(params)
       openings = Openings.validate(params, profiles)
       layers = Composition.bands(params)
-      nested = !profiles.one? || layers.any? || openings.values.flatten.any? { |opening| opening['sash'] }
+      nested = !profiles.one? || layers.any? || openings.values.flatten.any? do |opening|
+        opening['sash'] || opening['window_type'] || Doors.filled?(opening)
+      end
       profiles.each_with_index do |profile, index|
         segment = group
         if nested
@@ -96,11 +119,12 @@ module Higeotoko
         end
       end
       Sashes.write(group, params, profiles, sashes)
+      Doors.write(group, params, profiles)
     end
 
     def write_wall_segment(group, params, profile, index, openings)
-      if openings.key?(index)
-        Openings.write_segment(group, params, profile, index, openings.fetch(index))
+      if openings.key?(index) || Roof.roof_planes(params)
+        Openings.write_segment(group, params, profile, index, openings.fetch(index, []))
       else
         write_prism(group, profile, 0, params.fetch('height'))
       end
@@ -109,8 +133,8 @@ module Higeotoko
     def member_profile(kind, params)
       width = params.fetch('width')
       if point_member?(kind)
-        x = width / 2
-        y = params.fetch('depth') / 2
+        x = width / 2.0
+        y = params.fetch('depth') / 2.0
         [[-x, -y], [x, -y], [x, y], [-x, y]]
       else
         Layout.wall_profiles([[0.0, 0.0], params.fetch('end')], width, '中央').first
@@ -151,25 +175,42 @@ module Higeotoko
        [half_stem, 0], [-half_stem, 0], [-half_stem, -rise], [-half_foot, -rise]]
     end
 
-    def foundation_ends(params)
-      x, y = params.fetch('end')
-      length = Math.hypot(x, y)
-      raise ArgumentError, '基礎の長さは1 mm以上にしてください。' if length < Layout::MIN_MM
-
-      start = foundation_section(params).map { |u, z| point(-y * u / length, x * u / length, z) }
-      direction = Geom::Vector3d.new(x.mm, y.mm, 0)
-      [start, start.map { |p| p + direction }]
+    def foundation_rings(params)
+      points = params.fetch('points') { [[0, 0], params.fetch('end')] }
+      section = foundation_section(params)
+      width = params.fetch('footing_width')
+      profiles = Layout.wall_profiles(points, width, '中央')
+      ends = profiles.map { |left, right, _, _| [left, right] }
+      ends << profiles.last.values_at(3, 2)
+      ends.zip(points).map do |(left, right), center|
+        section.map do |offset, z|
+          x = center[0] + (left[0] - right[0]) * offset / width
+          y = center[1] + (left[1] - right[1]) * offset / width
+          point(x, y, z)
+        end
+      end
     end
 
     def write_strip(group, params)
-      start, finish = foundation_ends(params)
-      vector = finish.first - start.first
-      face = group.entities.add_face(start)
-      raise ArgumentError, '基礎断面を作成できませんでした。' unless face
-
-      face.reverse! if face.normal.dot(vector).negative?
-      face.pushpull(vector.length)
+      rings = foundation_rings(params)
+      group.entities.build do |builder|
+        unless rings.first == rings.last
+          builder.add_face(rings.first.reverse)
+          builder.add_face(rings.last)
+        end
+        rings.each_cons(2) do |start, finish|
+          start.each_index do |i|
+            j = (i + 1) % start.size
+            builder.add_face([start[i], start[j], finish[j], finish[i]])
+          end
+        end
+      end
       raise ArgumentError, '基礎を立体にできませんでした。' unless group.manifold?
+
+      group.entities.grep(Sketchup::Edge).each do |edge|
+        a, b = edge.faces
+        edge.hidden = true if b && a.normal.samedirection?(b.normal)
+      end
       group.entities.each { |entity| entity.layer = group.model.layers[0] }
     end
 
@@ -177,11 +218,16 @@ module Higeotoko
       return '壁' if kind == 'wall'
       return '通り芯' if kind == 'grid'
       return '床スラブ' if kind == 'slab'
+      return '屋根' if kind == 'roof'
+      return '直階段' if kind == 'stair'
+      return '室' if kind == 'room'
 
       MEMBERS.fetch(kind).first
     end
 
     def generated_name(kind, params)
+      return "屋根（#{Roof::TYPES.fetch(params.fetch('roof_type'))}）" if kind == 'roof'
+
       system = Catalog::SYSTEMS[params['system']] if FRAMING.include?(kind)
       role = Catalog.timber_roles(kind).fetch(params['role']).fetch('name') if system == '木造' && params['role']
       [system, role || object_name(kind), params['section_id']].compact.join(' ')
@@ -198,34 +244,31 @@ module Higeotoko
       case kind
       when 'wall' then write_wall(group, params, sashes)
       when 'slab' then Composition.slab(group, params)
+      when 'roof' then Roof.write(group, params)
+      when 'stair' then Stairs.write(group, params)
       when 'grid' then write_grid(group, params)
       when 'strip_foundation' then write_strip(group, params)
       else
         height = point_member?(kind) ? params.fetch('height') : params.fetch('depth')
         write_prism(group, member_profile(kind, params), kind == 'column' ? 0 : -height, height)
       end
-      if kind == 'grid'
-        group.entities.each { |entity| entity.layer = group.model.layers[0] }
-      end
       ColumnCenters.add(group, params) if kind == 'column'
     end
 
-    def write_grid(group, params)
+    def write_grid(group, params, labels: true)
       xs = Layout.stations(params.fetch('x_spans'))
       ys = Layout.stations(params.fetch('y_spans'))
       entities = group.entities
       extension = 360.0
       xs.zip(params.fetch('x_names')).each do |x, name|
         stations = [-extension] + ys + [ys.last + extension]
-        stations.each_cons(2) { |a, b| entities.add_line(point(x, a), point(x, b)) }
-        entities.add_text(name, point(x, -extension))
-        entities.add_text(name, point(x, ys.last + extension))
+        stations.each_cons(2) { |a, b| GridStyle.add_axis(entities, point(x, a), point(x, b)) }
+        [-extension, ys.last + extension].each { |y| entities.add_text(name, point(x, y)) } if labels
       end
       ys.zip(params.fetch('y_names')).each do |y, name|
         stations = [-extension] + xs + [xs.last + extension]
-        stations.each_cons(2) { |a, b| entities.add_line(point(a, y), point(b, y)) }
-        entities.add_text(name, point(-extension, y))
-        entities.add_text(name, point(xs.last + extension, y))
+        stations.each_cons(2) { |a, b| GridStyle.add_axis(entities, point(a, y), point(b, y)) }
+        [-extension, xs.last + extension].each { |x| entities.add_text(name, point(x, y)) } if labels
       end
       xs.each_cons(2) do |a, b|
         entities.add_dimension_linear(point(a, 0), point(b, 0), Geom::Vector3d.new(0, -720.mm, 0))
@@ -233,6 +276,8 @@ module Higeotoko
       ys.each_cons(2) do |a, b|
         entities.add_dimension_linear(point(0, a), point(0, b), Geom::Vector3d.new(-720.mm, 0, 0))
       end
+      entities.each { |entity| entity.layer = group.model.layers[0] }
+      GridStyle.apply(group)
     end
 
     def operation(model, name)
@@ -248,7 +293,7 @@ module Higeotoko
     end
 
     def wall_profiles(params)
-      Layout.wall_profiles(params.fetch('points'), params.fetch('thickness'), params.fetch('alignment'))
+      Layout.wall_profile_for(params)
     end
 
     def store_params(group, kind, params)
@@ -267,6 +312,13 @@ module Higeotoko
         write_geometry(target, kind, params)
         target.transformation = Geom::Transformation.translation(origin) * target.transformation
         store_params(target, kind, params)
+        if kind == 'roof' && params['level']
+          target.set_attribute(DICT, 'follow', JSON.generate('level' => params['level']))
+        end
+        if kind == 'grid'
+          Drawings.seed_from_grid(model)
+          GridStyle.show_in_view(model)
+        end
         target
       end
       model.selection.clear
@@ -274,7 +326,7 @@ module Higeotoko
       group
     end
 
-    def regenerate(group, params, placement: nil)
+    def regenerate(group, params, placement: nil, refresh_plan: false)
       kind = group.get_attribute(DICT, 'kind')
       name = object_name(kind)
       operation(group.model, "#{name}を編集") do
@@ -284,6 +336,10 @@ module Higeotoko
         params = WallHeads.resolve(group, params, target) if kind == 'wall'
         result = rebuild(group, kind, params, previous, target)
         WallHeads.refresh(group.model, changed: kind == 'grid' ? nil : group)
+        Stairs.refresh(group.model, host: group) if kind == 'slab'
+        if refresh_plan && (plan = Openings::PlanPick.active_spec(group.model))
+          Drawings.generate(group.model, [plan], within_operation: true)
+        end
         result
       end
     end
@@ -322,40 +378,13 @@ module Higeotoko
 
     def start_wall(configure = false)
       report_errors do
-        model = Sketchup.active_model
-        top_level!(model)
-        defaults = @wall_defaults || WALL_DEFAULTS
-        level = active_level(model)
-        values = [defaults[0], defaults[1], level&.last || defaults[2], defaults[3]]
-        if configure
-          values = UI.inputbox(['壁厚 (mm)', '高さ (mm)', '基準高さ Z (mm)', '壁芯からの寄せ'],
-                               values, ['', '', '', Layout::ALIGNMENTS.join('|')], '壁の設定')
-          next unless values
-        end
-        thickness, height, elevation, alignment = values
-        z = Layout.mm(elevation, '基準高さ')
-        params = attach_level(wall_params(thickness, height, alignment), level, z)
-        @wall_defaults = values if configure
-        model.select_tool(Placement.new(model, 'wall', params, z))
+        Palette.show if configure
+        Palette.instance.activate('wall')
       end
     end
 
     def start_grid
-      report_errors do
-        model = Sketchup.active_model
-        top_level!(model)
-        level = active_level(model)
-        defaults = (@grid_defaults || GRID_DEFAULTS).dup
-        defaults[-1] = level.last if level
-        values = UI.inputbox(['X方向の間隔 (mm)', 'Y方向の間隔 (mm)', 'Xの符号', 'Yの符号', '基準高さ Z (mm)'],
-                             defaults, '通り芯を一括生成（例 910*4 または 910,1820）')
-        next unless values
-
-        z = Layout.mm(values.last, '基準高さ')
-        params = attach_level(grid_params(*values.first(4)), level, z)
-        @grid_defaults = values
-        model.select_tool(Placement.new(model, 'grid', params, z))
-      end
+      report_errors { Palette.instance.activate('grid') }
     end
 
     def member_fields(kind)
@@ -382,13 +411,7 @@ module Higeotoko
 
     def change_system(system)
       report_errors do
-        model = Sketchup.active_model
-        top_level!(model)
-        next if structural_system(model) == system
-
-        model.select_tool(nil)
-        operation(model, '作図の構造を切替') { model.set_attribute(DICT, 'structural_system', system) }
-        Sketchup.set_status_text("#{Catalog::SYSTEMS.fetch(system)}で作図します。柱または梁のボタンを選択。", SB_PROMPT)
+        Palette.instance.set_context(system: system)
       end
     end
 
@@ -466,21 +489,20 @@ module Higeotoko
 
     def start_member(kind, configure = false)
       report_errors do
+        palette = Palette.instance
+        next palette.activate(kind) unless configure
+
         model = Sketchup.active_model
         top_level!(model)
-        @member_defaults ||= {}
         system = FRAMING.include?(kind) ? structural_system(model) : 'rc'
-        key = [kind, system]
-        params, previous_z = @member_defaults[key] || [initial_member(kind, system), 0]
-        level = active_level(model)
-        z = level&.last || previous_z
+        params = palette.saved_defaults(model, kind, system) || initial_member(kind, system)
+        z = draw_elevation(model)
         place = lambda do |selected, elevation|
-          @member_defaults[key] = [selected, elevation] if configure
-          model.select_tool(Placement.new(model, kind, attach_level(selected.dup, level, elevation), elevation))
+          palette.set_context(level: '', z: elevation) if elevation != z
+          palette.store_defaults(model, kind, system, selected)
+          palette.activate(kind)
         end
-        if !configure
-          place.call(params, z)
-        elsif system == 'steel'
+        if system == 'steel'
           steel_settings(kind, params, z, &place)
         elsif system == 'timber'
           result = timber_settings(kind, params, z)
@@ -518,6 +540,10 @@ module Higeotoko
       params
     end
 
+    def draw_elevation(model)
+      active_level(model)&.last || model.get_attribute(DICT, 'manual_z', 0)
+    end
+
     def choose_level
       report_errors do
         model = Sketchup.active_model
@@ -531,8 +557,7 @@ module Higeotoko
 
         index = options.index(values.first)
         name = index == options.size - 1 ? '' : levels(model).keys.fetch(index)
-        model.select_tool(nil)
-        operation(model, '作図レベルを切替') { model.set_attribute(DICT, 'active_level', name) }
+        Palette.instance.set_context(level: name)
       end
     end
 
@@ -569,16 +594,8 @@ module Higeotoko
         kind = group.get_attribute(DICT, 'kind')
         case kind
         when 'wall'
-          if previous['head'] || previous.fetch('layers', []).any?
-            Palette.show(edit_selected: true)
-            next
-          end
-          values = UI.inputbox(['壁厚 (mm)', '高さ (mm)', '壁芯からの寄せ'],
-                               previous.values_at('thickness', 'height', 'alignment'),
-                               ['', '', Layout::ALIGNMENTS.join('|')], '壁を編集')
-          next unless values
-
-          params = previous.merge(wall_params(*values))
+          Palette.show(edit_selected: true)
+          next
         when 'grid'
           defaults = previous.values_at('x_spans', 'y_spans').map { |spans| spans.join(',') }
           defaults.concat(previous.values_at('x_label_spec', 'y_label_spec'))
@@ -614,6 +631,10 @@ module Higeotoko
     end
 
     class Placement
+      def active?
+        @active
+      end
+
       def initialize(model, kind, params, elevation)
         @model = model
         @kind = kind
@@ -624,39 +645,116 @@ module Higeotoko
       end
 
       def activate
+        @active = true
         prompt
       end
 
       def resume(view)
-        prompt
+        activate
         view.invalidate
       end
 
       def deactivate(view)
+        @active = false
         view.invalidate
       end
 
+      def update_settings(params, elevation)
+        @next_settings = [params, elevation.mm]
+        apply_settings if @points.empty?
+      end
+
+      def apply_settings
+        @params, @elevation = @next_settings if @next_settings
+        @next_settings = @cursor = nil
+        @axis = @axis_anchor = nil
+        prompt
+        @model.active_view.invalidate
+      end
+
       def onMouseMove(_flags, x, y, view)
+        @mouse = [x, y]
         @input.pick(view, x, y)
         @center_guide = ColumnCenters.pick(view, x, y)
-        @cursor = cursor_on_plane(view, x, y)
-        if @center_guide
+        free = cursor_on_plane(view, x, y)
+        @cursor = @axis ? locked_cursor(view, x, y, free) : free
+        if closes_at_start? && @cursor && @points.size >= 3 && @points.first != @points.last
+          screen = view.screen_coords(@points.first)
+          if Math.hypot(screen.x - x, screen.y - y) <= 8 && @axis != :z &&
+             (!@axis || SbrArchitecture.axis_position(@axis, @points.last, @points.first) == @points.first)
+            @cursor = @points.first
+          end
+        end
+        if @axis
+          view.tooltip = "#{@axis.to_s.upcase}軸固定"
+        elsif @center_guide
           view.tooltip = '柱芯'
         elsif @input.valid? && @input.degrees_of_freedom < 3
           view.tooltip = @input.tooltip
         end
+        prompt if @axis == :z
         view.invalidate
       end
 
+      def closes_at_start?
+        @kind == 'strip_foundation' || (@kind == 'wall' && @params['alignment'] == Layout::ECCENTRIC)
+      end
+
       def cursor_on_plane(view, x, y)
+        elevation = @points.first&.z || @elevation
         if @center_guide
-          return Geom::Point3d.new(@center_guide.x, @center_guide.y, @elevation)
+          return Geom::Point3d.new(@center_guide.x, @center_guide.y, elevation)
         end
         if @input.valid? && @input.degrees_of_freedom < 3
           p = @input.position
-          return Geom::Point3d.new(p.x, p.y, @elevation)
+          return Geom::Point3d.new(p.x, p.y, elevation)
         end
-        Geom.intersect_line_plane(view.pickray(x, y), [Geom::Point3d.new(0, 0, @elevation), Z_AXIS])
+        Geom.intersect_line_plane(view.pickray(x, y), [Geom::Point3d.new(0, 0, elevation), Z_AXIS])
+      end
+
+      def locked_cursor(view, x, y, free)
+        anchor = @axis == :z ? @axis_anchor : (@points.last || @axis_anchor)
+        if @axis == :z
+          ray = view.pickray(x, y)
+          target = if @input.valid? && @input.degrees_of_freedom < 3
+                     @input.position
+                   elsif !ray.last.parallel?(Z_AXIS)
+                     Geom.closest_points([anchor, Z_AXIS], ray).first
+                   else
+                     anchor
+                   end
+          return SbrArchitecture.axis_position(:z, anchor, target)
+        end
+        SbrArchitecture.axis_position(@axis, anchor, free) if free
+      end
+
+      def onKeyDown(key, repeat, flags, view)
+        axis = SbrArchitecture.arrow_axis(key)
+        return false unless axis
+        return true if %w[slab_opening room].include?(@kind) && axis == :z
+        return true if repeat > 1
+
+        if @axis == axis
+          @axis = @axis_anchor = nil
+        elsif (anchor = @cursor || @points.last)
+          @axis, @axis_anchor = axis, anchor
+        end
+        onMouseMove(flags, *@mouse, view) if @mouse
+        prompt
+        true
+      end
+
+      def params_at(origin)
+        return @params if (origin.z - @elevation).abs < 0.001.mm
+
+        @params.reject { |key, _| key == 'level' }
+      end
+
+      def rebase_path
+        return unless @axis == :z && @cursor
+
+        @points = @points.map { |point| SbrArchitecture.axis_position(:z, point, @cursor) }
+        @axis = @axis_anchor = nil
       end
 
       def onLButtonDown(flags, x, y, view)
@@ -665,20 +763,35 @@ module Higeotoko
 
         SbrArchitecture.report_errors do
           SbrArchitecture.top_level!(@model)
+          rebase_path
           if @kind == 'grid'
-            SbrArchitecture.create(@model, 'grid', @params, @cursor)
+            SbrArchitecture.create(@model, 'grid', params_at(@cursor), @cursor)
             @model.select_tool(nil)
           elsif SbrArchitecture.point_member?(@kind)
-            SbrArchitecture.create(@model, @kind, @params, @cursor)
-          elsif MEMBERS.key?(@kind) && @points.any?
+            SbrArchitecture.create(@model, @kind, params_at(@cursor), @cursor)
+            prompt
+          elsif @kind == 'roof' && @points.any?
+            origin = @points.first
+            SbrArchitecture.create(@model, @kind, params_at(origin).merge('end' => relative_xy(@cursor, origin)), origin)
+            @model.select_tool(nil)
+          elsif @kind == 'slab_opening' && @points.any?
+            SlabOpenings.add(opening_host, @points.first, @cursor)
+            @model.select_tool(nil)
+          elsif @kind == 'room'
+            seed = @cursor.to_a.first(2).map { |coordinate| coordinate.to_mm.round(3) }
+            Rooms.dialog(@model, @params.fetch('level'), seed)
+            @model.select_tool(nil)
+          elsif MEMBERS.key?(@kind) && @kind != 'strip_foundation' && @points.any?
             origin = @points.first
             next if origin.distance(@cursor).to_mm < Layout::MIN_MM
 
-            SbrArchitecture.create(@model, @kind, @params.merge('end' => relative_xy(@cursor, origin)), origin)
+            SbrArchitecture.create(@model, @kind, params_at(origin).merge('end' => relative_xy(@cursor, origin)), origin)
             @points.clear
-            prompt
+            apply_settings
           elsif @points.empty? || @points.last.distance(@cursor).to_mm >= Layout::MIN_MM
             @points << @cursor
+            return onReturn(view) if closes_at_start? && @points.size >= 4 && @points.last == @points.first
+
             prompt
           end
         end
@@ -686,13 +799,14 @@ module Higeotoko
 
       def onReturn(view)
         minimum = @kind == 'slab' ? 3 : 2
-        return unless %w[wall slab].include?(@kind) && @points.size >= minimum
+        return unless %w[wall slab strip_foundation].include?(@kind) && @points.size >= minimum
 
         SbrArchitecture.report_errors do
           SbrArchitecture.top_level!(@model)
+          rebase_path
           origin = @points.first
           points = @points.map { |p| relative_xy(p, origin) }
-          SbrArchitecture.create(@model, @kind, @params.merge('points' => points), origin)
+          SbrArchitecture.create(@model, @kind, params_at(origin).merge('points' => points), origin)
           @model.select_tool(nil)
         end
         view.invalidate
@@ -702,12 +816,27 @@ module Higeotoko
         [(position.x - origin.x).to_mm, (position.y - origin.y).to_mm]
       end
 
+      def opening_host
+        slab = @model.find_entity_by_persistent_id(@params.fetch('host_id'))
+        raise ArgumentError, '選択した床がなくなりました。床を選び直してください。' unless slab&.valid?
+
+        slab
+      end
+
       def onCancel(reason, view)
-        if reason.zero? && @points.any?
-          @points.pop
-          @cursor = nil
+        if reason.zero? && @axis
+          @axis = @axis_anchor = nil
+          onMouseMove(0, *@mouse, view) if @mouse
           prompt
-          view.invalidate
+        elsif reason.zero? && @points.any?
+          @points.pop
+          if @points.empty?
+            apply_settings
+          else
+            @cursor = nil
+            prompt
+            view.invalidate
+          end
         elsif reason.zero?
           @model.select_tool(nil)
         end
@@ -728,31 +857,53 @@ module Higeotoko
           draw_member(view, @params, @cursor)
         elsif @points.any?
           vertices = @points + [@cursor]
+          vertices = vertices.map { |point| SbrArchitecture.axis_position(:z, point, @cursor) } if @axis == :z
           view.draw(GL_LINE_STRIP, vertices)
-          origin = @points.first
+          origin = vertices.first
           coordinates = vertices.map { |p| relative_xy(p, origin) }
           if @kind == 'wall'
-            profiles = Layout.wall_profiles(coordinates, @params.fetch('thickness'), @params.fetch('alignment'))
+            profiles = SbrArchitecture.wall_profiles(@params.merge('points' => coordinates))
             profiles.each { |profile| draw_profile(view, profile, origin, @params.fetch('height').mm) }
           elsif @kind == 'slab'
             outline = Layout.slab_outline(coordinates)
             draw_profile(view, outline, origin, -@params.fetch('thickness').mm)
+          elsif @kind == 'roof'
+            draw_ends(view, Roof.solid_ends(@params.merge('end' => coordinates.last)), origin)
+          elsif @kind == 'slab_opening'
+            slab = opening_host
+            points = vertices.map { |point| point.transform(slab.transformation.inverse).to_a.first(2).map(&:to_mm) }
+            ring = SlabOpenings.rectangle(*points).map { |xy| SbrArchitecture.point(*xy).transform(slab.transformation) }
+            view.draw(GL_LINE_LOOP, ring)
+          elsif @kind == 'strip_foundation'
+            coordinates.pop if coordinates.size > 1 && coordinates[-1] == coordinates[-2]
+            if coordinates.size >= 2
+              rings = SbrArchitecture.foundation_rings(@params.merge('points' => coordinates))
+              rings.each_cons(2) { |start, finish| draw_ends(view, [start, finish], origin) }
+            end
           else
             return if origin.distance(@cursor).to_mm < Layout::MIN_MM
 
             draw_member(view, @params.merge('end' => coordinates.last), origin)
           end
         end
+        draw_axis(view) if @axis
       rescue ArgumentError, Catalog::STEEL::Error
         # The centerline remains visible while hovering over an invalid endpoint.
+      end
+
+      def draw_axis(view)
+        rgb = { x: [201, 39, 49], y: [25, 138, 68], z: [29, 107, 207] }
+        color = Sketchup::Color.new(*rgb.fetch(@axis))
+        anchor = @axis == :z ? @axis_anchor : (@points.last || @axis_anchor)
+        view.drawing_color = color
+        view.draw(GL_LINES, [anchor, @cursor]) if anchor.distance(@cursor) >= Layout::MIN_MM.mm
+        view.draw_points([@cursor], 8, 3, color)
       end
 
       def draw_member(view, params, origin)
         if params['system'] == 'steel'
           member = SbrArchitecture.steel_member(@kind, params)
           SbrArchitecture.steel_section_ends(member).each { |ends| draw_ends(view, ends, origin) }
-        elsif @kind == 'strip_foundation'
-          draw_ends(view, SbrArchitecture.foundation_ends(params), origin)
         else
           profile = SbrArchitecture.member_profile(@kind, params)
           size = params['height'] || params.fetch('depth')
@@ -802,6 +953,12 @@ module Higeotoko
         if @cursor
           if @kind == 'grid'
             bounds.add(grid_outline)
+          elsif @kind == 'roof' && @points.any?
+            origin = @points.first
+            if [(origin.x - @cursor.x).abs, (origin.y - @cursor.y).abs].all? { |span| span >= Layout::MIN_MM.mm }
+              ends = Roof.solid_ends(@params.merge('end' => relative_xy(@cursor, origin)))
+              bounds.add(ends.flatten.map { |point| point + (origin - ORIGIN) })
+            end
           else
             margin = (@params['height'] || @params['depth'] || @params['thickness'] ||
                       @params.values_at('rise', 'footing_thickness').compact.sum).mm
@@ -820,17 +977,27 @@ module Higeotoko
                     '通り芯の原点（最初のX/Yの交点）をクリック。Escで終了。'
                   elsif SbrArchitecture.point_member?(@kind)
                     "#{SbrArchitecture.object_name(@kind)}の中心をクリックして配置。Escで終了。"
+                  elsif @kind == 'strip_foundation'
+                    '基礎芯を連続クリック。Enterで確定、始点をクリックで一周。Escで直前の点を戻す。'
                   elsif MEMBERS.key?(@kind)
                     name = SbrArchitecture.object_name(@kind)
                     @points.empty? ? "#{name}芯の始点をクリック。" : "#{name}芯の終点をクリック。Escで始点を取り消し。"
                   elsif @kind == 'slab'
                     '床の外周を3点以上クリック。Enterで閉じて確定。Escで直前の点を戻す。'
+                  elsif @kind == 'roof'
+                    @points.empty? ? '屋根を掛ける外壁矩形の角をクリック。' : '対角をクリックして屋根を作成。Escで戻す。'
+                  elsif @kind == 'slab_opening'
+                    @points.empty? ? '床開口の角をクリック。' : '対角をクリックして床開口を作成。Escで戻す。'
+                  elsif @kind == 'room'
+                    '室の内側をクリックして室名と面積を登録。既存の室もここから編集。'
                   elsif @points.empty?
                     '壁芯の始点をクリック。Escで終了。'
                   else
                     '次の芯点をクリック。Enterで壁を作成。Escで直前の点を戻す。'
                   end
-        label = @params['level'] ? "#{@params['level']} " : ''
+        elevation = @axis == :z && @cursor ? @cursor.z : (@points.first&.z || @elevation)
+        level = @params['level'] if (elevation - @elevation).abs < 0.001.mm
+        label = level ? "#{level} " : ''
         sizes = if @kind == 'wall'
                   @params.values_at('thickness', 'height')
                 elsif @kind == 'slab'
@@ -845,7 +1012,8 @@ module Higeotoko
           section = "立上り #{stem} / 底盤 #{base} mm"
         end
         system = Catalog::SYSTEMS[@params['system']] if FRAMING.include?(@kind)
-        info = [system, section, "#{label}Z=#{@elevation.to_mm.round(3)} mm", message].select { |item| item }
+        axis = @axis && "#{@axis.to_s.upcase}軸固定（同じ矢印で解除）"
+        info = [system, section, "#{label}Z=#{elevation.to_mm.round(3)} mm", axis, message].compact
         Sketchup.set_status_text(info.join('  |  '), SB_PROMPT)
       end
     end
@@ -891,8 +1059,15 @@ module Higeotoko
         toolbar_command('壁', 'wall', '壁芯を連続クリック、Enterで確定') { start_wall },
         toolbar_command('柱', 'column', '柱芯をクリック') { start_member('column') },
         toolbar_command('梁', 'beam', '梁芯の始点と終点をクリック') { start_member('beam') },
-        toolbar_command('布基礎', 'strip_foundation', '立上りと底盤を一体で生成。基礎芯の始点と終点をクリック') { start_member('strip_foundation') },
+        toolbar_command('布基礎', 'strip_foundation', '基礎芯を連続クリック。Enterまたは始点クリックで確定') { start_member('strip_foundation') },
         toolbar_command('独立基礎', 'pad_foundation', '矩形の基礎底盤を作成。中心をクリック') { start_member('pad_foundation') },
+        toolbar_command('床スラブ', 'slab', '床の外周をクリック。Enterで閉じる') { report_errors { Palette.instance.activate('slab') } },
+        toolbar_command('屋根', 'roof', '外壁矩形の対角を2点クリックして片流れ・切妻を作る') { report_errors { Palette.instance.activate('roof') } },
+        toolbar_command('床開口', 'slab_opening', '床を選び、矩形の対角を2点クリック') { report_errors { Palette.instance.activate('slab_opening') } },
+        toolbar_command('直階段', 'stair', '上階の床開口と下階レベルを選び、直階段を作る') { report_errors { Palette.instance.activate('stair') } },
+        toolbar_command('室', 'room', '閉じた壁の内側をクリックして室名・面積を登録') { report_errors { Palette.instance.activate('room') } },
+        toolbar_command('窓開口', 'window', '形式を選んで壁に配置。必要に応じて可動側を指定') { report_errors { Palette.instance.activate('window') } },
+        toolbar_command('扉開口', 'door', '形式を選んで壁に配置。必要に応じて引く方向・開く側を指定') { report_errors { Palette.instance.activate('door') } },
         toolbar_command('寸法・断面設定', 'settings', '選んだツールの寸法や断面を設定') { choose_tool_settings },
         toolbar_command('図面・シーン', 'drawings', '階別平面、立面、断面を作成・更新') { Drawings.show }
       ]
@@ -903,6 +1078,7 @@ module Higeotoko
       toolbar.get_last_state == TB_NEVER_SHOWN ? toolbar.show : toolbar.restore
       menu.add_separator
       settings = menu.add_submenu('寸法・レベル設定')
+      menu.add_item('作業背景を切り替え') { report_errors { WorkView.toggle(Sketchup.active_model) } }
       settings.add_item('壁の設定…') { start_wall(true) }
       (MEMBERS.keys - ['sill']).each do |kind|
         settings.add_item("#{object_name(kind)}の設定…") { start_member(kind, true) }
@@ -919,15 +1095,24 @@ module Higeotoko
         next unless group.is_a?(Sketchup::Group)
 
         kind = group.get_attribute(DICT, 'kind')
-        next unless %w[wall grid slab].include?(kind) || MEMBERS.key?(kind)
-
-        context.add_item("SketchBRep #{object_name(kind)}を編集…") do
-          kind == 'slab' ? Palette.show(edit_selected: true) : edit(group)
+        if kind == 'stair'
+          context.add_item('SketchUPbuildingTool 直階段を編集…') { report_errors { Stairs.dialog(model, group) } }
+          next
         end
-        context.add_item('SketchBRep 柱芯点を追加…') { ColumnCenters.update(group) } if kind == 'column'
-        context.add_item('SketchBRep 壁上端の納まり…') { report_errors { WallHeads.pick(group) } } if kind == 'wall'
+        if kind == 'room'
+          context.add_item('SketchUPbuildingTool 室情報を編集…') { report_errors { Rooms.edit(group) } }
+          next
+        end
+        next unless %w[wall grid slab roof].include?(kind) || MEMBERS.key?(kind)
+
+        context.add_item("SketchUPbuildingTool #{object_name(kind)}を編集…") do
+          %w[slab roof].include?(kind) ? Palette.show(edit_selected: true) : edit(group)
+        end
+        context.add_item('SketchUPbuildingTool 柱芯点を追加…') { ColumnCenters.update(group) } if kind == 'column'
+        context.add_item('SketchUPbuildingTool 壁上端の納まり…') { report_errors { WallHeads.pick(group) } } if kind == 'wall'
+        context.add_item('SketchUPbuildingTool 床開口を編集…') { report_errors { SlabOpenings.edit(group) } } if kind == 'slab'
         if Follow::KINDS.include?(kind)
-          label = kind == 'slab' ? 'SketchBRep 床を階に関連付け…' : 'SketchBRep 通り芯・階に関連付け…'
+          label = %w[slab roof].include?(kind) ? "#{MENU_TITLE} #{object_name(kind)}を階に関連付け…" : "#{MENU_TITLE} 通り芯・階に関連付け…"
           context.add_item(label) { Follow.dialog(group) }
         end
       end

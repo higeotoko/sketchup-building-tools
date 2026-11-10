@@ -5,7 +5,9 @@ module Higeotoko
     module Layout
       MIN_MM = 1.0
       MAX_SPANS = 40
-      ALIGNMENTS = %w[中央 左寄せ 右寄せ].freeze
+      ECCENTRIC = '外・内寸法'
+      ALIGNMENTS = ['中央', '左寄せ', '右寄せ', ECCENTRIC].freeze
+      OUTSIDE_SIDES = { 'auto' => '自動（開いた経路は右）', 'left' => '進行方向の左', 'right' => '進行方向の右' }.freeze
       module_function
 
       def mm(value, label, positive: false)
@@ -93,6 +95,50 @@ module Higeotoko
                   when '右寄せ' then [0.0, -thickness]
                   else raise ArgumentError, '壁の基準を選択してください。'
                   end
+        offset_profiles(points, offsets)
+      end
+
+      def outside_side(points, side = 'auto')
+        return side unless side == 'auto'
+
+        x0, y0 = points.first
+        area = points.each_cons(2).sum do |(x, y), (u, v)|
+          (x - x0) * (v - y0) - (u - x0) * (y - y0)
+        end
+        points.size > 2 && points.first == points.last && area.negative? ? 'left' : 'right'
+      end
+
+      def wall_parameters(thickness, height, alignment, outer: nil, inner: nil, outside_side: 'auto')
+        raise ArgumentError, '壁の基準を選択してください。' unless ALIGNMENTS.include?(alignment)
+
+        params = { 'height' => mm(height, '壁高さ', positive: true), 'alignment' => alignment }
+        if alignment == ECCENTRIC
+          raise ArgumentError, '外側の向きを選択してください。' unless OUTSIDE_SIDES.key?(outside_side)
+
+          outer = mm(outer, '芯から外面')
+          inner = mm(inner, '芯から内面')
+          thickness = outer + inner
+          params.merge!('outer_offset' => outer, 'inner_offset' => inner, 'outside_side' => outside_side)
+        end
+        params.merge('thickness' => mm(thickness, '壁厚', positive: true))
+      end
+
+      def wall_outside(params)
+        return unless params['alignment'] == ECCENTRIC
+
+        outside_side(params.fetch('points'), params.fetch('outside_side', 'auto'))
+      end
+
+      def wall_profile_for(params)
+        points, thickness, alignment = params.values_at('points', 'thickness', 'alignment')
+        return wall_profiles(points, thickness, alignment) unless alignment == ECCENTRIC
+
+        outer, inner = params.values_at('outer_offset', 'inner_offset')
+        offsets = wall_outside(params) == 'left' ? [outer, -inner] : [inner, -outer]
+        offset_profiles(points, offsets)
+      end
+
+      def offset_profiles(points, offsets)
         if points.size < 2
           raise ArgumentError, '壁の芯を2点以上指定してください。'
         end

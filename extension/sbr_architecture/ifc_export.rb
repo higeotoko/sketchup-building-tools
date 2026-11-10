@@ -122,15 +122,30 @@ module Higeotoko
                                   'NominalWidth' => opening.fetch('width') / 1000.0,
                                   'NominalHeight' => opening.fetch('height') / 1000.0,
                                   'SillHeight' => opening.fetch('sill') / 1000.0 } }
-          if opening['sash']
+          door = Doors.filled?(opening)
+          if door || opening['sash'] || opening['window_type']
             part = fills[id]
-            raise ArgumentError, "建具「#{name}」のサッシ形状が見つかりません。" unless part
+            raise ArgumentError, "建具「#{name}」の形状が見つかりません。" unless part
 
-            fill = "#{token}_WINDOW_#{openings.size + 1}"
-            component(storey, part, group.transformation * part.transformation, fill, 'IfcWindow')
-            metadata[fill] = { ifc: 'IFCWINDOW', name: name, stable_key: "#{token}/fill/#{id}", width: opening.fetch('width') / 1000.0,
-                               height: opening.fetch('height') / 1000.0,
-                               properties: { 'Mark' => mark, 'ProductId' => opening.fetch('sash').fetch('product_id') } }
+            classification = door ? 'IfcDoor' : 'IfcWindow'
+            fill = "#{token}_#{door ? 'DOOR' : 'WINDOW'}_#{openings.size + 1}"
+            component(storey, part, group.transformation * part.transformation, fill, classification)
+            properties = { 'Mark' => mark }
+            if door
+              properties['DoorType'] = Openings.label(opening)
+              direction = Doors.direction(opening)
+              properties['DoorDirection'] = Doors.direction_options(Doors.type(opening)).fetch(direction) if direction
+              properties['InactiveLeafWidth'] = opening['inactive_width'] / 1000.0 if opening['inactive_width']
+            else
+              mount = Openings.window_mount(opening)
+              properties.merge!('WindowType' => Openings.label(opening),
+                                'Mounting' => Openings::WINDOW_MOUNTS.fetch(mount.fetch('mode')),
+                                'MountingOffset' => mount.fetch('offset') / 1000.0)
+              properties['ProductId'] = opening['sash']['product_id'] if opening['sash']
+            end
+            metadata[fill] = { ifc: classification.upcase, name: name, stable_key: "#{token}/fill/#{id}",
+                               width: opening.fetch('width') / 1000.0, height: opening.fetch('height') / 1000.0,
+                               properties: properties }
             entry[:fill] = fill
           end
           openings << entry
@@ -204,7 +219,9 @@ module Higeotoko
           data = IfcStep.new(File.read(temporary, encoding: 'UTF-8'), File.expand_path(model.path))
                         .export(metadata, openings, File.basename(file))
           File.open(file, File::WRONLY | File::CREAT | File::EXCL, 0o666) { |output| output.binmode; output.write(data) }
-          { elements: groups.size, openings: openings.size, windows: openings.count { |item| item[:fill] } }
+          { elements: groups.size, openings: openings.size,
+            windows: metadata.values.count { |item| item[:ifc] == 'IFCWINDOW' },
+            doors: metadata.values.count { |item| item[:ifc] == 'IFCDOOR' } }
         end
       end
 

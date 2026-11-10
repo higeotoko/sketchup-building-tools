@@ -5,7 +5,7 @@ module Higeotoko
     module Follow
       API = SbrArchitecture
       GRID_KINDS = %w[column beam wall].freeze
-      KINDS = (GRID_KINDS + ['slab']).freeze
+      KINDS = (GRID_KINDS + %w[slab roof]).freeze
       NONE = '関連付けなし'
       module_function
 
@@ -53,7 +53,7 @@ module Higeotoko
 
       def bind(group, grid, level)
         type = kind(group)
-        raise ArgumentError, '柱・梁・壁・床を1つ選択してください。' unless KINDS.include?(type)
+        raise ArgumentError, '柱・梁・壁・床・屋根を1つ選択してください。' unless KINDS.include?(type)
         raise ArgumentError, '部材のロックを解除してください。' if group.locked?
 
         model = group.model
@@ -61,7 +61,7 @@ module Higeotoko
         params = parameters(group)
         links = {}
         if grid
-          raise ArgumentError, '床は階に関連付けできます。' unless GRID_KINDS.include?(type)
+          raise ArgumentError, 'この部材は階に関連付けできます。' unless GRID_KINDS.include?(type)
           raise ArgumentError, '同じモデルの通り芯を選択してください。' unless kind(grid) == 'grid' && grid.model == model
 
           links['grid'] = grid.persistent_id.to_s
@@ -100,7 +100,7 @@ module Higeotoko
             defaults.unshift(current)
             lists.unshift(grid_options.keys.join('|'))
           end
-          title = prompts.one? ? '床を階に関連付け' : '通り芯・階に関連付け'
+          title = prompts.one? ? "#{API.object_name(kind(group))}を階に関連付け" : '通り芯・階に関連付け'
           values = UI.inputbox(prompts, defaults, lists, title)
           next unless values
 
@@ -192,6 +192,7 @@ module Higeotoko
           end
           WallHeads.refresh(model)
           model.set_attribute(API::DICT, 'levels', pairs.map { |pair| pair.join('=') }.join(','))
+          Stairs.refresh(model)
         end
       end
     end

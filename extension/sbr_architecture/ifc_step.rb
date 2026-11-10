@@ -127,15 +127,14 @@ module Higeotoko
             fields[7] = fields[2]
             fields[8] = '.ELEMENT.'
             fields[9] = data[:elevation].nil? ? '$' : number(data.fetch(:elevation))
+          elsif %w[IFCWINDOW IFCDOOR].include?(type)
+            fields[8] = number(data.fetch(:height))
+            fields[9] = number(data.fetch(:width))
+            fields[10] = type == 'IFCWINDOW' ? '.WINDOW.' : '.DOOR.'
+            fields[11] = '.NOTDEFINED.'
+            fields[12] = '$'
           else
-            fields[-1] = data.fetch(:predefined, '.NOTDEFINED.') unless type == 'IFCWINDOW'
-            if type == 'IFCWINDOW'
-              fields[8] = number(data.fetch(:height))
-              fields[9] = number(data.fetch(:width))
-              fields[10] = '.WINDOW.'
-              fields[11] = '.NOTDEFINED.'
-              fields[12] = '$'
-            end
+            fields[-1] = data.fetch(:predefined, '.NOTDEFINED.')
           end
           @products[token] = ["##{id}", fields[5]]
           @replacements[id] = "##{id}= #{type}(#{fields.join(',')});\n"

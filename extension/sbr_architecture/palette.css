@@ -25,9 +25,13 @@ button:hover:enabled { border-color: #216c83; }
 button:disabled { opacity: .5; cursor: default; }
 .systems, .tools { display: grid; gap: 5px; }
 .systems { grid-template-columns: repeat(3, 1fr); margin-top: 8px; }
+.systems button { display: flex; align-items: center; justify-content: center; gap: 5px; }
+.systems img { width: 19px; height: 19px; flex: none; }
 .tools { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .tools button { display: grid; justify-items: center; gap: 2px; padding: 5px 2px; font-size: 12px; }
 .tools img { width: 26px; height: 26px; }
+#edit-plan-opening, #repair-grid { width: 100%; margin-top: 6px; }
+#work-background { margin-top: 8px; }
 .systems button[aria-pressed="true"], .tools button[aria-pressed="true"] {
   background: #d8eeef; border-color: #16807b; color: #13494d; box-shadow: inset 0 -2px #16807b;
 }
@@ -46,6 +50,7 @@ button:disabled { opacity: .5; cursor: default; }
 #submit:hover:enabled { background: #215b74; }
 #openings { display: grid; gap: 6px; margin-top: 9px; }
 #openings fieldset { margin: 0; border: 1px solid #d4e0e5; border-radius: 6px; padding: 6px; }
+#openings .focused-opening { border-color: #087e79; background: #f0faf9; }
 #openings legend { font-size: 12px; font-weight: 700; }
 #openings button { margin-top: 5px; }
 #composition { min-width: 0; border: 1px solid #d4e0e5; border-radius: 6px; margin: 8px 0 0; padding: 8px; }
@@ -54,4 +59,14 @@ button:disabled { opacity: .5; cursor: default; }
 .layer { display: grid; grid-template-columns: minmax(0, 1.3fr) 64px minmax(0, 1fr) auto; gap: 4px; align-items: end; }
 .layer button { min-height: 32px; }
 [hidden] { display: none !important; }
+:root.dark { color-scheme: dark; color: #dbe0e7; background: #1e2024; }
+.dark header { background: #243643; }
+.dark section, .dark input, .dark select, .dark button { background: #2b2e34; border-color: #555b66; }
+.dark #openings fieldset, .dark #composition { border-color: #555b66; }
+.dark #selection, .dark .tip, .dark #status { color: #b8c3d1; }
+.dark #status.error { color: #ffabab; }
+.dark #openings .focused-opening { background: #253b39; }
+.dark .tools img, .dark .systems button[aria-pressed="false"] img { filter: brightness(2.65); }
+.dark .tools button[aria-pressed="true"] img { filter: none; }
+.dark #work-background[aria-pressed="true"] { background: #314642; border-color: #77ada1; }
 @media (max-width: 370px) { .tools { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

@@ -2,7 +2,7 @@
 <html lang="ja">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SketchBRep 階別一覧</title>
+<title>SketchUPbuildingTool 階別一覧</title>
 <link rel="stylesheet" href="palette.css">
 <style>
   .filters { display:flex; flex-wrap:wrap; align-items:end; gap:8px; }
@@ -13,7 +13,7 @@
   th { background:#e7f1f3; position:sticky; top:0; }
   tbody button { min-height:26px; padding:1px 6px; }
 </style>
-<header><img src="palette.svg" alt=""><div><span>SKETCHBREP FOR SKETCHUP</span><h1>階別一覧</h1></div></header>
+<header><img src="palette.svg" alt=""><div><span>SketchUPbuildingTool</span><h1>階別一覧</h1></div></header>
 <main>
   <section class="filters">
     <label>階 <select id="level"></select></label>
@@ -43,7 +43,7 @@ function render() {
     button.textContent = values[8] ? "親壁を選択" : "選択";
     button.addEventListener("click", () => sketchup.select(data.token, target));
     row.insertCell().append(button);
-    values.slice(0, 8).forEach(value => { row.insertCell().textContent = value ?? "—"; });
+    [...values.slice(0, 8), values[10], values[11]].forEach(value => { row.insertCell().textContent = value ?? "—"; });
     return row;
   }));
   byId("count").textContent = rows.length + " 件";
@@ -53,7 +53,7 @@ function receiveSchedule(next) {
   options(byId("level"), data.rows.map(row => row.values[0]));
   options(byId("kind"), data.rows.map(row => row.values[1]));
   const heading = document.createElement("tr");
-  ["モデル", ...data.headers.slice(0, 8)].forEach(text => {
+  ["モデル", ...data.headers.slice(0, 8), ...data.headers.slice(10)].forEach(text => {
     const cell = document.createElement("th");
     cell.textContent = text;
     heading.append(cell);

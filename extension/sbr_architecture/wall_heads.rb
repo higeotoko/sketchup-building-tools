@@ -8,6 +8,7 @@ module Higeotoko
         'fixed' => '固定高さ',
         'slab' => '床下面で止める',
         'beam' => '梁下で止める',
+        'roof' => '屋根下面に合わせる',
         'exterior' => '外壁を上階につなぐ'
       }.freeze
       SIDES = { 'left' => '左（最初の層）', 'right' => '右（最後の層）' }.freeze
@@ -36,6 +37,10 @@ module Higeotoko
         raise ArgumentError, '壁のロックを解除してください。' if wall.locked?
 
         params = Follow.parameters(wall)
+        previous = params['head']
+        if previous && previous['mode'] == 'roof'
+          params['height'] = previous.fetch('fixed_height', params.fetch('height'))
+        end
         if rule
           params['head'] = rule
         else
@@ -62,8 +67,9 @@ module Higeotoko
         kinds = mode == 'exterior' ? %w[slab beam] : [mode]
         stop = target!(wall, head['stop'], kinds)
         unless PlanLinework.upright?(placement) && PlanLinework.upright?(API.placement_for(stop, Follow.kind(stop), Follow.parameters(stop)))
-          raise ArgumentError, '納まりを設定する壁・床・梁は水平な作図面に置いてください。'
+          raise ArgumentError, '納まりを設定する部材は水平な作図面に置いてください。'
         end
+        return resolve_roof(wall, params, placement, stop) if mode == 'roof'
 
         inverse = placement.inverse
         bounds = stop.bounds
@@ -83,6 +89,39 @@ module Higeotoko
         updated.merge('head' => head.merge('outside_height' => outside)).tap do |resolved|
           validate_exterior(resolved, placement, stop, upper)
         end
+      end
+
+      def resolve_roof(wall, params, placement, roof)
+        footprint = API.wall_profiles(params)
+        roof_params = Follow.parameters(roof)
+        first, last = Roof.surface_ends(roof_params)
+        x, y = (first + last).map { |point| point.first(2) }.transpose.map(&:minmax)
+        to_roof = roof.transformation.inverse * placement
+        covered = footprint.flatten(1).all? do |point|
+          u, v = xy(API.point(*point).transform(to_roof))
+          u.between?(x.first - TOLERANCE_MM, x.last + TOLERANCE_MM) &&
+            v.between?(y.first - TOLERANCE_MM, y.last + TOLERANCE_MM)
+        end
+        raise ArgumentError, "「#{wall.name}」の壁厚全体が屋根の外周に収まるようにしてください。" unless covered
+
+        to_wall = placement.inverse * roof.transformation
+        underside = lambda do |(px, py, z)|
+          API.point(px, py, z - roof_params.fetch('thickness')).transform(to_wall)
+        end
+        along = underside.call(last.first) - underside.call(first.first)
+        planes = first.each_cons(2).map do |a, b|
+          start, finish = [a, b].map(&underside)
+          normal = (finish - start).cross(along)
+          sx, sy = -normal.x / normal.z, -normal.y / normal.z
+          [sx.round(10), sy.round(10), (start.z.to_mm - sx * start.x.to_mm - sy * start.y.to_mm).round(6)]
+        end
+        low = footprint.flatten(1).map { |point| Roof.roof_height(planes, point) }.min
+        raise ArgumentError, "「#{wall.name}」の屋根下面が壁脚に近すぎます。" if low < Layout::MIN_MM
+
+        high = footprint.flat_map { |profile| Roof.roof_caps(planes, profile).flatten(1) }
+                        .map { |point| Roof.roof_height(planes, point) }.max
+        head = params.fetch('head').merge('planes' => planes, 'fixed_height' => params.dig('head', 'fixed_height') || params.fetch('height'))
+        params.merge('height' => high.round(6), 'head' => head)
       end
 
       def xy(point)
@@ -202,7 +241,10 @@ module Higeotoko
         return apply(wall, nil) if mode == 'fixed'
 
         stops = options(wall, mode == 'exterior' ? %w[slab beam] : [mode])
-        raise ArgumentError, '壁脚より上にある参照先の床または梁を用意してください。' if stops.empty?
+        if stops.empty?
+          message = mode == 'roof' ? '先に建築パレットの屋根を作成してください。' : '壁脚より上にある参照先の床または梁を用意してください。'
+          raise ArgumentError, message
+        end
 
         prompts = ['止める面の参照先']
         defaults = [stops.key(head['stop']) || stops.keys.first]
@@ -230,7 +272,7 @@ module Higeotoko
           next unless item != wall && kinds.include?(kind)
 
           z = kind == 'wall' ? item.transformation.origin.z : item.bounds.min.z
-          next unless z > bottom
+          next unless (kind == 'roof' ? item.bounds.max.z : z) > bottom
 
           level = Follow.parameters(item)['level'] || '階未指定'
           id = item.persistent_id.to_s

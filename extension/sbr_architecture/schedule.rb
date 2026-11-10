@@ -6,7 +6,7 @@ module Higeotoko
   module SbrArchitecture
     module Schedule
       API = SbrArchitecture
-      HEADERS = %w[階 種別 名称 構造・仕様 幅_mm 高さ・せい_mm 腰高_mm 体積_m3 親壁ID 要素ID].freeze
+      HEADERS = %w[階 種別 名称 構造・仕様 幅_mm 高さ・せい_mm 腰高_mm 体積_m3 親壁ID 要素ID 床面積_m2 室面積_m2].freeze
       module_function
 
       def rows(model)
@@ -19,14 +19,30 @@ module Higeotoko
           level = params['level'] || '未指定'
           quantity = volume(group, kind)
           spec = [Catalog::SYSTEMS[params['system']], params['section_id']].compact.join(' ')
+          spec = "#{Roof::TYPES.fetch(params.fetch('roof_type'))} #{params.fetch('pitch')}寸" if kind == 'roof'
+          if kind == 'stair'
+            spec = format('%d段｜蹴上げ %.1f・踏面 %.1f mm', params['risers'], params['height'] / params['risers'].to_f, params['going'])
+          end
           height = kind == 'wall' ? WallHeads.overall_height(params) : (params['height'] || params['depth'])
+          area = kind == 'slab' ? slab_area(group, params) : nil
+          room_area = params['area'] if kind == 'room'
+          spec = '室境界を確認' if kind == 'room' && !room_area
           base = [level, API.object_name(kind), group.name, spec,
-                  params['width'] || params['thickness'], height, nil, quantity, nil, id]
+                  params['width'] || params['thickness'], height, nil, quantity, nil, id, area, room_area]
           layer_rows = composition_rows(group, kind, level, id)
           openings = params.fetch('openings', []).map do |item|
             label = Openings::TYPES.fetch(item['kind'])
-            mark = item['mark'].to_s.empty? ? label : item['mark']
-            spec = [group.name, item.dig('sash', 'product_id')].compact.join(' / ')
+            mark = item['mark'].to_s.empty? ? Openings.label(item) : item['mark']
+            spec_parts = [group.name, Openings.label(item)]
+            if item['kind'] == 'window'
+              mount = Openings.window_mount(item)
+              position = Openings::WINDOW_MOUNTS.fetch(mount['mode'])
+              position += " #{format('%g', mount['offset'])} mm" if mount['offset'].positive?
+              spec_parts.concat([position, item.dig('sash', 'product_id')].compact)
+            elsif (direction = Doors.direction(item)) && direction != 'none'
+              spec_parts << Doors.direction_options(Doors.type(item)).fetch(direction)
+            end
+            spec = spec_parts.join(' / ')
             [level, label, mark, spec, item['width'], item['height'], item['sill'], nil, id, "#{id}/#{item.fetch('id')}"]
           end
           [{ values: base, target: id }, *(layer_rows + openings).map { |row| { values: row, target: id } }]
@@ -36,6 +52,14 @@ module Higeotoko
       def volume(group, kind)
         value = group.manifold? ? group.volume : (%w[wall slab].include?(kind) ? solid_volume(group) : nil)
         (value * 0.0254**3).round(5) if value
+      end
+
+      def slab_area(group, params)
+        transform = group.transformation
+        origin = ORIGIN.transform(transform)
+        x = Geom::Point3d.new(1, 0, 0).transform(transform) - origin
+        y = Geom::Point3d.new(0, 1, 0).transform(transform) - origin
+        (SlabOpenings.net_area(params) * x.cross(y).length / 1e6).round(5)
       end
 
       def determinant(transform)
@@ -77,7 +101,7 @@ module Higeotoko
           return
         end
 
-        @dialog = UI::HtmlDialog.new(dialog_title: 'SketchBRep 階別一覧',
+        @dialog = UI::HtmlDialog.new(dialog_title: 'SketchUPbuildingTool 階別一覧',
                                      preferences_key: 'Higeotoko.SbrArchitecture.Schedule',
                                      width: 850, height: 485, min_width: 480, resizable: true,
                                      style: UI::HtmlDialog::STYLE_DIALOG)
@@ -115,7 +139,7 @@ module Higeotoko
 
       def export_csv(token, level, kind)
         model = active_model(token)
-        file = UI.savepanel('階別一覧をCSVに保存', '', 'SketchBRep-階別一覧.csv')
+        file = UI.savepanel('階別一覧をCSVに保存', '', 'SketchUPbuildingTool-階別一覧.csv')
         return unless file
 
         File.write(file, csv_for(model, level, kind), encoding: 'UTF-8')
@@ -128,7 +152,10 @@ module Higeotoko
           values = row.fetch(:values)
             next unless (level.empty? || level == values[0]) && (kind.empty? || kind == values[1])
 
-            csv << values.map { |value| value.is_a?(String) && value.match?(/\A\s*[=+\-@]/) ? "'#{value}" : value }
+            csv << HEADERS.each_index.map do |i|
+              value = values[i]
+              value.is_a?(String) && value.match?(/\A\s*[=+\-@]/) ? "'#{value}" : value
+            end
           end
         end
         "\uFEFF#{content}"
