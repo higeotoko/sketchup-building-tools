@@ -5,8 +5,32 @@ require_relative '../extension/sbr_architecture/layout_sheets'
 require_relative '../extension/sbr_architecture/publication_sets'
 
 module Higeotoko::SbrArchitecture
+  def self.point(*coordinates) = coordinates
+
   module Drawings
     META = 'test'
+  end
+end
+
+class Numeric
+  def to_mm = self
+  def mm = self
+end
+
+module Geom
+  Bounds2d = Struct.new(:x, :y, :width, :height)
+end
+
+module Layout
+  Rectangle = Struct.new(:bounds)
+end
+
+CropViewport = Struct.new(:denominator, :clip_mask) do
+  Point = Struct.new(:x, :y)
+
+  def model_to_paper_point(coordinates)
+    x, y = coordinates
+    Point.new(160 + x / denominator.to_f, 180 - y / denominator.to_f)
   end
 end
 
@@ -54,6 +78,20 @@ raise 'Large plans were scaled down or forced together' unless sheets.arrange([l
 raise 'Mixed scales were grouped' unless sheets.arrange([plans.first, entry('other', 'plan', 8500, 6900, 100)], 'grouped').map(&:size) == [1, 1]
 raise 'Three elevations were not grouped when the fourth did not fit' unless
   sheets.arrange([*elevations.first(3), entry('wide', 'elevation', 19000, 13000, 100)], 'grouped').map(&:size) == [3, 1]
+
+[25, 50].each do |denominator|
+  view = CropViewport.new(denominator)
+  sheets.apply_plan_crop(view, [900, 1300, 3900, 3500], sheets::VIEWPORT_MM)
+  bounds = view.clip_mask.bounds
+  raise 'Crop lost the authored paper scale' unless bounds.to_a == [160 + 900.0 / denominator, 180 - 3500.0 / denominator,
+                                                                    3000.0 / denominator, 2200.0 / denominator]
+end
+begin
+  sheets.apply_plan_crop(CropViewport.new(25), [900, 1300, 9000, 3500], sheets::VIEWPORT_MM)
+  raise 'Crop outside the assigned frame was published'
+rescue ArgumentError => error
+  raise unless error.message.include?('配置枠')
+end
 
 if ARGV.first
   fixture = JSON.parse(File.read(ARGV.first, encoding: 'UTF-8'))

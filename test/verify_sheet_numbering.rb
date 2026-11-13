@@ -10,6 +10,7 @@ PAGE_USE_RENDERING_OPTIONS = 16
 require 'json'
 require_relative '../extension/sbr_architecture/drawings'
 require_relative '../extension/sbr_architecture/drawing_datums'
+require_relative '../extension/sbr_architecture/column_cuts'
 
 Scene = Struct.new(:spec, :number) do
   def get_attribute(_dictionary, key)
@@ -69,4 +70,10 @@ datums = Higeotoko::SbrArchitecture::DrawingDatums
   raise 'Strokes should have gaps' unless spans.each_cons(2).all? { |(_, a), (b, _)| b - a >= 1.49 * scale }
 end
 raise 'A short mark should stay connected' unless datums.section_line_spans(0, 300, 50) == [[0, 300]]
+cuts = Higeotoko::SbrArchitecture::ColumnCuts
+diagonal = datums.dimension_mask([0, 0], [4000, 4000], 140)
+raise 'A diagonal dimension masked unrelated reference frames' if cuts.intersects?([900, 3000], [1500, 3000], [diagonal])
+raise 'The area around a diagonal dimension was lost' unless cuts.intersects?([1900, 2000], [2100, 2000], [diagonal])
+horizontal = datums.dimension_mask([1000, 500], [2500, 500], 140)
+raise 'The mask for a horizontal dimension changed' unless horizontal.drop(1) == [[860, 2640], [360, 640]]
 puts 'Sheet numbering and section reference checks passed'

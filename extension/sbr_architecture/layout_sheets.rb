@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'date'
+require_relative 'plan_references'
+require_relative 'drawing_index'
 
 module Higeotoko
   module SbrArchitecture
@@ -20,9 +22,11 @@ module Higeotoko
       TITLE_COLUMNS = [10, 162, 217, 278, 333, 410].freeze
       SCHEDULE_LAYER = '建具表・室一覧'
       SCHEDULE_META = 'higeotoko.sbr_architecture.layout_schedule'
+      INDEX_LAYER = '図面目録'
+      DrawingSheet = Struct.new(:number, :title, :page_name, :placements)
       module_function
 
-      def check_source!(model, keys: nil, tables: [], allow_missing_sections: false)
+      def check_source!(model, keys: nil, tables: [], allow_missing_sections: false, allow_missing_partial_plans: false)
         raise ArgumentError, 'このSketchUp環境ではLayOutへの配置を利用できません。' unless defined?(::Layout::Document)
         all = Drawings.specs(model)
         raise ArgumentError, '先に図面シーンを作成してください。' if all.empty?
@@ -32,7 +36,8 @@ module Higeotoko
         end
         numbers = all.to_h { |scene, spec| [spec.fetch('key'), scene.get_attribute(Drawings::META, 'sheet_number')] }
         references = Drawings.section_references(Drawings.section_targets(all.map(&:last), numbers))
-        if scenes.any? { |scene, spec| needs_update?(scene, spec, numbers, references) }
+        partials = PlanReferences.targets(all.map(&:last), numbers)
+        if scenes.any? { |scene, spec| needs_update?(scene, spec, numbers, references) || PlanReferences.stale?(scene, spec, partials) }
           raise ArgumentError, '「モデルから全更新」で図面を更新し、SKPを保存してください。'
         end
         if model.path.empty? || model.modified? || !File.file?(model.path)
@@ -45,11 +50,30 @@ module Higeotoko
         if stale.any?
           raise ArgumentError, "更新が必要な図面があります（#{brief_list(stale)}）。「モデルから全更新」してSKPを保存してください。"
         end
+        broken = scenes.filter_map do |scene, _|
+          scene.name if JSON.parse(scene.get_attribute(Drawings::META, 'stats', '{}')).fetch('plan_dimensions', {}).values.any?(&:nil?)
+        end
+        if broken.any?
+          raise ArgumentError, "連動寸法の参照切れがあります（#{brief_list(broken)}）。図面・シーンで該当寸法を削除し、必要に応じて入れ直してください。"
+        end
+        broken_tags = scenes.filter_map do |scene, _|
+          scene.name if JSON.parse(scene.get_attribute(Drawings::META, 'stats', '{}')).fetch('member_tags', {}).values.any?(&:nil?)
+        end
+        if broken_tags.any?
+          raise ArgumentError, "部材タグの参照切れがあります（#{brief_list(broken_tags)}）。図面・シーンで該当タグを確認してください。"
+        end
+
         check_rooms!(model, signature) if tables.include?('rooms')
         unless allow_missing_sections
-          missing = missing_section_labels(all, scenes, numbers)
+          missing = missing_reference_labels(all, scenes, numbers, 'drawn_section_keys')
           if missing.any?
             raise ArgumentError, "平面が参照する断面が発行対象外です（#{brief_list(missing)}）。セットに追加するか、対象外を許可してください。"
+          end
+        end
+        unless allow_missing_partial_plans
+          missing = missing_reference_labels(all, scenes, numbers, PlanReferences::DRAWN_KEYS)
+          if missing.any?
+            raise ArgumentError, "参照先の部分平面が発行対象外です（#{brief_list(missing)}）。セットに追加するか、対象外への参照を許可してください。"
           end
         end
         scenes
@@ -66,10 +90,10 @@ module Higeotoko
         raise ArgumentError, '室一覧の面積が古い可能性があります。「モデルから全更新」してSKPを保存してください。'
       end
 
-      def missing_section_labels(all, scenes, numbers)
+      def missing_reference_labels(all, scenes, numbers, attribute)
         chosen = scenes.map { |_, data| data.fetch('key') }
         targets = scenes.filter_map do |scene, data|
-          scene.get_attribute(Drawings::META, 'drawn_section_keys', []) if data['kind'] == 'plan'
+          scene.get_attribute(Drawings::META, attribute, []) if data['kind'] == 'plan'
         end.flatten.uniq - chosen
         all.filter_map do |_, data|
           key = data.fetch('key')
@@ -170,6 +194,26 @@ module Higeotoko
         end
       end
 
+      def drawing_number(scene)
+        Drawings.sheet_label(scene.get_attribute(Drawings::META, 'sheet_number'))
+      end
+
+      def drawing_sheets(entries, mode)
+        groups = 0
+        arrange(entries, mode).map do |placements|
+          scene, spec, = placements.first.first
+          if placements.one?
+            title = Drawings.title(spec)
+            DrawingSheet.new(drawing_number(scene), title, title, placements)
+          else
+            groups += 1
+            title = GROUP_NAMES.fetch(spec.fetch('kind'))
+            number = format('M-%02d', groups)
+            DrawingSheet.new(number, title, "#{number}｜#{title}", placements)
+          end
+        end
+      end
+
       def project_fields(values, model_title)
         fields = PROJECT_FIELDS.to_h do |key, (label, limit)|
           text = values.fetch(key, '').to_s.strip
@@ -235,17 +279,18 @@ module Higeotoko
         end
       end
 
-      def schedule_sheet(doc, layer, sheet)
+      def schedule_sheet(doc, layer, sheet, page: nil, tagged: true)
         number, title = sheet
-        page = doc.pages.add(title)
-        page.set_attribute(SCHEDULE_META, 'sheet', number) if page.respond_to?(:set_attribute)
+        page ||= doc.pages.add(title)
+        page.name = title
+        page.set_attribute(SCHEDULE_META, 'sheet', number) if tagged && page.respond_to?(:set_attribute)
         doc.add_entity(text("#{number}    #{title}", [14, 13, 392, 11], 14, bold: true), layer, page)
         title_cell(doc, layer, 4, '縮尺・用紙', '縮尺なし (A3)', page)
-        schedule_body(sheet).each { |_, entity| doc.add_entity(entity, layer, page) }
+        schedule_body(sheet, tagged: tagged).each { |_, entity| doc.add_entity(entity, layer, page) }
         page
       end
 
-      def schedule_body(sheet)
+      def schedule_body(sheet, tagged: true)
         _, _, note, headings, widths, rows = sheet
         top = DrawingSchedules::TOP
         bottom = rows.last[0] + rows.last[1]
@@ -262,7 +307,7 @@ module Higeotoko
           end
         end
         { 'summary' => text(note, [14, 30, 392, 6], 10), 'table' => table }.each do |role, entity|
-          entity.set_attribute(SCHEDULE_META, 'role', role) if entity.respond_to?(:set_attribute)
+          entity.set_attribute(SCHEDULE_META, 'role', role) if tagged && entity.respond_to?(:set_attribute)
         end
       end
 
@@ -277,8 +322,25 @@ module Higeotoko
         entity
       end
 
-      def export(model, file, scale: nil, project: {}, tables: [], arrangement: 'single', keys: nil, allow_missing_sections: false)
-        scenes = check_source!(model, keys: keys, tables: tables, allow_missing_sections: allow_missing_sections)
+      def apply_plan_crop(view, crop, frame)
+        x_min, y_min, x_max, y_max = crop
+        points = [x_min, x_max].product([y_min, y_max]).map do |x, y|
+          view.model_to_paper_point(SbrArchitecture.point(x, y, 0))
+        end
+        left, right = points.map { |point| point.x.to_mm }.minmax
+        top, bottom = points.map { |point| point.y.to_mm }.minmax
+        x, y, width, height = frame
+        unless left >= x - 0.1 && right <= x + width + 0.1 && top >= y - 0.1 && bottom <= y + height + 0.1
+          raise ArgumentError, '部分平面の範囲が配置枠を超えました。縮尺と範囲を確認し、図面を更新してください。'
+        end
+
+        view.clip_mask = ::Layout::Rectangle.new(sheet_bounds(left, top, right - left, bottom - top))
+      end
+
+      def export(model, file, scale: nil, project: {}, tables: [], arrangement: 'single', keys: nil, drawing_index: false,
+                 allow_missing_sections: false, allow_missing_partial_plans: false)
+        scenes = check_source!(model, keys: keys, tables: tables, allow_missing_sections: allow_missing_sections,
+                               allow_missing_partial_plans: allow_missing_partial_plans)
         project = project_fields(project, model.title)
         raise ArgumentError, '対応する縮尺を選んでください。' if scale && !SCALES.include?(scale)
         file = "#{file}.layout" unless File.extname(file).casecmp?('.layout')
@@ -288,7 +350,8 @@ module Higeotoko
 
         schedules = DrawingSchedules.pages(model, tables)
         entries = scenes.map { |scene, spec| [scene, spec, paper_scale(scene, scale)] }
-        sheets = arrange(entries, arrangement)
+        sheets = drawing_sheets(entries, arrangement)
+        index_pages = drawing_index ? DrawingIndex.pages(sheets, schedules) : []
         doc = ::Layout::Document.new
         doc.page_info.width = 420.mm.to_f
         doc.page_info.height = 297.mm.to_f
@@ -296,33 +359,29 @@ module Higeotoko
         shared_frame(doc, project)
         unit_note = millimeter_dimensions?(model) ? '寸法 mm' : 'レベル mm'
         scene_indices = model.pages.to_a.each_with_index.to_h { |page, index| [page.persistent_id, index + 1] }
-        groups = 0
-        sheets.each_with_index do |placements, i|
-          scene, spec, denominator = placements.first.first
-          if placements.one?
-            title = Drawings.title(spec)
-            sheet_number = Drawings.sheet_label(scene.get_attribute(Drawings::META, 'sheet_number'))
-            page_name = title
-          else
-            groups += 1
-            title = GROUP_NAMES.fetch(spec.fetch('kind'))
-            sheet_number = format('M-%02d', groups)
-            page_name = "#{sheet_number}｜#{title}"
+        if index_pages.any?
+          index_layer = doc.layers.add(INDEX_LAYER, false)
+          index_pages.each_with_index do |sheet, index|
+            schedule_sheet(doc, index_layer, sheet, page: (doc.pages[0] if index.zero?), tagged: false)
           end
-          page = i.zero? ? doc.pages[0] : doc.pages.add(title)
-          page.name = page_name
-          placements.each do |(view_scene, view_spec, view_scale), frame, caption|
+        end
+        sheets.each_with_index do |sheet, i|
+          _, _, denominator = sheet.placements.first.first
+          page = i.zero? && index_pages.empty? ? doc.pages[0] : doc.pages.add(sheet.title)
+          page.name = sheet.page_name
+          sheet.placements.each do |(view_scene, view_spec, view_scale), frame, caption|
             view = viewport(model, scene_indices.fetch(view_scene.persistent_id), view_scale, frame)
             doc.add_entity(view, layer, page)
+            apply_plan_crop(view, view_spec['plan_crop'], frame) if view_spec['plan_crop']
             view.render if view.render_needed?
             if caption
-              number = Drawings.sheet_label(view_scene.get_attribute(Drawings::META, 'sheet_number'))
+              number = drawing_number(view_scene)
               doc.add_entity(text("#{number}   #{Drawings.title(view_spec)}   1:#{view_scale}", caption, 10, bold: true), layer, page)
               left, top, width, height = caption
               doc.add_entity(line(left, top + height, left + width, top + height), layer, page)
             end
           end
-          doc.add_entity(text("#{sheet_number}    #{title}", [14, 13, 392, 11], 14, bold: true), layer, page)
+          doc.add_entity(text("#{sheet.number}    #{sheet.title}", [14, 13, 392, 11], 14, bold: true), layer, page)
           title_cell(doc, layer, 4, '縮尺・用紙', "1:#{denominator} (A3)   #{unit_note}", page)
         end
         unless schedules.empty?
@@ -333,7 +392,7 @@ module Higeotoko
         doc.save(file)
         raise ArgumentError, 'LayOutファイルを保存できませんでした。' unless File.file?(file)
 
-        sheets.size + schedules.size
+        index_pages.size + sheets.size + schedules.size
       end
     end
   end

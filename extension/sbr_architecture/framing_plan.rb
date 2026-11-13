@@ -55,14 +55,26 @@ module Higeotoko
         params['section_id'] || params.values_at('width', 'depth').map { |mm| format('%g', mm) }.join('×')
       end
 
+      def beam_axis(beam, params)
+        finish = params.fetch('end')
+        finish = [Math.hypot(*finish), 0] if params['system'] == 'steel'
+        [[0, 0], finish].map do |x, y|
+          API.point(x, y).transform(beam.transformation).to_a.first(2).map(&:to_mm)
+        end
+      end
+
+      def column_cut(beams)
+        underside = beams.map { |beam| beam.bounds.min.z.to_mm }.min
+        underside - 1.0 if underside
+      end
+
       def draw(group, beams, level, datum, hidden)
         entities = group.entities
         labels = []
         columns = []
         masks = []
         if beams.any?
-          underside = beams.map { |beam| beam.bounds.min.z.to_mm }.min - 1.0
-          columns = ColumnCuts.sections(group.model, underside, hidden)
+          columns = ColumnCuts.sections(group.model, column_cut(beams), hidden)
           masks = ColumnCuts.masks(columns)
           beams.each do |beam|
             params = Follow.parameters(beam)
@@ -74,10 +86,7 @@ module Higeotoko
                 entities.add_line(API.point(*first, datum - 0.5), API.point(*last, datum - 0.5))
               end
             end
-            axis = [[0, 0], params.fetch('end')].map do |x, y|
-              API.point(x, y).transform(beam.transformation).to_a.first(2).map(&:to_mm)
-            end
-            labels << [section_label(params), axis, outline]
+            labels << [section_label(params), beam_axis(beam, params), outline, beam.persistent_id]
           end
           ColumnCuts.draw(entities, columns, datum)
         end

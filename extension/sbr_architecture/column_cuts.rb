@@ -11,15 +11,19 @@ module Higeotoko
         model.entities.grep(Sketchup::Group).filter_map do |column|
           next unless Follow.kind(column) == 'column' && !hidden.include?(column.persistent_id) && column.layer.visible?
 
-          box = column.bounds
-          next unless box.valid? && box.min.z.to_mm < cut && cut <= box.max.z.to_mm
-
-          edges = LayerHatches.boundary(column, column.transformation, 2, cut - 0.03, [0, 1])
-          loops = closed_loops(edges)
-          next if loops.empty?
-
-          [loops.max_by { |loop| signed_area(loop).abs }, loops, edges]
+          section(column, cut)
         end
+      end
+
+      def section(column, cut)
+        box = column.bounds
+        return unless box.valid? && box.min.z.to_mm < cut && cut <= box.max.z.to_mm
+
+        edges = LayerHatches.boundary(column, column.transformation, 2, cut - 0.03, [0, 1])
+        loops = closed_loops(edges)
+        return if loops.empty?
+
+        [loops.max_by { |loop| signed_area(loop).abs }, loops, edges]
       end
 
       def closed_loops(edges)

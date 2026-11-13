@@ -26,4 +26,11 @@ raise 'Crossing face was not cropped' unless clip.polygon(triangle) == expected
 opposite = Higeotoko::SbrArchitecture::SectionDepth.new([0, 3030, 0], [0, -1, 0], 1200, {})
 segment = opposite.segment([0, 3300, 0], [0, 5000, 0])
 raise 'Reversing the eye did not reverse the retained side' unless segment.last[1].round(6) == 4230
+
+band = Higeotoko::SbrArchitecture::SectionDepth.new([0, 0, 1100], [0, 0, -1], 0, {}, minimum_z: -300)
+crossing = band.segment([0, 0, -600], [0, 0, 1500])
+raise 'A wall edge must stop at both range boundaries' unless crossing.map { |point| point[2].round(6) } == [-300, 1100]
+raise 'An edge below the plan range survived' if band.segment([0, 0, -900], [0, 0, -400])
+face = band.polygon([[0, 0, -600], [200, 0, -600], [200, 0, 1500], [0, 0, 1500]])
+raise 'A wall face was not clipped by both planes' unless face.size == 4 && face.map { |point| point[2].round(6) }.minmax == [-300, 1100]
 puts 'Section depth clipping checks passed'

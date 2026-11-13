@@ -51,10 +51,21 @@ module Higeotoko
             ends = [dim.start.last, dim.end.last].map do |point|
               (point + dim.offset_vector).transform(transform).to_a.first(2).map(&:to_mm)
             end
-            x, y = ends.transpose.map { |values| a, b = values.minmax; [a - margin, b + margin] }
-            ColumnCuts.mask_for([[[x.first, y.first], [x.last, y.first], [x.last, y.last], [x.first, y.last]]])
+            dimension_mask(*ends, margin)
           end
         end
+      end
+
+      def dimension_mask(a, b, margin)
+        dx, dy = b[0] - a[0], b[1] - a[1]
+        length = Math.hypot(dx, dy)
+        ux, uy = length.positive? ? [dx / length, dy / length] : [1, 0]
+        start = [a[0] - ux * margin, a[1] - uy * margin]
+        finish = [b[0] + ux * margin, b[1] + uy * margin]
+        nx, ny = -uy * margin, ux * margin
+        corners = [[start[0] - nx, start[1] - ny], [finish[0] - nx, finish[1] - ny],
+                   [finish[0] + nx, finish[1] + ny], [start[0] + nx, start[1] + ny]]
+        ColumnCuts.mask_for([corners])
       end
 
       def section_marks(entities, sections, frame, cut, denominator:, masks: [], grid_masks: [])

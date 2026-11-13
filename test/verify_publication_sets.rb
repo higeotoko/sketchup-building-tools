@@ -55,7 +55,7 @@ Dir.mktmpdir do |folder|
   File.write(path, 'saved')
   base = { 'paper_scale' => 50, 'extent_mm' => [7500, 6200], 'source_signature' => 'current' }
   plan = [Scene.new('平面 1FL', base.merge('sheet_number' => 1, 'references' => [7], 'drawn_section_keys' => ['section:a-a'])),
-          { 'key' => 'plan:1FL', 'kind' => 'plan' }]
+          { 'key' => 'plan:1FL', 'kind' => 'plan', 'level' => '1FL' }]
   draft = [Scene.new('梁伏図 2FL', base.merge('sheet_number' => 4, 'stats' => '{"provisional":true}')),
            { 'key' => 'framing:2FL', 'kind' => 'framing' }]
   section = [Scene.new('断面 A-A', base.merge('sheet_number' => 7)), { 'key' => 'section:a-a', 'kind' => 'section' }]
@@ -70,9 +70,23 @@ Dir.mktmpdir do |folder|
   expect_error('同じ名前') { sets.save(model, { 'name' => '確認用', 'keys' => ['plan:1FL'] }) }
   expect_error('表の設定') { sets.save(model, { 'name' => '別のセット', 'keys' => ['plan:1FL'], 'tables' => ['unknown'] }) }
   expect_error('配置方法') { sets.save(model, { 'name' => '別のセット', 'keys' => ['plan:1FL'], 'arrangement' => 'unknown' }) }
+  with_index = sets.save(model, item.merge('drawing_index' => true))
+  raise 'Index setting was not saved with the publication' unless
+    with_index.fetch('id') == id && sets.find(model, id)['drawing_index'] == true
+  raise 'Disabling the index did not restore the original set' unless
+    sets.save(model, with_index.merge('drawing_index' => false)) == item
   raise 'Unselected drafts blocked a complete set' unless layout.check_source!(model, keys: item['keys']) == [plan, section]
   expect_error('A-07') { layout.check_source!(model, keys: ['plan:1FL']) }
   raise 'An explicit reference exception was rejected' unless layout.check_source!(model, keys: ['plan:1FL'], allow_missing_sections: true) == [plan]
+  plan.first.attributes['stats'] = JSON.generate('plan_dimensions' => { 'dim-a' => nil })
+  expect_error('連動寸法の参照切れ') { layout.check_source!(model, keys: item['keys']) }
+  raise 'A broken dimension on an unselected plan blocked publication' unless layout.check_source!(model, keys: ['section:a-a']) == [section]
+  plan.first.attributes['stats'] = JSON.generate('plan_dimensions' => { 'dim-a' => 2880 })
+  section.first.attributes['stats'] = JSON.generate('member_tags' => { 'tag-a' => nil })
+  expect_error('部材タグの参照切れ') { layout.check_source!(model, keys: item['keys']) }
+  raise 'A broken tag on an unselected view blocked publication' unless
+    layout.check_source!(model, keys: ['plan:1FL'], allow_missing_sections: true) == [plan]
+  section.first.attributes['stats'] = JSON.generate('member_tags' => { 'tag-a' => '梁｜RC造 300×500' })
   model.data['source_signature'] = 'changed and saved'
   expect_error('更新が必要な図面') { layout.check_source!(model, keys: item['keys']) }
   model.data.delete('source_signature')
@@ -80,6 +94,26 @@ Dir.mktmpdir do |folder|
   expect_error('室一覧の面積') { layout.check_source!(model, keys: item['keys'], tables: ['rooms']) }
   model.data['room_schedule_signature'] = 'current'
   raise 'Refreshed room schedules did not pass' unless layout.check_source!(model, keys: item['keys'], tables: ['rooms']) == [plan, section]
+
+  part = [Scene.new('平面 1FL｜水回り詳細', base.merge('sheet_number' => 9, 'references' => [7])),
+          { 'key' => 'plan-view:detail', 'kind' => 'plan', 'level' => '1FL',
+            'plan_name' => '水回り詳細', 'plan_crop' => [0, 0, 3000, 2200] }]
+  model.scenes << part
+  expect_error('モデルから全更新') { layout.check_source!(model, keys: item['keys']) }
+  references = api::PlanReferences
+  targets = references.targets([part.last], { 'plan-view:detail' => 9 })
+  plan.first.attributes[references::SIGNATURE] = references.signature(targets)
+  plan.first.attributes[references::DRAWN_KEYS] = ['plan-view:detail']
+  expect_error('A-09') { layout.check_source!(model, keys: item['keys']) }
+  raise 'The partial reference override did not work' unless
+    layout.check_source!(model, keys: item['keys'], allow_missing_partial_plans: true) == [plan, section]
+  raise 'A complete set with a partial plan could not be published' unless
+    layout.check_source!(model, keys: item['keys'] + ['plan-view:detail']) == [plan, section, part]
+  raise 'An omitted full plan blocked an independent partial view' unless layout.check_source!(model, keys: ['plan-view:detail']) == [part]
+  model.scenes.delete(part)
+  expect_error('モデルから全更新') { layout.check_source!(model, keys: item['keys']) }
+  plan.first.attributes.delete(references::SIGNATURE)
+  plan.first.attributes.delete(references::DRAWN_KEYS)
 
   section.first.name = '断面 A-A 改訂'
   clone = Model.new(path, model.scenes, JSON.parse(JSON.generate(model.data)), false)

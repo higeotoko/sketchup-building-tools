@@ -20,19 +20,22 @@ module Higeotoko
         item.is_a?(Sketchup::Face) || item.is_a?(Sketchup::Edge)
       end
 
-      def initialize(point, eye, depth, visibility)
-        @axis = eye.to_a.index { |value| !value.zero? }
-        @sign = eye.to_a.fetch(@axis)
-        @limit = @sign * point.to_a.fetch(@axis).to_f - depth.mm.to_f
+      def initialize(point, eye, depth, visibility, minimum_z: nil)
+        axis = eye.to_a.index { |value| !value.zero? }
+        sign = eye.to_a.fetch(axis)
+        limit = sign * point.to_a.fetch(axis).to_f - depth.mm.to_f
+        @planes = [[axis, sign, limit]]
+        @planes << [2, 1, minimum_z.mm.to_f] if minimum_z
         @visibility = visibility
       end
 
       def extent(box, transform)
         return :inside unless box.valid?
 
-        low, high = 8.times.map { |i| distance(box.corner(i).transform(transform)) }.minmax
-        return :beyond if high < 0
-        return :inside if low >= 0
+        corners = 8.times.map { |i| box.corner(i).transform(transform) }
+        ranges = @planes.map { |plane| corners.map { |point| distance(point, plane) }.minmax }
+        return :beyond if ranges.any? { |_, high| high < 0 }
+        return :inside if ranges.all? { |low, _| low >= 0 }
 
         :crossing
       end
@@ -57,8 +60,9 @@ module Higeotoko
         [hidden + cropped, { depth_hidden: hidden.size, depth_cropped: cropped.size }]
       end
 
-      def distance(point)
-        @sign * point.to_a.fetch(@axis).to_f - @limit
+      def distance(point, plane = @planes.first)
+        axis, sign, limit = plane
+        sign * point.to_a.fetch(axis).to_f - limit
       end
 
       def intersection(a, b, da, db)
@@ -66,8 +70,12 @@ module Higeotoko
       end
 
       def polygon(points)
+        @planes.reduce(points) { |clipped, plane| clip_polygon(clipped, plane) }
+      end
+
+      def clip_polygon(points, plane)
         points.zip(points.rotate).flat_map do |a, b|
-          da, db = distance(a), distance(b)
+          da, db = distance(a, plane), distance(b, plane)
           result = []
           result << a if da >= 0
           result << intersection(a, b, da, db) if da.negative? != db.negative?
@@ -76,7 +84,16 @@ module Higeotoko
       end
 
       def segment(a, b)
-        da, db = distance(a), distance(b)
+        @planes.reduce([a, b]) do |clipped, plane|
+          result = clip_segment(*clipped, plane)
+          return unless result
+
+          result
+        end
+      end
+
+      def clip_segment(a, b, plane)
+        da, db = distance(a, plane), distance(b, plane)
         return if da < 0 && db < 0
         return [a, b] if da >= 0 && db >= 0
 

@@ -27,6 +27,18 @@
         <label>作図レベル <select id="level"></select></label>
         <label>床面からの切断高さ (mm) <input id="cut" type="number" value="1100" min="1" step="any" required></label>
       </div>
+      <div id="named-plan" class="fields" hidden>
+        <label class="wide">編集する平面 <select id="plan-target"></select></label>
+        <label id="plan-name-row" hidden>平面の名前 <input id="plan-name" maxlength="32" placeholder="例　建具確認"></label>
+        <label id="plan-scale-row" hidden>この平面の縮尺 <select id="plan-scale"></select></label>
+        <div id="plan-crop" class="wide" hidden>
+          <div class="fields">
+            <button id="plan-crop-pick" type="button">平面で範囲を指定</button>
+            <button id="plan-crop-clear" type="button">全体に戻す</button>
+          </div>
+          <p id="plan-crop-size" class="tip" aria-live="polite"></p>
+        </div>
+      </div>
       <div id="framing" class="fields" hidden>
         <label>基準からの梁天端オフセット (mm) <input id="top-offset" type="number" step="any" value="0"></label>
         <label>梁天端を拾う範囲 ± (mm) <input id="top-tolerance" type="number" min="1" step="any" value="150"></label>
@@ -34,6 +46,15 @@
       </div>
       <label id="hatch-row" class="line"><span>平面に壁・床の層別ハッチを表示</span><input id="hatch" type="checkbox" style="width:auto;min-height:0"></label>
       <label id="opening-dimensions-row" class="line"><span>記号付き建具の位置・幅寸法を表示</span><input id="opening-dimensions" type="checkbox" style="width:auto;min-height:0"></label>
+      <label id="partial-references-row" class="line" hidden><span>部分平面の参照枠と図番を表示</span><input id="partial-references" type="checkbox" style="width:auto;min-height:0" checked></label>
+      <details id="plan-range">
+        <summary>平面の表示範囲</summary>
+        <div class="fields">
+          <label>床面からの表示下限 (mm)<input id="plan-bottom" type="number" step="any" placeholder="空欄は従来の階別表示"></label>
+          <label>床面からの頭上梁の上限 (mm)<input id="plan-top" type="number" step="any" placeholder="空欄は頭上梁を表示しない"></label>
+        </div>
+        <p class="tip">下限より下の建築部材を省きます。切断高さから上限までに梁下がある頭上梁を破線で表示します。</p>
+      </details>
       <div id="side-row" hidden><label>見る方向 <select id="side"></select></label></div>
       <div id="elevation" class="fields" hidden>
         <label class="wide">北の方向（4立面で共通） <select id="north"></select></label>
@@ -69,6 +90,24 @@
   <section>
     <div class="line"><h2>登録済みシーン</h2><button type="button" id="update" disabled>モデルから全更新</button></div>
     <ul id="pages"></ul>
+    <details id="plan-dimensions">
+      <summary>平面の連動寸法</summary>
+      <p id="plan-dimensions-hint" class="tip">一般平面を開くと、壁仕上面と柱芯を指定できます。</p>
+      <button type="button" id="plan-dimension-pick" disabled>平面で寸法を追加</button>
+      <div class="fields" id="plan-dimension-list" style="margin-top:8px" hidden>
+        <select id="plan-dimension-target" aria-label="削除する連動寸法"></select>
+        <button type="button" id="plan-dimension-remove" disabled>選んだ寸法を削除</button>
+      </div>
+    </details>
+    <details id="member-tags">
+      <summary>柱・梁の部材タグ</summary>
+      <p id="member-tag-hint" class="tip">一般平面または梁伏図を開きます。</p>
+      <button type="button" id="member-tag-pick" disabled>平面でタグを配置</button>
+      <div class="fields" id="member-tag-list" style="margin-top:8px" hidden>
+        <select id="member-tag-target" aria-label="削除する部材タグ"></select>
+        <button type="button" id="member-tag-remove" disabled>選んだタグを削除</button>
+      </div>
+    </details>
     <details>
       <summary>図枠の案件情報</summary>
       <div class="fields" style="margin:8px 0">
@@ -84,7 +123,7 @@
     <p id="publication-info" class="tip"></p>
     <label id="section-override" hidden style="display:flex;align-items:center;gap:6px;margin:6px 0">
       <input id="allow-missing-sections" type="checkbox" style="width:auto;min-height:0">
-      発行対象外の断面への参照を許可する
+      発行対象外の断面・部分平面への参照を許可する
     </label>
     <details id="publication-editor">
       <summary>発行セットを登録・編集</summary>
@@ -95,6 +134,7 @@
           <div id="publication-views" aria-label="発行する図面"></div>
           <label class="check"><input id="publication-openings" type="checkbox">建具表を付ける</label>
           <label class="check"><input id="publication-rooms" type="checkbox">室一覧を付ける</label>
+          <label class="check"><input id="publication-drawing-index" type="checkbox">図面目録を先頭に付ける</label>
           <label>LayOutの配置 <select id="publication-arrangement">
             <option value="single">図面ごとに1枚</option>
             <option value="grouped">同じ種類の図面をまとめる</option>
@@ -112,6 +152,7 @@
     <div class="fields" style="margin:8px 0">
       <label class="line"><span>建具表を付ける</span><input id="table-openings" type="checkbox" style="width:auto;min-height:0"></label>
       <label class="line"><span>室一覧を付ける</span><input id="table-rooms" type="checkbox" style="width:auto;min-height:0"></label>
+      <label class="line"><span>図面目録を先頭に付ける</span><input id="drawing-index" type="checkbox" style="width:auto;min-height:0"></label>
     </div>
     <label>LayOutの配置
       <select id="layout-arrangement">
@@ -144,7 +185,7 @@
 <script>
 "use strict";
 const byId = id => document.getElementById(id);
-let state, busy = false;
+let state, busy = false, planCrop = null;
 let publishing = false;
 let draftId = "", publicationDirty = false;
 const tableKeys = ["openings", "rooms"];
@@ -160,6 +201,7 @@ function showPublication(item) {
   byId("publication-info").textContent = item
     ? [item.keys.length + "図", item.arrangement === "grouped" ? "複数配置" : "図面ごとに1枚",
       ...item.tables.map(key => key === "openings" ? "建具表" : "室一覧"),
+      item.drawing_index ? "図面目録" : "",
       missing ? "一覧から削除された図面 " + missing + "件。選び直して保存してください。" : ""].filter(Boolean).join("　")
     : "登録済みの図面をすべて出力します。";
 }
@@ -170,6 +212,7 @@ function editPublication(item) {
   byId("publication-name").value = item?.name ?? "";
   byId("publication-remove").disabled = !draftId;
   byId("publication-arrangement").value = item?.arrangement ?? byId("layout-arrangement").value;
+  byId("publication-drawing-index").checked = item ? item.drawing_index === true : byId("drawing-index").checked;
   for (const key of tableKeys) {
     byId("publication-" + key).checked = item ? item.tables.includes(key) : byId("table-" + key).checked;
   }
@@ -191,8 +234,15 @@ function setBusy(value) {
   byId("publication-count").textContent = "発行する図面 " + checks.filter(input => input.checked).length + "件";
   byId("publication-toggle-all").textContent = checks.every(input => input.checked) ? "すべて外す" : "すべて選択";
   byId("make").disabled = busy || !state;
-  for (const id of ["kind", "section-target", "plan-section", "native-section"]) byId(id).disabled = busy;
+  for (const id of ["kind", "level", "plan-target", "plan-crop-pick", "section-target", "plan-section", "native-section"]) byId(id).disabled = busy;
+  byId("plan-crop-clear").disabled = busy || !planCrop;
   byId("update").disabled = busy || !state?.pages.length;
+  byId("plan-dimension-pick").disabled = busy || !state?.plans.some(plan => plan.kind === "plan");
+  byId("plan-dimension-target").disabled = busy;
+  byId("plan-dimension-remove").disabled = busy || !state?.plan_dimensions?.entries.length;
+  byId("member-tag-pick").disabled = busy || !state?.plans.length;
+  byId("member-tag-target").disabled = busy;
+  byId("member-tag-remove").disabled = busy || !state?.member_tags?.entries.length;
   byId("layout").disabled = busy || !state?.pages.length || missingPublicationViews(activePublication()) > 0 ||
     (byId("publication-editor").open && publicationDirty);
   byId("publication").disabled = busy || !state;
@@ -204,6 +254,14 @@ function refreshFields() {
   const kind = byId("kind").value;
   const horizontal = kind === "plan" || kind === "framing";
   byId("plan").hidden = !horizontal;
+  byId("named-plan").hidden = kind !== "plan";
+  const namedPlan = kind === "plan" && byId("plan-target").value !== "";
+  byId("plan-name-row").hidden = !namedPlan;
+  byId("plan-scale-row").hidden = !namedPlan;
+  byId("plan-crop").hidden = !namedPlan;
+  byId("partial-references-row").hidden = kind !== "plan" || !!planCrop;
+  byId("plan-name").disabled = !namedPlan;
+  byId("plan-name").required = namedPlan;
   byId("cut").closest("label").hidden = kind !== "plan";
   byId("framing").hidden = kind !== "framing";
   for (const id of ["top-offset", "top-tolerance"]) {
@@ -212,6 +270,8 @@ function refreshFields() {
   }
   byId("hatch-row").hidden = kind !== "plan";
   byId("opening-dimensions-row").hidden = kind !== "plan";
+  byId("plan-range").hidden = kind !== "plan";
+  for (const id of ["plan-bottom", "plan-top"]) byId(id).disabled = kind !== "plan";
   byId("side-row").hidden = horizontal;
   byId("elevation").hidden = kind !== "elevation";
   for (const id of ["eave", "ridge"]) byId(id).disabled = kind !== "elevation";
@@ -228,18 +288,37 @@ function refreshFields() {
   byId("depth").disabled = kind !== "section";
   byId("name").required = kind === "section";
   byId("offset-label").querySelector("span").textContent = byId("side").value.toUpperCase()[0] + "座標 (mm)";
-  byId("hint").textContent = {plan:"切断面より上と床面以下の梁は省きます。同じ階を選ぶと既存のシーンを更新します。",
+  byId("hint").textContent = {plan:"標準の平面を更新するか、名前付き平面を追加できます。切断高さや注記は平面ごとに保存します。",
     framing:"2階床下の梁は2FLを基準に選びます。梁天端が床面より下なら、その差を負の値で入力します。",
     elevation:"北を選ぶと4立面の方位名をそろえます。建具高さと軒・棟のZは立面ごとに設定します。",
     section:"平面で断面線と見る方向をクリックできます。登録済みの断面を選ぶと、図番を保って位置を変えられます。"}[kind];
 }
-function loadPlanSettings() {
+function loadPlanSettings(target = byId("plan-target").value) {
   const level = byId("level").value;
-  const settings = state?.plans.find(item => item.kind === "plan" && item.level === level);
+  const plans = state?.plans.filter(item => item.kind === "plan" && item.level === level) ?? [];
+  const standard = plans.find(item => !item.plan_name);
+  const named = plans.filter(item => item.plan_name);
+  const numbers = new Map(state?.pages.map(([key, , , number]) => [key, number]));
+  const options = [new Option("標準の一般平面", ""), ...named.map(item =>
+    new Option([numbers.get(item.key), item.plan_name].filter(Boolean).join("　"), item.key)),
+    new Option("名前付き平面を新規作成", "new")];
+  byId("plan-target").replaceChildren(...options);
+  byId("plan-target").value = options.some(option => option.value === target) ? target : "";
+  const selected = named.find(item => item.key === byId("plan-target").value);
+  const settings = selected ?? standard;
   const framing = state?.plans.find(item => item.kind === "framing" && item.level === level);
+  byId("plan-name").value = selected?.plan_name ?? "";
+  byId("plan-scale").replaceChildren(...Array.from(byId("layout-scale").options).slice(1).map(option => option.cloneNode(true)));
+  byId("plan-scale").value = settings?.scale?.toString() ?? "auto";
   byId("cut").value = settings?.cut ?? 1100;
+  byId("plan-bottom").value = settings?.plan_bottom ?? "";
+  byId("plan-top").value = settings?.plan_top ?? "";
+  byId("plan-range").open = settings?.plan_bottom != null || settings?.plan_top != null;
+  receivePlanCrop(selected?.plan_crop ?? null);
   byId("hatch").checked = settings?.hatch === true;
   byId("opening-dimensions").checked = settings?.opening_dimensions === true;
+  const standardPlan = byId("plan-target").value === "";
+  byId("partial-references").checked = (standardPlan ? standard : selected)?.show_partial_refs ?? standardPlan;
   byId("top-offset").value = framing?.top_offset ?? 0;
   byId("top-tolerance").value = framing?.top_tolerance ?? 150;
   byId("beam-labels").checked = framing?.beam_labels !== false;
@@ -253,7 +332,9 @@ function loadElevationSettings() {
 function receiveDrawings(data) {
   const same = state?.token === data.token;
   const selectedPublication = data.publication_selection ?? (same ? byId("publication").value : "");
-  const level = same ? byId("level").value : data.active;
+  const openedPlan = data.plans.find(item => item.key === data.plan_selection && item.kind === "plan");
+  const level = openedPlan?.level ?? (same ? byId("level").value : data.active);
+  const plan = openedPlan ? (openedPlan.plan_name ? openedPlan.key : "") : (same ? byId("plan-target").value : "");
   const side = same ? byId("side").value : "y-";
   const section = same ? byId("section-target").value : "";
   state = data;
@@ -261,11 +342,13 @@ function receiveDrawings(data) {
     for (const key of ["name", "number", "author", "date"]) byId("project-" + key).value = "";
     byId("project-name").placeholder = data.project_title || "空欄はモデル名";
     for (const key of tableKeys) byId("table-" + key).checked = false;
+    byId("drawing-index").checked = false;
     byId("layout-arrangement").value = "single";
   }
   byId("level").replaceChildren(...data.levels.map(([name, z]) => new Option(name + " · " + z + " mm", name)));
   if (data.levels.some(([name]) => name === level)) byId("level").value = level;
-  loadPlanSettings();
+  if (openedPlan) byId("kind").value = "plan";
+  loadPlanSettings(plan);
   const beamLevel = same ? byId("beam-level").value : level;
   byId("beam-level").replaceChildren(...data.levels.map(([name, z]) => new Option(name + " · " + z + " mm", name)));
   if (data.levels.some(([name]) => name === beamLevel)) byId("beam-level").value = beamLevel;
@@ -292,6 +375,19 @@ function receiveDrawings(data) {
     item.append(button);
     return item;
   }));
+  const dimensions = data.plan_dimensions;
+  byId("plan-dimensions-hint").textContent = dimensions ?
+    dimensions.name + " · 壁仕上面・柱芯から2点を指定し、寸法線を置きます。" : "一般平面を開くと、壁仕上面と柱芯を指定できます。";
+  byId("plan-dimension-list").hidden = !dimensions?.entries.length;
+  byId("plan-dimension-target").replaceChildren(...(dimensions?.entries ?? []).map(([id, value], index) =>
+    new Option((index + 1) + "　" + (value == null ? "参照切れ・範囲外" : value.toLocaleString("ja-JP") + " mm"), id)));
+  const tags = data.member_tags;
+  byId("member-tag-hint").textContent = tags ?
+    tags.name + " · 柱か梁を選び、引出線付きのタグを置きます。同じ部材を選ぶと位置を変更できます。" :
+    "一般平面または梁伏図を開きます。";
+  byId("member-tag-list").hidden = !tags?.entries.length;
+  byId("member-tag-target").replaceChildren(...(tags?.entries ?? []).map(([id, value], index) =>
+    new Option((index + 1) + "　" + (value ?? "参照切れ・範囲外"), id)));
   const publications = data.publications ?? [];
   byId("publication").replaceChildren(new Option("全図面", ""), ...publications.map(item => new Option(item.name, item.id)));
   byId("publication").value = publications.some(item => item.id === selectedPublication) ? selectedPublication : "";
@@ -314,11 +410,54 @@ function receiveSectionPlane(data) {
   byId("offset").value = data.offset;
   refreshFields();
 }
+function receivePlanCrop(crop) {
+  planCrop = crop;
+  const size = crop && [crop[2] - crop[0], crop[3] - crop[1]].map(mm => mm.toLocaleString("ja-JP", { maximumFractionDigits: 1 }));
+  byId("plan-crop-size").textContent = size ? size.join(" × ") + " mm · LayOutでこの範囲を切り出します。" : "全体を表示";
+  byId("plan-crop-clear").disabled = busy || !crop;
+  byId("partial-references-row").hidden = byId("kind").value !== "plan" || !!crop;
+}
 function receiveRoofHeight({field, value}) {
   if (field === "eave" || field === "ridge") byId(field).value = value;
 }
 byId("kind").addEventListener("change", () => { if (byId("kind").value === "elevation") loadElevationSettings(); refreshFields(); });
-byId("level").addEventListener("change", loadPlanSettings);
+byId("level").addEventListener("change", () => { loadPlanSettings(""); refreshFields(); });
+byId("plan-target").addEventListener("change", () => {
+  loadPlanSettings();
+  refreshFields();
+  if (byId("plan-target").value === "new") byId("plan-name").focus();
+});
+byId("plan-crop-pick").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "平面上で範囲の対角2点をクリックします。Escで中止できます。";
+  sketchup.pickPlanCrop(state.token);
+});
+byId("plan-crop-clear").addEventListener("click", () => receivePlanCrop(null));
+byId("plan-dimension-pick").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "壁仕上面や柱芯を2箇所クリックし、寸法線を置きます。Escで中止できます。";
+  sketchup.pickPlanDimension(state.token);
+});
+byId("plan-dimension-remove").addEventListener("click", () => {
+  const id = byId("plan-dimension-target").value;
+  if (busy || !state?.plan_dimensions || !id) return;
+  setBusy(true);
+  sketchup.removePlanDimension(state.token, state.plan_dimensions.key, id);
+});
+byId("member-tag-pick").addEventListener("click", () => {
+  if (busy || !state) return;
+  setBusy(true);
+  byId("status").textContent = "柱または梁をクリックし、タグの位置を指定します。Escで中止できます。";
+  sketchup.pickMemberTag(state.token);
+});
+byId("member-tag-remove").addEventListener("click", () => {
+  const id = byId("member-tag-target").value;
+  if (busy || !state?.member_tags || !id) return;
+  setBusy(true);
+  sketchup.removeMemberTag(state.token, state.member_tags.key, id);
+});
 byId("side").addEventListener("change", () => { if (byId("kind").value === "elevation") loadElevationSettings(); refreshFields(); });
 byId("beam-mode").addEventListener("change", refreshFields);
 byId("plan-section").addEventListener("click", () => {
@@ -373,6 +512,18 @@ byId("drawing-form").addEventListener("submit", event => {
   fields.hatch = byId("hatch").checked;
   fields.opening_dimensions = byId("opening-dimensions").checked;
   fields.scale = byId("layout-scale").value;
+  if (fields.kind === "plan") {
+    fields.plan_bottom = byId("plan-bottom").value;
+    fields.plan_top = byId("plan-top").value;
+    if (!planCrop) fields.show_partial_refs = byId("partial-references").checked;
+  }
+  if (fields.kind === "plan" && byId("plan-target").value) {
+    const target = byId("plan-target").value;
+    if (target !== "new") fields.key = target;
+    fields.plan_name = byId("plan-name").value;
+    fields.scale = byId("plan-scale").value;
+    fields.plan_crop = planCrop;
+  }
   sketchup.makeDrawing(state.token, JSON.stringify(fields));
 });
 byId("update").addEventListener("click", () => {
@@ -415,6 +566,7 @@ byId("publication-form").addEventListener("submit", event => {
   const data = { id: draftId, name: byId("publication-name").value, keys,
     tables: tableKeys.filter(key => byId("publication-" + key).checked),
     arrangement: byId("publication-arrangement").value };
+  if (byId("publication-drawing-index").checked) data.drawing_index = true;
   setBusy(true);
   sketchup.savePublication(state.token, JSON.stringify(data));
 });
@@ -433,10 +585,12 @@ byId("layout").addEventListener("click", () => {
   if (publication) {
     project.publication = publication.id;
     project.allow_missing_sections = byId("allow-missing-sections").checked;
+    project.allow_missing_partial_plans = project.allow_missing_sections;
   }
   else {
     project.tables = tableKeys.filter(key => byId("table-" + key).checked);
     project.arrangement = byId("layout-arrangement").value;
+    if (byId("drawing-index").checked) project.drawing_index = true;
   }
   sketchup.exportLayout(state.token, byId("layout-scale").value, JSON.stringify(project));
 });

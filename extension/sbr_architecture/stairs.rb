@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'winder_stairs'
+
 module Higeotoko
   module SbrArchitecture
     module Stairs
@@ -17,46 +19,66 @@ module Higeotoko
         end
       end
 
-      def dimensions(rect, direction, height, risers)
+      def dimensions(rect, direction, height, risers, start_turn: 'none', end_turn: 'none')
         raise ArgumentError, '上る方向を選んでください。' unless DIRECTIONS.key?(direction)
         raise ArgumentError, '蹴上げの段数は2〜60の整数にしてください。' unless risers&.between?(2, 60)
         raise ArgumentError, '上階の床は下階より上に置いてください。' if height <= Layout::MIN_MM
+        unless [start_turn, end_turn].all? { |turn| WinderStairs::TURNS.key?(turn) }
+          raise ArgumentError, '上り口と上り切りの回り段を選んでください。'
+        end
 
         ring = SlabOpenings.rectangle(*rect)
         axis = direction.start_with?('x') ? 0 : 1
         spans = ring[2].zip(ring[0]).map { |high, low| high - low }
         run = spans[axis]
+        width = spans[1 - axis]
+        info = { 'height' => height, 'run' => run, 'width' => width, 'rect' => ring.values_at(0, 2) }
+        if [start_turn, end_turn].any? { |turn| turn != 'none' }
+          raise ArgumentError, '段数に対して階高が足りません。' if height / risers.to_f < Layout::MIN_MM
+
+          return info.merge(WinderStairs.dimensions(run, width, risers, start_turn, end_turn))
+        end
+
         landing = [20.0, run * 0.03].min
         going = (run - landing) / (risers - 1)
         if [landing, going, height / risers.to_f].any? { |length| length < Layout::MIN_MM }
           raise ArgumentError, '段数に対して開口の長さか階高が足りません。'
         end
 
-        { 'height' => height, 'run' => run, 'width' => spans[1 - axis], 'rect' => ring.values_at(0, 2), 'going' => going }
+        info.merge('going' => going)
       end
 
       def resolve(model, params)
         slab = model.find_entity_by_persistent_id(params.fetch('host_id'))
         unless slab.is_a?(Sketchup::Group) && Follow.kind(slab) == 'slab'
-          raise ArgumentError, '直階段の参照先の床がありません。階段を削除し、床と開口を選び直してください。'
+          raise ArgumentError, '階段の参照先の床がありません。階段を削除し、床と開口を選び直してください。'
         end
         transform = slab.transformation
         unless PlanLinework.upright?(transform) && [transform.xaxis, transform.yaxis, transform.zaxis].all? { |axis| (axis.length - 1).abs < 1e-6 } &&
                transform.xaxis.cross(transform.yaxis).samedirection?(transform.zaxis)
-          raise ArgumentError, '直階段の参照先には、水平で拡大縮小や反転をしていない床を選んでください。'
+          raise ArgumentError, '階段の参照先には、水平で拡大縮小や反転をしていない床を選んでください。'
         end
 
         host = Follow.parameters(slab)
         opening = host.fetch(SlabOpenings::KEY, []).find { |item| item['id'] == params['opening_id'] }
-        raise ArgumentError, '直階段の参照先の床開口がありません。階段を編集するか削除してください。' unless opening
+        raise ArgumentError, '階段の参照先の床開口がありません。階段を編集するか削除してください。' unless opening
 
         base = API.levels(model)[params.fetch('level')]
-        raise ArgumentError, '直階段の下階レベルを選び直してください。' unless base
+        raise ArgumentError, '階段の下階レベルを選び直してください。' unless base
 
         count = Integer(params['risers'].to_s, exception: false)
         rise = (transform.origin.z.to_mm - base).round(6)
-        info = dimensions(opening.fetch('corners'), params.fetch('direction'), rise, count)
-        [params.merge(info, 'risers' => count), transform]
+        info = dimensions(opening.fetch('corners'), params.fetch('direction'), rise, count,
+                          start_turn: params.fetch('start_turn', 'none'), end_turn: params.fetch('end_turn', 'none'))
+        [params.except('straight_steps', 'top_landing').merge(info, 'risers' => count), transform]
+      end
+
+      def winder?(params)
+        %w[start_turn end_turn].any? { |key| params.fetch(key, 'none') != 'none' }
+      end
+
+      def type_name(params)
+        winder?(params) ? '回り階段' : '直階段'
       end
 
       def point_at(params, distance, across, z)
@@ -84,6 +106,17 @@ module Higeotoko
       end
 
       def write(group, params)
+        if winder?(params)
+          WinderStairs.write(group, params)
+        else
+          write_straight(group, params)
+        end
+        raise ArgumentError, '階段をソリッドにできません。床開口と段数を確認してください。' unless group.manifold? && group.volume.positive?
+
+        group.entities.each { |item| item.layer = group.model.layers[0] }
+      end
+
+      def write_straight(group, params)
         points = profile(params)
         first, last = [0, params.fetch('width')].map { |w| points.reverse.map { |x, z| point_at(params, x, w, z) } }
         group.entities.build do |builder|
@@ -94,25 +127,22 @@ module Higeotoko
             builder.add_face([first[j], first[i], last[i], last[j]])
           end
         end
-        raise ArgumentError, '直階段をソリッドにできません。床開口と段数を確認してください。' unless group.manifold? && group.volume.positive?
-
-        group.entities.each { |item| item.layer = group.model.layers[0] }
       end
 
       def apply(model, values, stair = nil)
         API.top_level!(model)
-        API.operation(model, stair ? '直階段を編集' : '直階段を作成') do
+        API.operation(model, stair ? '階段を編集' : '階段を作成') do
           params, placement = resolve(model, values)
           duplicate = items(model).any? do |item|
             item != stair && Follow.parameters(item).values_at('host_id', 'opening_id') == params.values_at('host_id', 'opening_id')
           end
-          raise ArgumentError, 'この開口にはすでに直階段があります。' if duplicate
+          raise ArgumentError, 'この開口にはすでに階段があります。' if duplicate
 
           if stair
             rebuild(stair, params, placement)
           else
             stair = model.entities.add_group
-            stair.name = '直階段'
+            stair.name = type_name(params)
             stair.layer = model.layers[0]
             write(stair, params)
             stair.transformation = placement
@@ -128,9 +158,12 @@ module Higeotoko
       end
 
       def rebuild(stair, params, placement)
-        raise ArgumentError, '関連する直階段のロックを解除してください。' if stair.locked?
+        raise ArgumentError, '関連する階段のロックを解除してください。' if stair.locked?
 
-        API.rebuild(stair, 'stair', params, Follow.parameters(stair), placement)
+        previous = Follow.parameters(stair)
+        rename = stair.name == type_name(previous)
+        API.rebuild(stair, 'stair', params, previous, placement)
+        stair.name = type_name(params) if rename
       end
 
       def refresh(model, host: nil)
@@ -164,17 +197,22 @@ module Higeotoko
         first, last = openings.fetch(selected).fetch('corners')
         default_direction = last[0] - first[0] >= last[1] - first[1] ? 'x+' : 'y+'
         direction = DIRECTIONS.fetch(previous.fetch('direction', default_direction))
-        input = UI.inputbox(['上階の床開口', '下階レベル', '上る向き（床の軸）', '蹴上げの段数'],
-                            [selected, level, direction, count.to_s],
-                            [openings.keys.join('|'), levels.join('|'), DIRECTIONS.values.join('|'), ''], '直階段')
+        turns = WinderStairs::TURNS
+        start_turn, end_turn = %w[start_turn end_turn].map { |key| turns.fetch(previous.fetch(key, 'none')) }
+        turn_choices = turns.values.join('|')
+        input = UI.inputbox(['上階の床開口', '下階レベル', '直線部分の上る向き（床の軸）', '蹴上げの段数',
+                             '上り口の回り段（上る向きで左右）', '上り切りの回り段（上る向きで左右）'],
+                            [selected, level, direction, count.to_s, start_turn, end_turn],
+                            [openings.keys.join('|'), levels.join('|'), DIRECTIONS.values.join('|'), '', turn_choices, turn_choices], '階段')
         return unless input
 
-        key, lower, ascent, risers = input
+        key, lower, ascent, risers, start_choice, end_choice = input
         result = apply(model, { 'host_id' => slab.persistent_id, 'opening_id' => openings.fetch(key).fetch('id'),
-                                'direction' => DIRECTIONS.key(ascent), 'level' => lower, 'risers' => risers }, stair)
+                                'direction' => DIRECTIONS.key(ascent), 'level' => lower, 'risers' => risers,
+                                'start_turn' => turns.key(start_choice), 'end_turn' => turns.key(end_choice) }, stair)
         params = Follow.parameters(result)
-        Sketchup.set_status_text(format('直階段｜蹴上げ %.1f mm・踏面 %.1f mm', params['height'] / params['risers'].to_f,
-                                        params['going']), SB_PROMPT)
+        Sketchup.set_status_text(format('%s｜蹴上げ %.1f mm・直線部踏面 %.1f mm', type_name(params),
+                                        params['height'] / params['risers'].to_f, params['going']), SB_PROMPT)
       end
 
       def draw_plan(entities, model, level, cut, hidden)
@@ -188,6 +226,10 @@ module Higeotoko
           going = params.fetch('going')
           cut_above = cut - API.levels(model).fetch(level)
           split = (cut_above / (height / risers.to_f)).ceil
+          if winder?(params)
+            WinderStairs.draw_plan(entities, params, at, split)
+            next true
+          end
           risers.times do |index|
             x = index * going
             if index < split

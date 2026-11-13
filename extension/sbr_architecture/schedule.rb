@@ -21,7 +21,8 @@ module Higeotoko
           spec = [Catalog::SYSTEMS[params['system']], params['section_id']].compact.join(' ')
           spec = "#{Roof::TYPES.fetch(params.fetch('roof_type'))} #{params.fetch('pitch')}寸" if kind == 'roof'
           if kind == 'stair'
-            spec = format('%d段｜蹴上げ %.1f・踏面 %.1f mm', params['risers'], params['height'] / params['risers'].to_f, params['going'])
+            spec = format('%s・%d段｜蹴上げ %.1f・直線部踏面 %.1f mm', Stairs.type_name(params), params['risers'],
+                          params['height'] / params['risers'].to_f, params['going'])
           end
           height = kind == 'wall' ? WallHeads.overall_height(params) : (params['height'] || params['depth'])
           area = kind == 'slab' ? slab_area(group, params) : nil

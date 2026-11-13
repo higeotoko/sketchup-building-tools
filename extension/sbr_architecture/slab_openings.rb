@@ -98,12 +98,14 @@ module Higeotoko
         end.to_h
       end
 
-      def draw_plan(entities, model, level, cut, hidden)
+      def draw_plan(entities, model, level, cut, hidden, bottom: nil)
         model.entities.grep(Sketchup::Group).sum do |slab|
           next 0 unless Follow.kind(slab) == 'slab' && !hidden.include?(slab.persistent_id) && slab.layer.visible?
 
           params = Follow.parameters(slab)
           top = slab.transformation.origin.z.to_mm
+          next 0 if bottom && top < bottom
+
           floor = API.levels(model).fetch(level)
           assigned = params['level']
           next 0 if top > cut || (assigned ? assigned != level : (top - floor).abs > 1)
@@ -133,7 +135,7 @@ module Higeotoko
         opening = choices.fetch(selected.first)
         if selected.last == '削除'
           if Stairs.linked?(slab, opening.fetch('id'))
-            raise ArgumentError, 'この開口に直階段があります。先に階段を削除してください。'
+            raise ArgumentError, 'この開口に階段があります。先に階段を削除してください。'
           end
           params[KEY].delete(opening)
         else

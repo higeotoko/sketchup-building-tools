@@ -219,7 +219,7 @@ module Higeotoko
       return '通り芯' if kind == 'grid'
       return '床スラブ' if kind == 'slab'
       return '屋根' if kind == 'roof'
-      return '直階段' if kind == 'stair'
+      return '階段' if kind == 'stair'
       return '室' if kind == 'room'
 
       MEMBERS.fetch(kind).first
@@ -255,7 +255,7 @@ module Higeotoko
       ColumnCenters.add(group, params) if kind == 'column'
     end
 
-    def write_grid(group, params, labels: true)
+    def write_grid(group, params, labels: true, dimensions: true)
       xs = Layout.stations(params.fetch('x_spans'))
       ys = Layout.stations(params.fetch('y_spans'))
       entities = group.entities
@@ -270,11 +270,13 @@ module Higeotoko
         stations.each_cons(2) { |a, b| GridStyle.add_axis(entities, point(a, y), point(b, y)) }
         [-extension, xs.last + extension].each { |x| entities.add_text(name, point(x, y)) } if labels
       end
-      xs.each_cons(2) do |a, b|
-        entities.add_dimension_linear(point(a, 0), point(b, 0), Geom::Vector3d.new(0, -720.mm, 0))
-      end
-      ys.each_cons(2) do |a, b|
-        entities.add_dimension_linear(point(0, a), point(0, b), Geom::Vector3d.new(-720.mm, 0, 0))
+      if dimensions
+        xs.each_cons(2) do |a, b|
+          entities.add_dimension_linear(point(a, 0), point(b, 0), Geom::Vector3d.new(0, -720.mm, 0))
+        end
+        ys.each_cons(2) do |a, b|
+          entities.add_dimension_linear(point(0, a), point(0, b), Geom::Vector3d.new(-720.mm, 0, 0))
+        end
       end
       entities.each { |entity| entity.layer = group.model.layers[0] }
       GridStyle.apply(group)
@@ -1064,7 +1066,7 @@ module Higeotoko
         toolbar_command('床スラブ', 'slab', '床の外周をクリック。Enterで閉じる') { report_errors { Palette.instance.activate('slab') } },
         toolbar_command('屋根', 'roof', '外壁矩形の対角を2点クリックして片流れ・切妻を作る') { report_errors { Palette.instance.activate('roof') } },
         toolbar_command('床開口', 'slab_opening', '床を選び、矩形の対角を2点クリック') { report_errors { Palette.instance.activate('slab_opening') } },
-        toolbar_command('直階段', 'stair', '上階の床開口と下階レベルを選び、直階段を作る') { report_errors { Palette.instance.activate('stair') } },
+        toolbar_command('階段', 'stair', '上階の床開口を選び、直階段や回り階段を作る') { report_errors { Palette.instance.activate('stair') } },
         toolbar_command('室', 'room', '閉じた壁の内側をクリックして室名・面積を登録') { report_errors { Palette.instance.activate('room') } },
         toolbar_command('窓開口', 'window', '形式を選んで壁に配置。必要に応じて可動側を指定') { report_errors { Palette.instance.activate('window') } },
         toolbar_command('扉開口', 'door', '形式を選んで壁に配置。必要に応じて引く方向・開く側を指定') { report_errors { Palette.instance.activate('door') } },
@@ -1096,7 +1098,7 @@ module Higeotoko
 
         kind = group.get_attribute(DICT, 'kind')
         if kind == 'stair'
-          context.add_item('SketchUPbuildingTool 直階段を編集…') { report_errors { Stairs.dialog(model, group) } }
+          context.add_item('SketchUPbuildingTool 階段を編集…') { report_errors { Stairs.dialog(model, group) } }
           next
         end
         if kind == 'room'

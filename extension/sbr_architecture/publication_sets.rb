@@ -57,6 +57,7 @@ module Higeotoko
 
         item = { 'id' => previous ? id : SecureRandom.uuid, 'name' => name,
                  'keys' => scenes.map { |_, data| data.fetch('key') }, 'tables' => tables.uniq, 'arrangement' => arrangement }
+        item['drawing_index'] = true if input['drawing_index'] == true
         previous ? sets[sets.index(previous)] = item : sets << item
         write(model, sets) unless item == previous
         item

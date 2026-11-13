@@ -190,7 +190,7 @@ module Higeotoko
         grid.entities.erase_entities(strokes) unless strokes.empty?
       end
 
-      def grids(model, entities, level, cut_height, hidden, aligned: false, sections: [])
+      def grids(model, entities, level, cut_height, hidden, aligned: false, sections: [], dimensions: true)
         candidates = model.entities.grep(Sketchup::Group).filter_map do |grid|
           next unless Follow.kind(grid) == 'grid' && !hidden.include?(grid.persistent_id) &&
                       grid.layer.visible? && upright?(grid.transformation)
@@ -203,7 +203,7 @@ module Higeotoko
           copy = entities.add_group
           copy.name = grid.name
           copy.layer = model.layers[0]
-          API.write_grid(copy, params, labels: false)
+          API.write_grid(copy, params, labels: false, dimensions: dimensions)
           if aligned
             copy.entities.grep(Sketchup::DimensionLinear).each do |dimension|
               direction = dimension.end.last - dimension.start.last
@@ -285,13 +285,15 @@ module Higeotoko
         end
       end
 
-      def populate(group, level, cut_height, hidden, masks: [], hollow_masks: [], dimension_openings: false, sections: [])
+      def populate(group, level, cut_height, hidden, masks: [], hollow_masks: [], dimension_openings: false,
+                   sections: [], dimension_overall: true)
         extent = Geom::BoundingBox.new
         stats, projections = walls(group.model, group.entities, cut_height, hidden, extent, masks,
                                    hollow_masks: hollow_masks, dimension_openings: dimension_openings)
-        grid_data = grids(group.model, group.entities, level, cut_height, hidden, aligned: dimension_openings, sections: sections)
+        grid_data = grids(group.model, group.entities, level, cut_height, hidden, aligned: dimension_openings,
+                          sections: sections, dimensions: dimension_overall)
         stats[:grids] = grid_data.size
-        stats[:overall_dimensions] = overall_dimensions(group.entities, extent, aligned: dimension_openings)
+        stats[:overall_dimensions] = dimension_overall ? overall_dimensions(group.entities, extent, aligned: dimension_openings) : 0
         group.entities.each { |entity| entity.layer = group.model.layers[0] }
         [stats, projections, grid_data]
       end
